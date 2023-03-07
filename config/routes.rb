@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show'
   get '/clips', to: 'clips#index'
   get '/discover', to: 'pages#discover'
+  get '/test', to: 'test#index'
 end
