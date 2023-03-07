@@ -1,5 +1,5 @@
 class ClipsController < ApplicationController
   def index
-    @clips = Clip.all
+    @clips = Clip.order(view_count: :desc).sort_by { rand }
   end
 end
