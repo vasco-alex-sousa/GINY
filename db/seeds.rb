@@ -204,9 +204,10 @@ puts "Created categories successfully"
 
 puts "Creating some streams"
 #Stream 1
-stream1 = Stream.create!(user: user1, category: category1, status: 'live', started_at: Time.new(2023,03,05, 11, 30, 00), language: 'portuguese', viewer_count: 1000, average_viewers: 100, peak_viewers: 150, number_of_chat_messages: 500, unique_chatters: 100, new_followers: 10, new_subscriptions: 2)
+stream1 = Stream.create!(user: user1, category: category5, status: 'live', started_at: Date.new, language: 'cona', viewer_count: 1900, average_viewers: 170, peak_viewers: 200, number_of_chat_messages: 800, unique_chatters: 150, new_followers: 30, new_subscriptions: 5)
 stream2 = Stream.create!(user: user1, category: category4, status: 'live', started_at: Time.new(2023,02,20, 16, 00, 00), language: 'portuguese', viewer_count: 2000, average_viewers: 200, peak_viewers: 250, number_of_chat_messages: 1000, unique_chatters: 200, new_followers: 20, new_subscriptions: 4)
-stream3 = Stream.create!(user: user1, category: category5, status: 'live', started_at: Time.new(2023,01,30, 22, 15, 00), language: 'portuguese', viewer_count: 1900, average_viewers: 170, peak_viewers: 200, number_of_chat_messages: 800, unique_chatters: 150, new_followers: 30, new_subscriptions: 5)
+stream3 = Stream.create!(user: user1, category: category1, status: 'live', started_at: Time.new(2023,03,05, 11, 30, 00), language: 'portuguese', viewer_count: 1000, average_viewers: 100, peak_viewers: 150, number_of_chat_messages: 500, unique_chatters: 100, new_followers: 10, new_subscriptions: 2)
+
 # #Stream 2
 stream4 = Stream.create!(user: user2, category: category2, status: 'live', started_at: Time.new(2023,03,05, 11, 30, 00), language: 'english', viewer_count: 10000, average_viewers: 1000, peak_viewers: 1500, number_of_chat_messages: 5000, unique_chatters: 1000, new_followers: 100, new_subscriptions: 20)
 stream5 = Stream.create!(user: user2, category: category1, status: 'live', started_at: Time.new(2023,02,20, 16, 00, 00), language: 'english', viewer_count: 20000, average_viewers: 2000, peak_viewers: 2500, number_of_chat_messages: 10000, unique_chatters: 2000, new_followers: 200, new_subscriptions: 40)
