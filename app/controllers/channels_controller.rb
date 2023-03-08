@@ -1,9 +1,8 @@
 class ChannelsController < ApplicationController
   def index
-    @channels = User.all.order(:created_at)
-  end
-
-  def show
-    @channel = User.find(params[:id])
+    @user = current_user
+    @user_id = current_user.id
+    @num_streams = params[:num_streams] || 5
+    @streams = @user.last_streams(@num_streams)
   end
 end
