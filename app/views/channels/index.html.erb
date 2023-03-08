@@ -1,8 +1,57 @@
-<!-- app/views/channels/index.html.erb -->
-<h1>All Channels</h1>
+<h1><%= @user.display_name %></h1>
 
-<ul>
-  <% @channels.each do |channel| %>
-    <li><%= link_to channel.display_name, channel_path(channel) %></li>
+
+<div class="profile-info">
+  <img src="<%= @user.profile_image_url %>" alt="Profile Image">
+  <p><%= @user.display_name %></p>
+</div>
+<div class="streams-info">
+  <h2>Streams</h2>
+  <div class="num-streams-selector">
+    <%= link_to "Last 5 streams", channels_path(num_streams: 5) %>
+    <%= link_to "Last 10 streams", channels_path(num_streams: 10) %>
+    <%= link_to "Last 30 streams", channels_path(num_streams: 30) %>
+  </div>
+  <div class="stats-info">
+    <div class="week-info">
+      <h5>Last 5 Streams</h5>
+      <ul><%= @user.average(5)%> average viewers</ul>
+      <ul><%= @user.max_peak_viewers(5) %> peak viewers</ul>
+      <ul><%= @user.followers(5) %> new followers</ul>
+      <ul><%= @user.subscribers(5) %> new subscribers</ul>
+      <ul><%= @user.num_chat_msg(5) %> average chat messages</ul>
+      <ul><%= @user.num_chatters(5) %> average num_chatters</ul>
+    </div>
+    <div class="week-info">
+      <h5>Last 10 Streams</h5>
+      <ul><%= @user.average(10)%> average viewers</ul>
+      <ul><%= @user.max_peak_viewers(10) %> peak viewers</ul>
+      <ul><%= @user.followers(10) %> new followers</ul>
+      <ul><%= @user.subscribers(10) %> new subscribers</ul>
+      <ul><%= @user.num_chat_msg(10) %> average chat messages</ul>
+      <ul><%= @user.num_chatters(10) %> average num_chatters</ul>
+    </div>
+    <div class="week-info">
+      <h5>Last 30 Streams</h5>
+      <ul><%= @user.average(30)%> average viewers</ul>
+      <ul><%= @user.max_peak_viewers(30) %> peak viewers</ul>
+      <ul><%= @user.followers(30) %> new followers</ul>
+      <ul><%= @user.subscribers(30) %> new subscribers</ul>
+      <ul><%= @user.num_chat_msg(30) %> average chat messages</ul>
+      <ul><%= @user.num_chatters(30) %> average num_chatters</ul>
+    </div>
+  </div>
+</div>
+
+<div class="user-clips">
+  <% Clip.where(stream_id: Stream.where(user_id: @user_id).pluck(:id)).each do |clip| %>
+    <div class="clip">
+      <img src="<%= clip.thumbnail_url %>" alt="Clip thumbnail">
+      <div class="info">
+        <h3><%= clip.title %></h3>
+        <p><strong>View count:</strong> <%= clip.view_count %></p>
+        <p><strong>Clip date:</strong> <%= clip.clip_date.strftime("%B %d, %Y") %></p>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>

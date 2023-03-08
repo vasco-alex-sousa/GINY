@@ -67,4 +67,9 @@ class User < ApplicationRecord
   def max_peak_viewers(num_of_streams)
     streams.last(num_of_streams).map(&:peak_viewers).max
   end
+
+
+  def last_streams(num_streams)
+    streams.order(started_at: :desc).limit(num_streams)
+  end
 end
