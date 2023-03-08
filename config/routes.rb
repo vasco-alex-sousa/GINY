@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root "pages#home"
   get "/discover", to: "pages#discover"
   resources :categories, only: [:show]
-  resources :channels, only: [:show]
+  resources :channels, only: [:show, :index]
   resources :clips, only: [:index]
 end
