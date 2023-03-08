@@ -1,56 +1,59 @@
 <h1>Pages#home</h1>
 
-<img src="<%= @user.profile_image_url %>" alt="Profile Image">
-<p><%= @user.display_name %></p>
-
-<h5>Week</h5>
-<ul><%= @average_week %> average viewers</ul>
-<ul><%= @sum_followers_week %> new followers</ul>
-<ul><%= @sum_subscribers_week %> new subscribers</ul>
-
-<h5>Month</h5>
-<ul><%= @average_month %> average viewers</ul>
-<ul><%= @sum_followers_month %> new followers</ul>
-<ul><%= @sum_subscribers_month %> new subscribers</ul>
-
-
-<h5>3 Months</h5>
-<ul><%= @average_3months %> average viewers</ul>
-<ul><%= @sum_followers_3months %> new followers</ul>
-<ul><%= @sum_subscribers_3months %> new subscribers</ul>
+<!-- Displaying User Overview -->
+<div class="profile-info">
+  <img src="<%= @user.profile_image_url %>" alt="Profile Image">
+  <p><%= @user.display_name %></p>
+</div>
+<div class="stats-info">
+  <div class="week-info">
+    <h5>Last 5</h5>
+    <ul><%= @user.average(5)%> average viewers</ul>
+    <ul><%= @user.followers(5) %> new followers</ul>
+    <ul><%= @user.subscribers(5) %> new subscribers</ul>
+  </div>
+</div>
 
 <!-- Displaying Categories -->
-<h3>Categories:</h3>
-<ul>
-  <% @categories.each do |category| %>
-    <li><%= category.name %> (average viewers: <%= category.average_viewers %>)</li>
-    <% if category.clips.any? %>
-      <ul>
-        <li>Clip with most views:</li>
+<div class="categories">
+  <h3>Trending Categories:</h3>
+  <ul>
+    <% @categories.each do |category| %>
+      <li><%= category.name %> (average viewers: <%= category.average_viewers.round %>)</li>
+      <% if category.clips.any? %>
         <ul>
-          <li><%= category.clips.order("view_count DESC").first.title %> (views: <%= category.clips.order("view_count DESC").first.view_count %>)
-            <img src="<%= category.clips.order("view_count DESC").first.thumbnail_url %>" alt="Thumbnail">
-          </li>
+          <li>Clip with most views:</li>
+          <ul>
+            <li>
+              <%= category.clips.order("view_count DESC").first.title %> (views: <%= category.clips.order("view_count DESC").first.view_count %>)
+              <img src="<%= category.clips.order("view_count DESC").first.thumbnail_url %>" alt="Thumbnail">
+            </li>
+          </ul>
         </ul>
-      </ul>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+</div>
 
 <!-- Displaying Channels -->
-<h3>Channels:</h3>
-<ul>
-  <% @channels.each do |channel| %>
-    <li><%= channel.display_name %> (average viewers: <%= channel.average_viewers %>)</li>
-    <% if channel.streams.any? %>
-      <ul>
-        <li>Clip with most views:</li>
+<div class="channels">
+  <h3>Trending Channels:</h3>
+  <ul>
+    <% @channels.each do |channel| %>
+      <li><%= channel.display_name %> (average viewers: <%= channel.average_viewers.round %>)</li>
+      <% if channel.streams.any? %>
         <ul>
-          <li><%= channel.clips.order("view_count DESC").first.title %> (views: <%= channel.clips.order("view_count DESC").first.view_count %>)
-            <img src="<%= channel.clips.order("view_count DESC").first.thumbnail_url %>" alt="Thumbnail">
-          </li>
+          <li>Clip with most views:</li>
+          <ul>
+            <li>
+              <%= channel.clips.order("view_count DESC").first.title %> (views: <%= channel.clips.order("view_count DESC").first.view_count %>)
+              <img src="<%= channel.clips.order("view_count DESC").first.thumbnail_url %>" alt="Thumbnail">
+            </li>
+          </ul>
         </ul>
-      </ul>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+</div>
+
+<div style="padding-bottom: 50px;"></div>
