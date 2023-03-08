@@ -9,8 +9,12 @@
   <div class="week-info">
     <h5>Last 5</h5>
     <ul><%= @user.average(5)%> average viewers</ul>
+    <ul><%= @user.max_peak_viewers(5) %> peak viewers</ul>
     <ul><%= @user.followers(5) %> new followers</ul>
     <ul><%= @user.subscribers(5) %> new subscribers</ul>
+    <ul><%= @user.num_chat_msg(5) %> average chat messages</ul>
+    <ul><%= @user.num_chatters(5) %> average num_chatters</ul>
+
   </div>
 </div>
 

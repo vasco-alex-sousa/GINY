@@ -43,4 +43,28 @@ class User < ApplicationRecord
     end
     counter
   end
+
+  def num_chat_msg(num_of_streams)
+    i = 0
+    counter = 0
+    streams.last(num_of_streams).each do |stream|
+      i += 1
+      counter += stream.number_of_chat_messages
+    end
+    (counter.to_f / i).round
+  end
+
+  def num_chatters(num_of_streams)
+    i = 0
+    counter = 0
+    streams.last(num_of_streams).each do |stream|
+      i += 1
+      counter += stream.unique_chatters
+    end
+    (counter.to_f / i).round
+  end
+
+  def max_peak_viewers(num_of_streams)
+    streams.last(num_of_streams).map(&:peak_viewers).max
+  end
 end
