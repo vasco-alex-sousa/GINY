@@ -184,12 +184,17 @@ User.destroy_all
 puts "DB reset"
 
 puts "Creating some users"
-user1 = User.create(email: 'alexandre0grande@twitch.tv', password: 'alexandre', display_name: 'alexandre0grande', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/0b31cfd4-e60b-43bf-b1a1-19e4df9a02be-profile_image-300x300.png', created_at: '21-04-2020')
-user2 = User.create(email: 'pokimane@twitch.tv', password: 'pokimane', display_name: 'pokimane', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/6cd4de40-1a83-46c7-aea5-3bd73f90e7e4-profile_image-300x300.png', created_at: '14-02-2016')
-user3 = User.create(email: 'soficious@twitch.tv', password: 'soficious', display_name: 'soficious', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/1ff9ccec-1f47-4b0b-9c5e-6cded0ed1dac-profile_image-300x300.png', created_at: '30-09-2021')
-user4 = User.create(email: 'xqc@twitch.tv', password: 'xqctwitch', display_name: 'xqc', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/xqc-profile_image-9298dca608632101-300x300.jpeg', created_at: '01-01-2015')
-user5 = User.create(email: 'morgamix@twitch.tv', password: 'morgamix', display_name: 'morgamix', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/21b36c5f-fcde-4e80-a359-c003b89016c6-profile_image-300x300.png', created_at: '25-05-2021')
-user6 = User.create(email: 'anarlguerra@twitch.tv', password: 'anarlguerra', display_name: 'anarlguerra', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/eafce906-c626-4df9-bba6-629076a53c72-profile_image-300x300.png', created_at: '11-11-2019')
+user1 = User.create(email: 'alexandre0grande@twitch.tv', password: 'alexandre', display_name: 'alexandre0grande', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/0b31cfd4-e60b-43bf-b1a1-19e4df9a02be-profile_image-300x300.png', created_at: '21-04-2020', description: 'Olá Espartano! Sê Bem-vindo à Legião do Alexandre o Grande! (canal em off por tempo indeterminado) ⚔️', total_followers: 11100)
+user2 = User.create(email: 'pokimane@twitch.tv', password: 'pokimane', display_name: 'pokimane', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/6cd4de40-1a83-46c7-aea5-3bd73f90e7e4-profile_image-300x300.png', created_at: '14-02-2016', description: 'Welcome to my channel! :) I play a variety of games, chat, stream IRL & more! I love interacting with my chat & making others happy, so come say hi!', total_followers: 9300000)
+user3 = User.create(email: 'soficious@twitch.tv', password: 'soficious', display_name: 'soficious', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/1ff9ccec-1f47-4b0b-9c5e-6cded0ed1dac-profile_image-300x300.png', created_at: '30-09-2021', description: 'Streamer que luta pela acessibilidade e inclusão em jogos ♿🌈 .Canal focado em RPG e SP 🧙🏻‍♀️⚔. Só preciso de três refeições: Final Fantasy 👾, Dragon Age 🐲e Mass Effect 🚀. Querem entrar em contacto? É este o e-mail 📨 ladysoficious@gmail.com', total_followers: 844)
+user4 = User.create(email: 'xqc@twitch.tv', password: 'xqctwitch', display_name: 'xqc', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/xqc-profile_image-9298dca608632101-300x300.jpeg', created_at: '01-01-2015', description: 'THE BEST AT ABSOLUTELY EVERYTHING. THE JUICER. LEADER OF THE JUICERS.', total_followers: 11700000)
+user5 = User.create(email: 'morgamix@twitch.tv', password: 'morgamix', display_name: 'morgamix', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/21b36c5f-fcde-4e80-a359-c003b89016c6-profile_image-300x300.png', created_at: '25-05-2021', description: 'Gamer since... Spectrum 128k... Load " " Faço parte de uma geração de primeiros exploradores do Mundo dos videojogos. Muitas histórias e Universos fantásticos já foram vividos sozinho. Este canal não é mais que uma desculpa para partilhar e estar numa comunidade que sempre senti ser parte', total_followers: 28600)
+user6 = User.create(email: 'anarlguerra@twitch.tv', password: 'anarlguerra', display_name: 'anarlguerra', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/eafce906-c626-4df9-bba6-629076a53c72-profile_image-300x300.png', created_at: '11-11-2019', description: 'Hello you! O meu nome é Ana e vivo em Portugal. Partilho o que mais gosto, discuto a intersecção da tecnologia com a cultura e luto por um mundo em que as pessoas podem ser elas próprias sem desculpas. Tudo isto, enquanto vou jogando os meus jogos favoritos.', total_followers: 3900)
+user7 = User.create(email: 'miguel_conde99@twitch.tv', password: 'miguelconde', display_name: 'miguel_conde99', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/b3e53bb5-2dca-47d7-a9b2-a159e708121a-profile_image-300x300.png', created_at: '10-02-2020', description: 'FIFA Verified Player 1vs1/2vs2 Player (F/A) And Fifa Streamer', total_followers: 51700)
+user8 = User.create(email: 'khaheri_@twitch.tv', password: 'khaheri_', display_name: 'khaheri_', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/2f92f722-191d-4dd2-8a2d-08df3e832d36-profile_image-300x300.png', created_at: '05-05-2021', description: 'Olá Jóia , Sou a Raquel sou parceira oficial da Nintendo Portugal e sê bem-vindo ao mundo da Nintendo Switch ! Vem pertencer a esta familia super friendly , apesar de eu ser tóxica como o veneno de uma cobra os meus seguidores são lindos ! Aproveitem o chat que são melhores que eu ahahah !', total_followers: 5300)
+user9 = User.create(email: 'gmhikaru@twitch.tv', password: 'gmikaru', display_name: 'GMHikaru', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/cd921fcd-53fc-4b1d-be23-0787bc36b756-profile_image-300x300.png', created_at: '10-08-2015', description: 'Grandmaster Hikaru Nakamura, 5-time United States Chess Champion', total_followers: 1700000)
+user10 = User.create(email: 'bemaryjane@twitch.tv', password: 'bemaryjane', display_name: 'bemaryjane', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/3d2911d1-9bbb-449e-bf40-3aa6351a3e8d-profile_image-300x300.png', created_at: '20-06-2017', description: 'Yelloww!!! My Name is Mary Jane and this is BEMARYJANE! :D Im a girl that loves Cosplay, gaming and music. Hope you enjoy as much as i do :)', total_followers: 3200)
+
 puts "Create users successfully"
 
 
@@ -200,47 +205,198 @@ category3 = Category.create(name: 'Just Chatting', box_art_url: 'https://static-
 category4 = Category.create(name: 'Hogwarts Legacy', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/1095275650_IGDB-272x380.jpg', average_viewers: 100000, peak_viewers: 500000, peak_viewers_date: '15-02-2023')
 category5 = Category.create(name: 'League of Legends', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/21779-285x380.jpg', average_viewers: 70000, peak_viewers: 900000, peak_viewers_date: '02-03-2019')
 category6 = Category.create(name: 'Valorant', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/516575-285x380.jpg', average_viewers: 60000, peak_viewers: 600000, peak_viewers_date: '20-09-2020')
+category7 = Category.create(name: 'Football Manager 2023', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/1047410718_IGDB-285x380.jpg', average_viewers: 1000, peak_viewers: 8000, peak_viewers_date: '06-11-2022')
+category8 = Category.create(name: 'God of War Ragnarok', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/102007682_IGDB-272x380.jpg', average_viewers: 5000, peak_viewers: 500000, peak_viewers_date: '25-10-2022')
+category9 = Category.create(name: 'Sports', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/518203-285x380.jpg', average_viewers: 10000, peak_viewers: 800000, peak_viewers_date: '18-12-2022')
+category10 = Category.create(name: 'Music', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/26936-285x380.jpg', average_viewers: 30000, peak_viewers: 100000, peak_viewers_date: '15-08-2020')
 puts "Created categories successfully"
 
 puts "Creating some streams"
-#Stream 1
-stream1 = Stream.create!(user: user1, category: category1, status: 'live', started_at: Time.new(2023,03,05, 11, 30, 00), language: 'portuguese', viewer_count: 1000, average_viewers: 100, peak_viewers: 150, number_of_chat_messages: 500, unique_chatters: 100, new_followers: 10, new_subscriptions: 2)
-stream2 = Stream.create!(user: user1, category: category4, status: 'live', started_at: Time.new(2023,02,20, 16, 00, 00), language: 'portuguese', viewer_count: 2000, average_viewers: 200, peak_viewers: 250, number_of_chat_messages: 1000, unique_chatters: 200, new_followers: 20, new_subscriptions: 4)
-stream3 = Stream.create!(user: user1, category: category5, status: 'live', started_at: Time.new(2023,01,30, 22, 15, 00), language: 'portuguese', viewer_count: 1900, average_viewers: 170, peak_viewers: 200, number_of_chat_messages: 800, unique_chatters: 150, new_followers: 30, new_subscriptions: 5)
-# #Stream 2
-stream4 = Stream.create!(user: user2, category: category2, status: 'live', started_at: Time.new(2023,03,05, 11, 30, 00), language: 'english', viewer_count: 10000, average_viewers: 1000, peak_viewers: 1500, number_of_chat_messages: 5000, unique_chatters: 1000, new_followers: 100, new_subscriptions: 20)
-stream5 = Stream.create!(user: user2, category: category1, status: 'live', started_at: Time.new(2023,02,20, 16, 00, 00), language: 'english', viewer_count: 20000, average_viewers: 2000, peak_viewers: 2500, number_of_chat_messages: 10000, unique_chatters: 2000, new_followers: 200, new_subscriptions: 40)
-stream6 = Stream.create!(user: user2, category: category4, status: 'live', started_at: Time.new(2023,01,30, 22, 15, 00), language: 'english', viewer_count: 19000, average_viewers: 1700, peak_viewers: 2000, number_of_chat_messages: 8000, unique_chatters: 1500, new_followers: 300, new_subscriptions: 50)
-# #Stream 3
-stream7 = Stream.create!(user: user3, category: category2, status: 'live', started_at: Time.new(2023,03,05, 11, 30, 00), language: 'portuguese', viewer_count: 100, average_viewers: 10, peak_viewers: 15, number_of_chat_messages: 50, unique_chatters: 10, new_followers: 1, new_subscriptions: 0)
-stream8 = Stream.create!(user: user3, category: category3, status: 'live', started_at: Time.new(2023,02,20, 16, 00, 00), language: 'portuguese', viewer_count: 200, average_viewers: 20, peak_viewers: 25, number_of_chat_messages: 100, unique_chatters: 20, new_followers: 2, new_subscriptions: 1)
-stream9 = Stream.create!(user: user3, category: category6, status: 'live', started_at: Time.new(2023,01,30, 22, 15, 00), language: 'portuguese', viewer_count: 190, average_viewers: 17, peak_viewers: 20, number_of_chat_messages: 80, unique_chatters: 15, new_followers: 3, new_subscriptions: 2)
-# #Stream 4
-stream10 = Stream.create!(user: user4, category: category1, status: 'live', started_at: Time.new(2023,03,05, 11, 30, 00), language: 'english', viewer_count: 100000, average_viewers: 10000, peak_viewers: 15000, number_of_chat_messages: 50000, unique_chatters: 10000, new_followers: 1000, new_subscriptions: 200)
-stream11 = Stream.create!(user: user4, category: category2, status: 'live', started_at: Time.new(2023,02,20, 16, 00, 00), language: 'english', viewer_count: 20000, average_viewers: 20000, peak_viewers: 25000, number_of_chat_messages: 100000, unique_chatters: 20000, new_followers: 2000, new_subscriptions: 100)
-stream12 = Stream.create!(user: user4, category: category3, status: 'live', started_at: Time.new(2023,01,30, 22, 15, 00), language: 'english', viewer_count: 19000, average_viewers: 17000, peak_viewers: 20000, number_of_chat_messages: 80000, unique_chatters: 15000, new_followers: 3000, new_subscriptions: 300)
-# #Stream 5
-stream13 = Stream.create!(user: user5, category: category6, status: 'live', started_at: Time.new(2023,03,05, 11, 30, 00), language: 'portuguese', viewer_count: 200, average_viewers: 100, peak_viewers: 150, number_of_chat_messages: 500, unique_chatters: 100, new_followers: 10, new_subscriptions: 6)
-stream14 = Stream.create!(user: user5, category: category5, status: 'live', started_at: Time.new(2023,02,20, 16, 00, 00), language: 'portuguese', viewer_count: 400, average_viewers: 200, peak_viewers: 250, number_of_chat_messages: 1000, unique_chatters: 200, new_followers: 20, new_subscriptions: 8)
-stream15 = Stream.create!(user: user5, category: category4, status: 'live', started_at: Time.new(2023,01,30, 22, 15, 00), language: 'portuguese', viewer_count: 390, average_viewers: 170, peak_viewers: 200, number_of_chat_messages: 800, unique_chatters: 150, new_followers: 30, new_subscriptions: 3)
-# #Stream 6
-stream16 = Stream.create!(user: user5, category: category3, status: 'live', started_at: Time.new(2023,03,05, 11, 30, 00), language: 'portuguese', viewer_count: 20, average_viewers: 10, peak_viewers: 15, number_of_chat_messages: 50, unique_chatters: 10, new_followers: 3, new_subscriptions: 0)
-stream17 = Stream.create!(user: user5, category: category5, status: 'live', started_at: Time.new(2023,02,20, 16, 00, 00), language: 'portuguese', viewer_count: 40, average_viewers: 20, peak_viewers: 25, number_of_chat_messages: 100, unique_chatters: 20, new_followers: 2, new_subscriptions: 1)
-stream18 = Stream.create!(user: user5, category: category2, status: 'live', started_at: Time.new(2023,01,30, 22, 15, 00), language: 'portuguese', viewer_count: 39, average_viewers: 17, peak_viewers: 20, number_of_chat_messages: 80, unique_chatters: 15, new_followers: 1, new_subscriptions: 2)
+category_array = Category.all
+#User 1
+30.times do
+  Stream.create!(
+    user: user1,
+    category: category_array.sample,
+    status: "live",
+    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..22), 30, 00),
+    language: "Portuguese",
+    viewer_count: rand(1000..2000),
+    average_viewers: rand(100..200),
+    peak_viewers: rand(150..300),
+    number_of_chat_messages: rand(500..1000),
+    unique_chatters: rand(50..100),
+    new_followers: rand(5..20),
+    new_subscriptions: rand(1..10)
+  )
+end
+#User 2
+30.times do
+  Stream.create!(
+    user: user2,
+    category: category_array.sample,
+    status: "live",
+    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..22), 30, 00),
+    language: "Portuguese",
+    viewer_count: rand(10000..20000),
+    average_viewers: rand(1000..2000),
+    peak_viewers: rand(1500..3000),
+    number_of_chat_messages: rand(5000..10000),
+    unique_chatters: rand(500..1000),
+    new_followers: rand(50..200),
+    new_subscriptions: rand(10..100)
+  )
+end
+#User 3
+30.times do
+  Stream.create!(
+    user: user3,
+    category: category_array.sample,
+    status: "live",
+    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..22), 30, 00),
+    language: "Portuguese",
+    viewer_count: rand(100..200),
+    average_viewers: rand(10..20),
+    peak_viewers: rand(15..30),
+    number_of_chat_messages: rand(50..100),
+    unique_chatters: rand(5..10),
+    new_followers: rand(1..5),
+    new_subscriptions: rand(0..1)
+  )
+end
+#User 4
+30.times do
+  Stream.create!(
+    user: user4,
+    category: category_array.sample,
+    status: "live",
+    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..22), 30, 00),
+    language: "Portuguese",
+    viewer_count: rand(100000..200000),
+    average_viewers: rand(10000..20000),
+    peak_viewers: rand(15000..30000),
+    number_of_chat_messages: rand(50000..100000),
+    unique_chatters: rand(5000..10000),
+    new_followers: rand(500..2000),
+    new_subscriptions: rand(100..1000)
+  )
+end
+#User 5
+30.times do
+  Stream.create!(
+    user: user5,
+    category: category_array.sample,
+    status: "live",
+    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..22), 30, 00),
+    language: "Portuguese",
+    viewer_count: rand(2000..3000),
+    average_viewers: rand(200..300),
+    peak_viewers: rand(250..400),
+    number_of_chat_messages: rand(800..2000),
+    unique_chatters: rand(80..200),
+    new_followers: rand(10..40),
+    new_subscriptions: rand(2..20)
+  )
+end
+#User 6
+30.times do
+  Stream.create!(
+    user: user6,
+    category: category_array.sample,
+    status: "live",
+    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..22), 30, 00),
+    language: "Portuguese",
+    viewer_count: rand(100..200),
+    average_viewers: rand(10..20),
+    peak_viewers: rand(15..30),
+    number_of_chat_messages: rand(50..100),
+    unique_chatters: rand(5..10),
+    new_followers: rand(1..10),
+    new_subscriptions: rand(0..2)
+  )
+end
+#User 7
+30.times do
+  Stream.create!(
+    user: user7,
+    category: category_array.sample,
+    status: "live",
+    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..22), 30, 00),
+    language: "Portuguese",
+    viewer_count: rand(3000..6000),
+    average_viewers: rand(300..600),
+    peak_viewers: rand(450..700),
+    number_of_chat_messages: rand(900..3000),
+    unique_chatters: rand(90..200),
+    new_followers: rand(10..30),
+    new_subscriptions: rand(5..15)
+  )
+end
+#User 8
+30.times do
+  Stream.create!(
+    user: user8,
+    category: category_array.sample,
+    status: "live",
+    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..22), 30, 00),
+    language: "Portuguese",
+    viewer_count: rand(10000..20000),
+    average_viewers: rand(1000..2000),
+    peak_viewers: rand(1500..3000),
+    number_of_chat_messages: rand(5000..10000),
+    unique_chatters: rand(500..1000),
+    new_followers: rand(50..200),
+    new_subscriptions: rand(10..30)
+  )
+end
+#User 9
+30.times do
+  Stream.create!(
+    user: user9,
+    category: category_array.sample,
+    status: "live",
+    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..22), 30, 00),
+    language: "Portuguese",
+    viewer_count: rand(100..200),
+    average_viewers: rand(15..25),
+    peak_viewers: rand(20..40),
+    number_of_chat_messages: rand(50..100),
+    unique_chatters: rand(5..10),
+    new_followers: rand(2..7),
+    new_subscriptions: rand(0..3)
+  )
+end
+#User 10
+30.times do
+  Stream.create!(
+    user: user10,
+    category: category_array.sample,
+    status: "live",
+    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..22), 30, 00),
+    language: "Portuguese",
+    viewer_count: rand(1000..2000),
+    average_viewers: rand(100..200),
+    peak_viewers: rand(150..300),
+    number_of_chat_messages: rand(500..1000),
+    unique_chatters: rand(50..100),
+    new_followers: rand(5..20),
+    new_subscriptions: rand(0..10)
+  )
+end
 puts "Created streams successfully"
 
-
+streams_array = Stream.all
 puts "Creating some clips"
 #Stream 1
-clip1 = Clip.create!(stream: stream1, title: "Clip 1", view_count: 100, clip_date: Time.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1192997034-preview-260x147.jpg')
+clip1 = Clip.create!(stream: streams_array.sample, title: "Clip 1", view_count: 100, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://clips-media-assets2.twitch.tv/AT-cm%7C1192997034-preview-260x147.jpg')
 #Stream 4
-clip2 = Clip.create!(stream: stream4, title: "Clip 2", view_count: 1000, clip_date: Time.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://clips-media-assets2.twitch.tv/FFewlUqsDHMcEcdRzNIJjg/AT-cm%7CFFewlUqsDHMcEcdRzNIJjg-preview-260x147.jpg')
+clip2 = Clip.create!(stream: streams_array.sample, title: "Clip 2", view_count: 1000, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://clips-media-assets2.twitch.tv/FFewlUqsDHMcEcdRzNIJjg/AT-cm%7CFFewlUqsDHMcEcdRzNIJjg-preview-260x147.jpg')
 #Stream 7
-clip3 = Clip.create!(stream: stream7, title: "Clip 3", view_count: 10, clip_date: Time.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://clips-media-assets2.twitch.tv/5_asp8wO49oDgAF9FYzJCQ/46670899884-offset-1724-preview-260x147.jpg')
+clip3 = Clip.create!(stream: streams_array.sample, title: "Clip 3", view_count: 10, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://clips-media-assets2.twitch.tv/5_asp8wO49oDgAF9FYzJCQ/46670899884-offset-1724-preview-260x147.jpg')
 #Stream 10
-clip4 = Clip.create!(stream: stream10, title: "Clip 4", view_count: 10000, clip_date: Time.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://clips-media-assets2.twitch.tv/rCpMLQ8B7n6DJ5px_esr2g/AT-cm%7CrCpMLQ8B7n6DJ5px_esr2g-preview-260x147.jpg')
+clip4 = Clip.create!(stream: streams_array.sample, title: "Clip 4", view_count: 10000, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://clips-media-assets2.twitch.tv/rCpMLQ8B7n6DJ5px_esr2g/AT-cm%7CrCpMLQ8B7n6DJ5px_esr2g-preview-260x147.jpg')
 #Stream 13
-clip5 = Clip.create!(stream: stream13, title: "Clip 5", view_count: 200, clip_date: Time.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://clips-media-assets2.twitch.tv/XN4VDicxQTA0F79LIXk4Qw/AT-cm%7CXN4VDicxQTA0F79LIXk4Qw-preview-260x147.jpg')
+clip5 = Clip.create!(stream: streams_array.sample, title: "Clip 5", view_count: 200, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://clips-media-assets2.twitch.tv/XN4VDicxQTA0F79LIXk4Qw/AT-cm%7CXN4VDicxQTA0F79LIXk4Qw-preview-260x147.jpg')
 #Stream 16
-clip6 = Clip.create!(stream: stream16, title: "Clip 6", view_count: 20, clip_date: Time.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://clips-media-assets2.twitch.tv/_BQeWWKzN40cc-83MSzDqA/AT-cm%7C_BQeWWKzN40cc-83MSzDqA-preview-260x147.jpg')
+clip6 = Clip.create!(stream: streams_array.sample, title: "Clip 6", view_count: 20, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://clips-media-assets2.twitch.tv/_BQeWWKzN40cc-83MSzDqA/AT-cm%7C_BQeWWKzN40cc-83MSzDqA-preview-260x147.jpg')
 puts "Created clips successfully"

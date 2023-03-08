@@ -1,0 +1,36 @@
+<h1>Discover</h1>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <% if user.clips.any? %>
+        <div class="clips">
+          <ul>
+            <li>
+              <img src="<%= user.clips.order("view_count DESC").first.thumbnail_url %>" alt="Thumbnail">
+              <div class="clip-info">
+                <!-- Add any clip info here -->
+              </div>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+      <div class="user">
+        <img src="<%= user.profile_image_url %>" alt="Profile Image">
+        <div class="user-info">
+          <h2><%= user.display_name %></h2>
+          <% if user.total_followers >= 1000 && user.total_followers < 1000000 %>
+            <p><%= (user.total_followers / 1000.0).round(1) %>k followers</p>
+          <% elsif user.total_followers >= 1000000 %>
+            <p><%= (user.total_followers / 1000000.0).round(1) %>M followers</p>
+          <% else %>
+            <p><%= user.total_followers %> followers</p>
+          <% end %>
+          <p><%= user.description %></p>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+<div style="padding-bottom: 50px;"></div>
