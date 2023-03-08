@@ -4,38 +4,63 @@
 <div class="profile-info">
   <img src="<%= @user.profile_image_url %>" alt="Profile Image">
   <p><%= @user.display_name %></p>
+  <% if @user.total_followers >= 1000 && @user.total_followers < 1000000 %>
+    <p><%= (@user.total_followers / 1000.0).round(1) %>k followers</p>
+  <% elsif @user.total_followers >= 1000000 %>
+    <p><%= (@user.total_followers / 1000000.0).round(1) %>M followers</p>
+  <% else %>
+    <p><%= @user.total_followers %> followers</p>
+  <% end %>
 </div>
 <div class="stats-info">
   <div class="week-info">
     <h5>Last 5</h5>
     <ul><%= @user.average(5)%> average viewers</ul>
-    <ul><%= @user.max_peak_viewers(5) %> peak viewers</ul>
     <ul><%= @user.followers(5) %> new followers</ul>
     <ul><%= @user.subscribers(5) %> new subscribers</ul>
-    <ul><%= @user.num_chat_msg(5) %> average chat messages</ul>
-    <ul><%= @user.num_chatters(5) %> average num_chatters</ul>
-
   </div>
-</div>
+<% if @user.clips.any? %>
+  <!-- Displaying Clips -->
+  <div class="clips">
+    <ul>
+      <li>
+        <img src="<%= @user.clips.order("view_count DESC").first.thumbnail_url %>" alt="Thumbnail">
+        <div class="clip-info">
+          <img src="<%= @user.clips.order("view_count DESC").first.stream.user.profile_image_url %>" alt="Profile Image">
+          <p><%= @user.clips.order("view_count DESC").first.stream.user.display_name %></p>
+          <p><%= @user.clips.order("view_count DESC").first.title %></p>
+          <p>Views: <%= @user.clips.order("view_count DESC").first.view_count %></p>
+          <p>Category: <%= @user.clips.order("view_count DESC").first.stream.category.name %></p>
+        </div>
+      </li>
+    </ul>
+  </div>
+<% end %>
+
 
 <!-- Displaying Categories -->
 <div class="categories">
   <h3>Trending Categories:</h3>
   <ul>
     <% @categories.each do |category| %>
-      <li><%= category.name %> (average viewers: <%= category.average_viewers.round %>)</li>
-      <% if category.clips.any? %>
-        <ul>
-          <li>Clip with most views:</li>
-          <ul>
-            <li>
-              <%= category.clips.order("view_count DESC").first.title %> (views: <%= category.clips.order("view_count DESC").first.view_count %>)
-              <img src="<%= category.clips.order("view_count DESC").first.thumbnail_url %>" alt="Thumbnail">
-            </li>
-          </ul>
-        </ul>
+      <li><%= category.name %></li>
+         Average viewers: <%= category.streams.first.average_viewers%>
+        <% if category.clips.any? %>
+          <div class="clips">
+            <ul>
+              <li>
+                <img src="<%= category.clips.order("view_count DESC").first.thumbnail_url %>" alt="Thumbnail">
+                <div class="clip-info">
+                  <img src="<%= category.clips.order("view_count DESC").first.stream.user.profile_image_url %>" alt="Profile Image">
+                  <p><%= category.clips.order("view_count DESC").first.stream.user.display_name %></p>
+                  <p><%= category.clips.order("view_count DESC").first.title %></p>
+                  <p>Views: <%= category.clips.order("view_count DESC").first.view_count %></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
   </ul>
 </div>
 
@@ -44,18 +69,24 @@
   <h3>Trending Channels:</h3>
   <ul>
     <% @channels.each do |channel| %>
-      <li><%= channel.display_name %> (average viewers: <%= channel.average_viewers.round %>)</li>
-      <% if channel.streams.any? %>
-        <ul>
-          <li>Clip with most views:</li>
-          <ul>
-            <li>
-              <%= channel.clips.order("view_count DESC").first.title %> (views: <%= channel.clips.order("view_count DESC").first.view_count %>)
-              <img src="<%= channel.clips.order("view_count DESC").first.thumbnail_url %>" alt="Thumbnail">
-            </li>
-          </ul>
-        </ul>
-      <% end %>
+      <li><%= channel.display_name %></li>
+          Average viewers: <%= channel.streams.where("created_at >= ?", 1.week.ago).average(:viewer_count).round %>
+        <% if channel.clips.any? %>
+          <div class="clips">
+            <ul>
+              <li>
+                <img src="<%= channel.clips.order("view_count DESC").first.thumbnail_url %>" alt="Thumbnail">
+                <div class="clip-info">
+                  <img src="<%= channel.clips.order("view_count DESC").first.stream.user.profile_image_url %>" alt="Profile Image">
+                  <p><%= channel.clips.order("view_count DESC").first.stream.user.display_name %></p>
+                  <p><%= channel.clips.order("view_count DESC").first.title %></p>
+                  <p>Views: <%= channel.clips.order("view_count DESC").first.view_count %></p>
+                  <p>Category: <%= channel.clips.order("view_count DESC").first.stream.category.name %></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        <% end %>
     <% end %>
   </ul>
 </div>

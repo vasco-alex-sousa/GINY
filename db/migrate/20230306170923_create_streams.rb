@@ -3,7 +3,7 @@ class CreateStreams < ActiveRecord::Migration[7.0]
     create_table :streams do |t|
       t.references :user, null: false, foreign_key: true
       t.references :category, null: false, foreign_key: true
-      t.time :started_at
+      t.datetime :started_at
       t.string :language
       t.string :type
       t.integer :viewer_count

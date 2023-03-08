@@ -1,2 +1,52 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h1><%= @category.name %></h1>
+
+<div class="category-info">
+  <img src="<%= @category.box_art_url %>" alt="Box Art">
+  <p>Average viewers:</p>
+  <ul>
+    <li>Last week: <%= @category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i %></li>
+    <li>Last month: <%= @category.streams.where("started_at >= ?", 1.month.ago).average(:average_viewers).to_i %></li>
+    <li>Last 3 months: <%= @category.streams.where("started_at >= ?", 3.months.ago).average(:average_viewers).to_i %></li>
+    <li>All time: <%= @category.streams.where("started_at >= ?", 20.years.ago).average(:average_viewers).to_i %></li>
+  </ul>
+  <p>Peak viewers: <%= @category.peak_viewers %>
+  <p>Peak viewers date: <%= @category.peak_viewers_date %></p>
+</div>
+
+<h3>Popular Channels:</h3>
+<% if @category.streams.any? %>
+  <div class="streams">
+    <ul>
+      <% @category.streams.group_by(&:user).sort_by { |user, streams| streams.last.average_viewers }.reverse.first(3).each do |user, streams| %>
+        <li>
+          <img src="<%= user.profile_image_url %>" alt="Profile Image">
+          <div class="stream-info">
+            <p><%= user.display_name %></p>
+            <p>Average viewers: <%= streams.last.average_viewers.to_i %></p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<h3>Popular Clips:</h3>
+<% if @category.clips.any? %>
+  <div class="clips">
+    <ul>
+      <% @category.clips.group_by { |clip| clip.stream.user }.sort_by { |user, clips| clips.sum(&:view_count) }.reverse.first(3).each do |user, clips| %>
+        <li>
+          <img src="<%= clips.first.thumbnail_url %>" alt="Thumbnail">
+          <div class="clip-info">
+            <img src="<%= user.profile_image_url %>" alt="Profile Image">
+            <p><%= user.display_name %></p>
+            <p><%= clips.first.title %></p>
+            <p>Views: <%= clips.sum(&:view_count) %></p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div style="padding-bottom: 50px;"></div>
