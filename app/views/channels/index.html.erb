@@ -1,0 +1,8 @@
+<!-- app/views/channels/index.html.erb -->
+<h1>All Channels</h1>
+
+<ul>
+  <% @channels.each do |channel| %>
+    <li><%= link_to channel.display_name, channel_path(channel) %></li>
+  <% end %>
+</ul>
