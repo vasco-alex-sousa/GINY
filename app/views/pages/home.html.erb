@@ -1,4 +1,4 @@
-<h1>Pages#home</h1>
+<h1>Home</h1>
 
 <!-- Displaying User Overview -->
 <div class="profile-info">
@@ -19,6 +19,7 @@
     <ul><%= @user.followers(5) %> new followers</ul>
     <ul><%= @user.subscribers(5) %> new subscribers</ul>
   </div>
+</div>
 <div class="top-categories">
   <h5>My Top Categories</h5>
   <% if @user.streams.any? %>
@@ -46,6 +47,7 @@
           <div class='align-self-center'>
             <h2><%= @user.clips.order("view_count DESC").first.title %></h2>
             <p><%= link_to @user.clips.order("view_count DESC").first.stream.user.display_name, channel_path(@user.clips.order("view_count DESC").first.stream.user.id), class: "text-decoration-none", style: 'color: black' %></p>
+          </div>
         </div>
       </div>
       <div class="text-end me-1">

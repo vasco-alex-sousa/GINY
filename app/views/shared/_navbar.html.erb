@@ -3,7 +3,7 @@
 <div class="navbar-giny">
 
   <a href="<%= root_path %>" class="<%= 'active' if current_page?(root_path) %>"><i class='bx bxs-home-alt-2'></i></a>
-  <i class='bx bxs-search-alt-2'></i>
+  <i class='bx bxs-search-alt-2' style="font-size: 23px;"></i>
 
   <% if current_user %>
     <a href="<%= channel_path(current_user.id) %>" class="<%= 'active' if current_page?(channel_path(current_user.id)) %>"><i class='bx bxs-user'></i></a>
