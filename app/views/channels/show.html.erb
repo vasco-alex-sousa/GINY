@@ -1,7 +1,7 @@
 <h1><%= @user.display_name %></h1>
 
 <div class="profile-info">
-  <img src="<%= @user.profile_image_url %>" alt="Profile Image">
+  <img class="avatar-large" src="<%= @user.profile_image_url %>" alt="Profile Image">
   <div class="user-info">
           <h2><%= @user.display_name %></h2>
           <% if @user.total_followers >= 1000 && @user.total_followers < 1000000 %>
@@ -11,11 +11,15 @@
           <% else %>
             <p><%= @user.total_followers %> followers</p>
           <% end %>
-          <div class="follow-button">
-            <a href="https://www.twitch.tv/<%= @user.display_name %>/follow" target="_blank">
-              <img src="https://static-cdn.jtvnw.net/follow-btn/v1/twitch-follow-sm.png" alt="Follow <%= @user.display_name %> on Twitch"/>
-            </a>
-          </div>
+         <div class="follow-button">
+  <a href="https://www.twitch.tv/<%= @user.display_name %>/follow"
+     target="_blank"
+     class="text-decoration-none category-btn"
+  >
+    <i class="fab fa-twitch"></i> Follow <%= @user.display_name %> on Twitch
+  </a>
+</div>
+
           <p><%= @user.description %></p>
           <% if @user.streams.any? %>
             <% if @top_categories.any? %>
@@ -43,7 +47,7 @@
 
                   <div>
                       <h1 class="skills__title">Last 5 Streams</h1>
-                      <span class="skills__subtitle">#</span>
+                      <span class="skills__subtitle">Check out your performance</span>
                   </div>
 
                   <i class="uil uil-angle-down skills__arrow"></i>
@@ -121,7 +125,7 @@
 
                   <div>
                       <h1 class="skills__title">Last 10 streams</h1>
-                      <span class="skills__subtitle">#</span>
+                      <span class="skills__subtitle">Check out your performance</span>
                   </div>
 
                   <i class="uil uil-angle-down skills__arrow"></i>
@@ -198,7 +202,7 @@
 
                   <div>
                       <h1 class="skills__title">Last 30 streams</h1>
-                      <span class="skills__subtitle">#</span>
+                      <span class="skills__subtitle">Check out your performance</span>
                   </div>
 
                   <i class="uil uil-angle-down skills__arrow"></i>
@@ -329,4 +333,7 @@
       </div>
     <% end %>
   </div>
+
 </div>
+
+<div style="padding-bottom: 65px;"></div>
