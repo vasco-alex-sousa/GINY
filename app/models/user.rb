@@ -72,4 +72,9 @@ class User < ApplicationRecord
   def last_streams(num_streams)
     streams.order(started_at: :desc).limit(num_streams)
   end
+
+  def top_categories
+    category_count = streams.where("created_at >= ?", 30.days.ago).group(:category_id).count
+    category_count.sort_by { |_, count| -count }.take(3).map(&:first)
+  end
 end
