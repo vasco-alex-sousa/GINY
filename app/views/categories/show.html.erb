@@ -17,7 +17,7 @@
 <% if @category.streams.any? %>
   <div class="streams">
     <ul>
-      <% @category.streams.group_by(&:user).sort_by { |user, streams| streams.last.average_viewers }.reverse.first(3).each do |user, streams| %>
+      <% @category.streams.group_by(&:user).sort_by { |user, streams| streams.last.average_viewers }.reverse.first(5).each do |user, streams| %>
         <li>
           <img src="<%= user.profile_image_url %>" alt="Profile Image">
           <div class="stream-info">
@@ -32,20 +32,22 @@
 
 <h3>Popular Clips:</h3>
 <% if @category.clips.any? %>
-  <div class="clips">
-    <ul>
-      <% @category.clips.group_by { |clip| clip.stream.user }.sort_by { |user, clips| clips.sum(&:view_count) }.reverse.first(3).each do |user, clips| %>
-        <li>
-          <img src="<%= clips.first.thumbnail_url %>" alt="Thumbnail">
-          <div class="clip-info">
-            <img src="<%= user.profile_image_url %>" alt="Profile Image">
-            <p><%= user.display_name %></p>
-            <p><%= clips.first.title %></p>
-            <p>Views: <%= clips.sum(&:view_count) %></p>
-          </div>
-        </li>
-      <% end %>
-    </ul>
+  <div class="cards-container">
+      <% @category.clips.group_by { |clip| clip.stream.user }.sort_by { |user, clips| clips.sum(&:view_count) }.reverse.first(5).each do |user, clips| %>
+        <div class="card-trip">
+          <%= image_tag clips.first.thumbnail_url %>
+          <div class="card-trip-infos">
+            <div class="d-flex gap-3">
+              <%= image_tag user.profile_image_url, class: "avatar-bordered" %>
+              <div class='align-self-center'>
+                <h2><%= clips.first.title %></h2>
+                <p><%= user.display_name %></p>
+              </div>
+            </div>
+          <p>Views: <%= clips.sum(&:view_count) %></p>
+        </div>
+      </div>
+    <% end %>
   </div>
 <% end %>
 
