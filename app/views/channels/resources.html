@@ -1,0 +1,249 @@
+<!--==================== SKILLS ====================-->
+<section class="skills section" id="skills">
+  <h2 class="section__title">Skills</h2>
+  <span class="section__subtitle">My technical level</span>
+
+  <div class="skills__container container grid">
+      <div>
+          <!--=============== SKILLS 1 ===============-->
+          <div class="skills__content skills__open">
+              <div class="skills__header">
+                  <i class="uil uil-brackets-curly skills__icon"></i>
+
+                  <div>
+                      <h1 class="skills__title">Last 5 Streams</h1>
+                      <span class="skills__subtitle">#</span>
+                  </div>
+
+                  <i class="uil uil-angle-down skills__arrow"></i>
+              </div>
+
+              <div class="skills__list grid">
+                  <div class="skills__data">
+                      <div class="skills__titles">
+                          <h3 class="skills__name">average viewers</h3>
+                          <span class="skills__number"><%= @user.average(5)%></span>
+                      </div>
+                      <div class="skills__bar">
+                          <span class="skills__percentage skills__html"></span>
+                      </div>
+                  </div>
+
+                  <div class="skills__data">
+                      <div class="skills__titles">
+                          <h3 class="skills__name">peak viewers</h3>
+                          <span class="skills__number"><%= @user.max_peak_viewers(5) %></span>
+                      </div>
+                      <div class="skills__bar">
+                          <span class="skills__percentage skills__css"></span>
+                      </div>
+                  </div>
+
+                  <div class="skills__data">
+                      <div class="skills__titles">
+                          <h3 class="skills__name">new followers</h3>
+                          <span class="skills__number"><%= @user.followers(5) %></span>
+                      </div>
+                      <div class="skills__bar">
+                          <span class="skills__percentage skills__js"></span>
+                      </div>
+                  </div>
+
+                  <div class="skills__data">
+                      <div class="skills__titles">
+                          <h3 class="skills__name">new subscribers</h3>
+                          <span class="skills__number"><%= @user.subscribers(5) %></span>
+                      </div>
+                      <div class="skills__bar">
+                          <span class="skills__percentage skills__react"></span>
+                      </div>
+                  </div>
+
+                  <div class="skills__data">
+                    <div class="skills__titles">
+                      <h3 class="skills__name">average chat messages</h3>
+                      <span class="skills__number"><%= @user.num_chat_msg(5) %></span>
+                    </div>
+                    <div class="skills__bar">
+                      <span class="skills__percentage skills__react"></span>
+                    </div>
+                  </div>
+
+                    <div class="skills__data">
+                    <div class="skills__titles">
+                      <h3 class="skills__name">average num_chatters</h3>
+                      <span class="skills__number"><%= @user.num_chatters(5) %></span>
+                    </div>
+                    <div class="skills__bar">
+                      <span class="skills__percentage skills__react"></span>
+                    </div>
+                  </div>
+
+
+              </div>
+          </div>
+
+          <!--=============== SKILLS 2 ===============-->
+          <div class="skills__content skills__close">
+              <div class="skills__header">
+                  <i class="uil uil-server-network skills__icon"></i>
+
+                  <div>
+                      <h1 class="skills__title">Last 10 streams</h1>
+                      <span class="skills__subtitle">#</span>
+                  </div>
+
+                  <i class="uil uil-angle-down skills__arrow"></i>
+              </div>
+
+              <div class="skills__list grid">
+                  <div class="skills__data">
+                      <div class="skills__titles">
+                          <h3 class="skills__name">average viewers</h3>
+                          <span class="skills__number"><%= @user.average(10)%></span>
+                      </div>
+                      <div class="skills__bar">
+                          <span class="skills__percentage skills__html"></span>
+                      </div>
+                  </div>
+
+                  <div class="skills__data">
+                      <div class="skills__titles">
+                          <h3 class="skills__name">peak viewers</h3>
+                          <span class="skills__number"><%= @user.max_peak_viewers(10) %></span>
+                      </div>
+                      <div class="skills__bar">
+                          <span class="skills__percentage skills__css"></span>
+                      </div>
+                  </div>
+
+                  <div class="skills__data">
+                      <div class="skills__titles">
+                          <h3 class="skills__name">new followers</h3>
+                          <span class="skills__number"><%= @user.followers(10) %></span>
+                      </div>
+                      <div class="skills__bar">
+                          <span class="skills__percentage skills__js"></span>
+                      </div>
+                  </div>
+
+                  <div class="skills__data">
+                      <div class="skills__titles">
+                          <h3 class="skills__name">new subscribers</h3>
+                          <span class="skills__number"><%= @user.subscribers(10) %></span>
+                      </div>
+                      <div class="skills__bar">
+                          <span class="skills__percentage skills__react"></span>
+                      </div>
+                  </div>
+
+                  <div class="skills__data">
+                    <div class="skills__titles">
+                      <h3 class="skills__name">average chat messages</h3>
+                      <span class="skills__number"><%= @user.num_chat_msg(10) %></span>
+                    </div>
+                    <div class="skills__bar">
+                      <span class="skills__percentage skills__react"></span>
+                    </div>
+                  </div>
+
+                    <div class="skills__data">
+                    <div class="skills__titles">
+                      <h3 class="skills__name">average num_chatters</h3>
+                      <span class="skills__number"><%= @user.num_chatters(10) %></span>
+                    </div>
+                    <div class="skills__bar">
+                      <span class="skills__percentage skills__react"></span>
+                    </div>
+                  </div>
+             </div>
+      </div>
+
+      <div>
+          <!--=============== SKILLS 3 ===============-->
+          <div class="skills__content skills__close">
+              <div class="skills__header">
+                  <i class="uil uil-swatchbook skills__icon"></i>
+
+                  <div>
+                      <h1 class="skills__title">Last 30 streams</h1>
+                      <span class="skills__subtitle">#</span>
+                  </div>
+
+                  <i class="uil uil-angle-down skills__arrow"></i>
+              </div>
+
+             <div class="skills__list grid">
+                  <div class="skills__data">
+                      <div class="skills__titles">
+                          <h3 class="skills__name">average viewers</h3>
+                          <span class="skills__number"><%= @user.average(30)%></span>
+                      </div>
+                      <div class="skills__bar">
+                          <span class="skills__percentage skills__html"></span>
+                      </div>
+                  </div>
+
+                  <div class="skills__data">
+                      <div class="skills__titles">
+                          <h3 class="skills__name">peak viewers</h3>
+                          <span class="skills__number"><%= @user.max_peak_viewers(30) %></span>
+                      </div>
+                      <div class="skills__bar">
+                          <span class="skills__percentage skills__css"></span>
+                      </div>
+                  </div>
+
+                  <div class="skills__data">
+                      <div class="skills__titles">
+                          <h3 class="skills__name">new followers</h3>
+                          <span class="skills__number"><%= @user.followers(30) %></span>
+                      </div>
+                      <div class="skills__bar">
+                          <span class="skills__percentage skills__js"></span>
+                      </div>
+                  </div>
+
+                  <div class="skills__data">
+                      <div class="skills__titles">
+                          <h3 class="skills__name">new subscribers</h3>
+                          <span class="skills__number"><%= @user.subscribers(30) %></span>
+                      </div>
+                      <div class="skills__bar">
+                          <span class="skills__percentage skills__react"></span>
+                      </div>
+                  </div>
+
+                  <div class="skills__data">
+                    <div class="skills__titles">
+                      <h3 class="skills__name">average chat messages</h3>
+                      <span class="skills__number"><%= @user.num_chat_msg(30) %></span>
+                    </div>
+                    <div class="skills__bar">
+                      <span class="skills__percentage skills__react"></span>
+                    </div>
+                  </div>
+
+                    <div class="skills__data">
+                    <div class="skills__titles">
+                      <h3 class="skills__name">average num_chatters</h3>
+                      <span class="skills__number"><%= @user.num_chatters(30) %></span>
+                    </div>
+                    <div class="skills__bar">
+                      <span class="skills__percentage skills__react"></span>
+                    </div>
+                  </div>
+
+
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+def index_for_user
+@user = User.find(params[:id])
+render :index
+end
