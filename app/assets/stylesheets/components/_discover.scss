@@ -1,47 +1,79 @@
-.discover-card-container {
-  padding: 12px;
-}
+// .discover-card-container {
+//   padding: 12px;
+// }
 
-.clips {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-bottom: 12px;
-  border-radius: 23px;
-  padding: 11px 11px 0px 11px;
-}
+// .clips {
+//   overflow: hidden;
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   margin-bottom: 12px;
+//   border-radius: 23px;
+//   padding: 11px 11px 0px 11px;
+// }
 
-.user-info > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 13px;
-}
+// .user-info > img {
+//   height: 200px;
+//   width: 100%;
+//   object-fit: cover;
+//   border-radius: 13px;
+// }
 
-.user h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
+// .user h2 {
+//   font-size: 16px;
+//   font-weight: bold;
+//   margin: 0;
+// }
 
-.stream-categories p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
+// .stream-categories p {
+//   font-size: 12px;
+//   opacity: .7;
+//   margin: 0;
+// }
 
 
-.discover-card-trip .discover-card-trip-infos {
-  padding: 11px 0px;
+// .discover-card-trip .discover-card-trip-infos {
+//   padding: 11px 0px;
+//   display: flex;
+//   align-items: flex-end;
+//   justify-content: space-between;
+//   position: relative;
+// }
+
+// .discover-card-trip-infos .discover-card-trip-user {
+//   position: absolute;
+//   right: 16px;
+//   top: -20px;
+//   width: 40px;
+// }
+.streamer-info{
+  margin:10px 20px;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  position: relative;
 }
 
-.discover-card-trip-infos .discover-card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
+.streamer-ava > img{
+  height: 40px;
   width: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.video{
+  margin: 10px 20px;
+  height: 150px;
+}
+.video-style{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.clip-card{
+  background-color: rgb(170, 170, 170);
+  margin: 0 20px 10px 20px;
+  border-radius: 10px;
+  height: 250px;
+}
+
+.clips-container {
+
 }
