@@ -3,8 +3,14 @@
 <div class="navbar-giny">
 
   <a href="<%= root_path %>" class="<%= 'active' if current_page?(root_path) %>"><i class='bx bxs-home-alt-2'></i></a>
-  <i class='bx bxs-search-alt-2' ></i>
-  <a href="<%= channel_path(current_user.id) %>" class="<%= 'active' if current_page?(channel_path(current_user.id)) %>"><i class='bx bxs-user'></i></a>
+  <i class='bx bxs-search-alt-2'></i>
+
+  <% if current_user %>
+    <a href="<%= channel_path(current_user.id) %>" class="<%= 'active' if current_page?(channel_path(current_user.id)) %>"><i class='bx bxs-user'></i></a>
+  <% else %>
+    <a href="<%= new_user_session_path %>" class="<%= 'active' if current_page?(new_user_session_path) %>"><i class='bx bxs-user'></i></a>
+  <% end %>
+
   <a href="<%= clips_path %>" class="<%= 'active' if current_page?(clips_path) %>"><i class='bx bxs-planet'></i></a>
   <a href="<%= discover_path %>" class="<%= 'active' if current_page?(discover_path) %>"><i class='bx bxs-hot'></i></a>
 
