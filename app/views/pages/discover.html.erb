@@ -27,6 +27,18 @@
             <p><%= user.total_followers %> followers</p>
           <% end %>
           <p><%= user.description %></p>
+          <% if user.streams.any? %>
+            <% category_count = user.streams.where("created_at >= ?", 30.days.ago).group(:category_id).count %>
+            <% top_categories = category_count.sort_by { |_, count| -count }.take(3).map(&:first) %>
+            <% if top_categories.any? %>
+              <ul class="stream-categories">
+                <% top_categories.each do |category_id| %>
+                  <% category_name = Category.find(category_id).name %>
+                  <li><%= category_name %></li>
+                <% end %>
+              </ul>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </li>
