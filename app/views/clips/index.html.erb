@@ -2,20 +2,6 @@
 
 <div class="cards-container">
   <% @clips.each do |clip| %>
-    <div class="card-trip">
-      <%= image_tag clip.thumbnail_url %>
-      <%# <iframe src="https://clips.twitch.tv/embed?clip=SmoothGlamorousJuiceKeepo-iVTzGP3hCRXc-1Gw&parent=www.example.com" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe> %>
-
-      <div class="card-trip-infos">
-        <div class="d-flex gap-3">
-          <%= image_tag clip.stream.user.profile_image_url, class: "avatar-bordered" %>
-          <div class='align-self-center'>
-            <h2><%= clip.title %></h2>
-            <p><%= clip.stream.category.name %></p>
-          </div>
-        </div>
-        <p><%= clip.view_count%> viewers</p>
-      </div>
-    </div>
+    <%= render "shared/clip_card", clip: clip %>
   <% end %>
 </div>
