@@ -237,7 +237,7 @@ end
     category: category_array.sample,
     status: "live",
     started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..22), 30, 00),
-    language: "Portuguese",
+    language: "English",
     viewer_count: rand(10000..20000),
     average_viewers: rand(1000..2000),
     peak_viewers: rand(1500..3000),
@@ -271,7 +271,7 @@ end
     category: category_array.sample,
     status: "live",
     started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..22), 30, 00),
-    language: "Portuguese",
+    language: "English",
     viewer_count: rand(100000..200000),
     average_viewers: rand(10000..20000),
     peak_viewers: rand(15000..30000),
@@ -340,13 +340,13 @@ end
     status: "live",
     started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..22), 30, 00),
     language: "Portuguese",
-    viewer_count: rand(10000..20000),
-    average_viewers: rand(1000..2000),
-    peak_viewers: rand(1500..3000),
-    number_of_chat_messages: rand(5000..10000),
-    unique_chatters: rand(500..1000),
-    new_followers: rand(50..200),
-    new_subscriptions: rand(10..30)
+    viewer_count: rand(100..200),
+    average_viewers: rand(15..25),
+    peak_viewers: rand(20..40),
+    number_of_chat_messages: rand(50..100),
+    unique_chatters: rand(5..10),
+    new_followers: rand(2..7),
+    new_subscriptions: rand(0..3)
   )
 end
 #User 9
@@ -356,14 +356,14 @@ end
     category: category_array.sample,
     status: "live",
     started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..22), 30, 00),
-    language: "Portuguese",
-    viewer_count: rand(100..200),
-    average_viewers: rand(15..25),
-    peak_viewers: rand(20..40),
-    number_of_chat_messages: rand(50..100),
-    unique_chatters: rand(5..10),
-    new_followers: rand(2..7),
-    new_subscriptions: rand(0..3)
+    language: "English",
+    viewer_count: rand(10000..20000),
+    average_viewers: rand(1000..2000),
+    peak_viewers: rand(1500..3000),
+    number_of_chat_messages: rand(5000..10000),
+    unique_chatters: rand(500..1000),
+    new_followers: rand(50..200),
+    new_subscriptions: rand(10..30)
   )
 end
 #User 10
