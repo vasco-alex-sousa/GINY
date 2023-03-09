@@ -49,7 +49,6 @@
             <p><%= link_to @user.clips.order("view_count DESC").first.stream.user.display_name, channel_path(@user.clips.order("view_count DESC").first.stream.user.id), class: "text-decoration-none", style: 'color: black' %></p>
           </div>
         </div>
-      </div>
       <div class="text-end me-1">
         <p><strong><%= link_to @user.clips.order("view_count DESC").first.stream.category.name, category_path(@user.clips.order("view_count DESC").first.stream.category.id), class: "text-decoration-none", style: 'color: black' %></strong></p>
         <p>Views: <%= @user.clips.order("view_count DESC").first.view_count %></p>
@@ -127,6 +126,7 @@
       <% end %>
     <% end %>
   </div>
+</div>
 </div>
 
 <div style="padding-bottom: 50px;"></div>
