@@ -1,7 +1,7 @@
 <h1><%= @category.name %></h1>
 
 <div class="category-info">
-  <img src="<%= @category.box_art_url %>" alt="Box Art">
+  <img src="<%= @category.box_art_url %>" alt="Box Art", class="game">
   <p>Average viewers:</p>
   <ul>
     <li>Last week: <%= @category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i %></li>
@@ -18,13 +18,20 @@
   <div class="streams">
     <ul>
       <% @category.streams.group_by(&:user).sort_by { |user, streams| streams.last.average_viewers }.reverse.first(5).each do |user, streams| %>
-        <li>
-          <img src="<%= user.profile_image_url %>" alt="Profile Image">
+        <p>
+          <%= link_to image_tag(user.profile_image_url, alt: "Profile Image", class: "avatar-large"), channel_path(user.id), class: "text-decoration-none"%>
           <div class="stream-info">
-            <p><%= user.display_name %></p>
+            <p><%= link_to user.display_name, channel_path(user.id), class: "text-decoration-none", style: 'color: black' %></p>
             <p>Average viewers: <%= streams.last.average_viewers.to_i %></p>
+            <% if user.total_followers >= 1000 && user.total_followers < 1000000 %>
+              <p><%= (user.total_followers / 1000.0).round(1) %>k followers</p>
+            <% elsif user.total_followers >= 1000000 %>
+              <p><%= (user.total_followers / 1000000.0).round(1) %>M followers</p>
+            <% else %>
+              <p><%= user.total_followers %> followers</p>
+            <% end %>
           </div>
-        </li>
+        </p>
       <% end %>
     </ul>
   </div>
@@ -38,10 +45,10 @@
           <%= image_tag clips.first.thumbnail_url %>
           <div class="card-trip-infos">
             <div class="d-flex gap-3">
-              <%= image_tag user.profile_image_url, class: "avatar-bordered" %>
+              <%= link_to image_tag(user.profile_image_url, class: "avatar-bordered", alt: "Profile Image"), channel_path(user.id), class: "text-decoration-none", style: 'color: black' %>
               <div class='align-self-center'>
                 <h2><%= clips.first.title %></h2>
-                <p><%= user.display_name %></p>
+                <p><%= link_to user.display_name, channel_path(user.id), class: "text-decoration-none", style: 'color: black' %></p>
               </div>
             </div>
           <p>Views: <%= clips.sum(&:view_count) %></p>

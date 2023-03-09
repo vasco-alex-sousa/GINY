@@ -12,5 +12,45 @@
 
   a {
     color: aliceblue;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    position: relative;
+
+    &:hover {
+      color: #fca3e1;
+    }
+
+    &.active {
+      color: #f953c6;
+    }
+
+    i {
+      font-size: 22px;
+    }
+
+    &:after {
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background-color: #f953c6;
+      transform: scale(0);
+      transition: transform 0.3s ease;
+    }
+
+    &:hover:after {
+      transform: scale(1);
+    }
+
+    &.active:after {
+      transform: scale(1);
+    }
   }
 }
