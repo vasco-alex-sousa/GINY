@@ -18,126 +18,126 @@
   --container-color: #FFF;
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
-/*==================== SKILLS ====================*/
-.skills__container {
+/*==================== streams ====================*/
+.streams__container {
   row-gap: 0;
 }
 
-.skills__header {
+.streams__header {
   display: flex;
   align-items: center;
   margin-bottom: var(--mb-2-5);
   cursor: pointer;
 }
 
-.skills__icon, .skills__arrow {
+.streams__icon, .streams__arrow {
   font-size: 2rem;
   color: var(--first-color);
 }
 
-.skills__icon {
+.streams__icon {
   margin-right: var(--mb-0-75);
 }
 
-.skills__title {
+.streams__title {
   font-size: var(--h3-font-size);
 }
 
-.skills__subtitle {
+.streams__subtitle {
   font-size: var(--smaller-font-size);
   color: var(--text-color-light);
 }
 
-.skills__arrow {
+.streams__arrow {
   margin-left: auto;
   transition: .4s;
 }
 
-.skills__list {
+.streams__list {
   row-gap: 1.5rem;
   padding-left: 2.7rem;
 }
 
-.skills__titles {
+.streams__titles {
   display: flex;
   justify-content: space-between;
   margin-bottom: var(--mb-0-5);
 }
 
-.skills__name {
+.streams__name {
   font-size: var(--normal-font-size);
   font-weight: var(--font-medium);
 }
 
-.skills__bar, .skills__percentage {
+.streams__bar, .streams__percentage {
   height: 5px;
   border-radius: .25rem;
 }
 
-.skills__bar {
+.streams__bar {
   background-color: var(--first-color-lighter);
 }
 
-.skills__percentage {
+.streams__percentage {
   display: block;
   background-color: var(--first-color);
 }
 
-.skills__html {
+.streams__html {
   width: 90%;
 }
 
-.skills__css {
+.streams__css {
   width: 80%;
 }
 
-.skills__js {
+.streams__js {
   width: 60%;
 }
 
-.skills__react {
+.streams__react {
   width: 85%;
 }
 
-.skills__php {
+.streams__php {
   width: 80%;
 }
 
-.skills__node {
+.streams__node {
   width: 70%;
 }
 
-.skills__firebase {
+.streams__firebase {
   width: 90%;
 }
 
-.skills__python {
+.streams__python {
   width: 55%;
 }
 
-.skills__figma {
+.streams__figma {
   width: 90%;
 }
 
-.skills__sketch {
+.streams__sketch {
   width: 85%;
 }
 
-.skills__photoshop {
+.streams__photoshop {
   width: 85%;
 }
 
-.skills__close .skills__list {
+.streams__close .streams__list {
   height: 0px;
   overflow: hidden;
 }
 
-.skills__open .skills__list {
+.streams__open .streams__list {
   height: max-content;
   margin-bottom: var(--mb-2-5);
 }
 
-.skills__open .skills__arrow {
+.streams__open .streams__arrow {
   transform: rotate(-180deg);
 }
 }

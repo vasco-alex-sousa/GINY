@@ -15,22 +15,22 @@
     <%= yield %>
     <%= render "shared/navbar" %>
     <script>
-    const skillsContent = document.getElementsByClassName('skills__content'),
-      skillsHeader = document.querySelectorAll('.skills__header')
+    const streamsContent = document.getElementsByClassName('streams__content'),
+      streamsHeader = document.querySelectorAll('.streams__header')
 
-function toggleSkills(){
+function togglestreams(){
     let itemClass = this.parentNode.className
 
-    for(i = 0; i < skillsContent.length; i++){
-        skillsContent[i].className = 'skills__content skills__close'
+    for(i = 0; i < streamsContent.length; i++){
+        streamsContent[i].className = 'streams__content streams__close'
     }
-    if(itemClass === 'skills__content skills__close'){
-        this.parentNode.className = 'skills__content skills__open'
+    if(itemClass === 'streams__content streams__close'){
+        this.parentNode.className = 'streams__content streams__open'
     }
 }
 
-skillsHeader.forEach((el) => {
-    el.addEventListener('click', toggleSkills)
+streamsHeader.forEach((el) => {
+    el.addEventListener('click', togglestreams)
 })
 
 

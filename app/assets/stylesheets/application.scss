@@ -10,9 +10,5 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
-
-body {
-  max-width: 100vw !important;
-}
+@import "pages/show"
 
