@@ -16,7 +16,7 @@
 <h3>Popular Channels:</h3>
 <% if @category.streams.any? %>
   <div class="streams">
-    <ul>
+    <ul class="categoryul">
       <% @category.streams.group_by(&:user).sort_by { |user, streams| streams.last.average_viewers }.reverse.first(5).each do |user, streams| %>
         <p>
           <%= link_to image_tag(user.profile_image_url, alt: "Profile Image", class: "avatar-large"), channel_path(user.id), class: "text-decoration-none"%>

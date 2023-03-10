@@ -1,39 +1,41 @@
-<h1>Home</h1>
-
 <!-- Displaying User Overview -->
-<div class="profile-info">
+<div class="profile-info pt-5 pb-3 mb-3">
   <a href="<%= channel_path(@user.id) %>"><img src="<%= @user.profile_image_url%>"alt="Profile Image", class="avatar-large"></a>
-  <a href="<%= channel_path(@user.id) %>" class="text-decoration-none" style="color: black;"><p><strong><%= @user.display_name %></strong></p></a>
+  <a href="<%= channel_path(@user.id) %>" class="text-decoration-none profile-name"><p><strong><%= @user.display_name %></strong></p></a>
   <% if @user.total_followers >= 1000 && @user.total_followers < 1000000 %>
-    <p><%= (@user.total_followers / 1000.0).round(1) %>k followers</p>
+    <p class="profile-header-stats"><%= (@user.total_followers / 1000.0).round(1) %>k followers</p>
   <% elsif @user.total_followers >= 1000000 %>
-    <p><%= (@user.total_followers / 1000000.0).round(1) %>M followers</p>
+    <p class="profile-header-stats"><%= (@user.total_followers / 1000000.0).round(1) %>M followers</p>
   <% else %>
-    <p><%= @user.total_followers %> followers</p>
+    <p class="profile-header-stats"><%= @user.total_followers %> followers</p>
   <% end %>
 </div>
-<div class="stats-info">
-  <div class="week-info">
-    <h5>Last 5 Streams</h5>
-    <ul><%= @user.average(5)%> average viewers</ul>
-    <ul><%= @user.followers(5) %> new followers</ul>
-    <ul><%= @user.subscribers(5) %> new subscribers</ul>
+
+
+<div class="d-flex gap-2 justify-content-between mx-3">
+  <div class="stats-info">
+    <div class="week-info">
+      <h5>Last 5 Streams</h5>
+      <p><%= @user.average(5)%> average viewers</p>
+      <p><%= @user.followers(5) %> new followers</p>
+      <p><%= @user.subscribers(5) %> new subscribers</p>
+    </div>
   </div>
-</div>
-<div class="top-categories">
-  <h5>My Top Categories</h5>
-  <% if @user.streams.any? %>
-    <% category_count = @user.streams.where("created_at >= ?", 30.days.ago).group(:category_id).count %>
-    <% top_categories = category_count.sort_by { |_, count| -count }.take(3).map(&:first) %>
-    <% if top_categories.any? %>
-      <ul class="stream-categories">
-      <% top_categories.each do |category_id| %>
-        <% category_name = Category.find(category_id).name %>
-        <p><strong><%= link_to category_name, category_path(category_id), class: "text-decoration-none", style: 'color: black' %></strong></p>
+  <div class="top-categories">
+    <h5>My Top Categories</h5>
+    <% if @user.streams.any? %>
+      <% category_count = @user.streams.where("created_at >= ?", 30.days.ago).group(:category_id).count %>
+      <% top_categories = category_count.sort_by { |_, count| -count }.take(3).map(&:first) %>
+      <% if top_categories.any? %>
+        <div class="stream-categories">
+        <% top_categories.each do |category_id| %>
+          <% category_name = Category.find(category_id).name %>
+          <p><strong><%= link_to category_name, category_path(category_id), class: "text-decoration-none", style: 'color: black' %></strong></p>
+        <% end %>
+        </div>
       <% end %>
-      </ul>
     <% end %>
-  <% end %>
+  </div>
 </div>
 
 <% if @user.clips.any? %>
@@ -49,9 +51,10 @@
             <p><%= link_to @user.clips.order("view_count DESC").first.stream.user.display_name, channel_path(@user.clips.order("view_count DESC").first.stream.user.id), class: "text-decoration-none", style: 'color: black' %></p>
           </div>
         </div>
-      <div class="text-end me-1">
-        <p><strong><%= link_to @user.clips.order("view_count DESC").first.stream.category.name, category_path(@user.clips.order("view_count DESC").first.stream.category.id), class: "text-decoration-none", style: 'color: black' %></strong></p>
-        <p>Views: <%= @user.clips.order("view_count DESC").first.view_count %></p>
+        <div class="text-end me-1">
+          <p><strong><%= link_to @user.clips.order("view_count DESC").first.stream.category.name, category_path(@user.clips.order("view_count DESC").first.stream.category.id), class: "text-decoration-none", style: 'color: black' %></strong></p>
+          <p>Views: <%= @user.clips.order("view_count DESC").first.view_count %></p>
+        </div>
       </div>
     </div>
   </div>

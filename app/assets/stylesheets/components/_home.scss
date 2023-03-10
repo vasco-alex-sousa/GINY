@@ -1,0 +1,50 @@
+.profile-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: #282828;
+  border-radius: 0px 0px 19px 19px;
+  color: white;
+
+  .profile-name {
+    font-size: 17px;
+    color: white;
+  }
+
+  .profile-header-stats {
+    font-size: 10px;
+  }
+}
+
+.week-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.channels {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-info .profile-header-stats {
+  font-size: 13px;
+}
+
+.profile-info .profile-name {
+  font-size: 20px;
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
