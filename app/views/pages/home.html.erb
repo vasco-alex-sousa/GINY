@@ -30,7 +30,7 @@
         <div class="stream-categories">
         <% top_categories.each do |category_id| %>
           <% category_name = Category.find(category_id).name %>
-          <p><strong><%= link_to category_name, category_path(category_id), class: "text-decoration-none", style: 'color: black' %></strong></p>
+          <p><strong><%= link_to category_name, category_path(category_id), class: "text-decoration-none"%></strong></p>
         <% end %>
         </div>
       <% end %>
@@ -48,11 +48,11 @@
           <%= link_to image_tag(@user.clips.order("view_count DESC").first.stream.user.profile_image_url, class: "avatar-bordered"), channel_path(@user.clips.order("view_count DESC").first.stream.user.id) %>
           <div class='align-self-center'>
             <h2><%= @user.clips.order("view_count DESC").first.title %></h2>
-            <p><%= link_to @user.clips.order("view_count DESC").first.stream.user.display_name, channel_path(@user.clips.order("view_count DESC").first.stream.user.id), class: "text-decoration-none", style: 'color: black' %></p>
+            <p><%= link_to @user.clips.order("view_count DESC").first.stream.user.display_name, channel_path(@user.clips.order("view_count DESC").first.stream.user.id), class: "text-decoration-none"%></p>
           </div>
         </div>
         <div class="text-end me-1">
-          <p><strong><%= link_to @user.clips.order("view_count DESC").first.stream.category.name, category_path(@user.clips.order("view_count DESC").first.stream.category.id), class: "text-decoration-none", style: 'color: black' %></strong></p>
+          <p><strong><%= link_to @user.clips.order("view_count DESC").first.stream.category.name, category_path(@user.clips.order("view_count DESC").first.stream.category.id), class: "text-decoration-none"%></strong></p>
           <p>Views: <%= @user.clips.order("view_count DESC").first.view_count %></p>
         </div>
       </div>
@@ -69,7 +69,7 @@
     end.reverse %>
 
     <% sorted_categories.each do |category| %>
-      <a href="<%= category_path(category.id) %>"><img src="<%= category.box_art_url %>" alt="Box Art", class="game-small"></a>      <strong><p><%= link_to category.name, category_path(category.id), class: "text-decoration-none", style: 'color: black'  %></p></strong>
+      <a href="<%= category_path(category.id) %>"><img src="<%= category.box_art_url %>" alt="Box Art", class="game-small"></a>      <strong><p><%= link_to category.name, category_path(category.id), class: "text-decoration-none"%></p></strong>
       <p>Average viewers: <%= category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i%></p>
       <% if category.clips.any? %>
         <div class="cards-container">
@@ -80,11 +80,11 @@
                 <%= link_to image_tag(category.clips.order("view_count DESC").first.stream.user.profile_image_url, class: "avatar-bordered"), channel_path(category.clips.order("view_count DESC").first.stream.user.id) %>
                 <div class='align-self-center'>
                   <h2><%= category.clips.order("view_count DESC").first.title %></h2>
-                  <p><%= link_to category.clips.order("view_count DESC").first.stream.user.display_name, channel_path(category.clips.order("view_count DESC").first.stream.user.id), class: "text-decoration-none", style: 'color: black'  %></p>
+                  <p><%= link_to category.clips.order("view_count DESC").first.stream.user.display_name, channel_path(category.clips.order("view_count DESC").first.stream.user.id), class: "text-decoration-none"%></p>
                 </div>
               </div>
               <div class="text-end me-1">
-                <p><strong><%= link_to category.clips.order("view_count DESC").first.stream.category.name, category_path(category.clips.order("view_count DESC").first.stream.category.id), class: "text-decoration-none", style: 'color: black'  %></strong></p>
+                <p><strong><%= link_to category.clips.order("view_count DESC").first.stream.category.name, category_path(category.clips.order("view_count DESC").first.stream.category.id), class: "text-decoration-none"%></strong></p>
                 <p>Views: <%= category.clips.order("view_count DESC").first.view_count %></p>
               </div>
             </div>
@@ -105,7 +105,7 @@
     end.reverse %>
     <% sorted_channels.each do |channel| %>
       <p><%= link_to image_tag(channel.clips.order("view_count DESC").first.stream.user.profile_image_url, class: "avatar-large"), channel_path(channel.clips.order("view_count DESC").first.stream.user.id) %></p>
-      <strong><%= link_to channel.display_name, channel_path(channel.id), class: "text-decoration-none", style: 'color: black' %></strong>
+      <strong><%= link_to channel.display_name, channel_path(channel.id), class: "text-decoration-none"%></strong>
       <p>Average viewers: <%= channel.streams.where("created_at >= ?", 1.week.ago).average(:viewer_count).to_i %></p>
       <% if channel.clips.any? %>
         <div class="cards-container">
@@ -116,11 +116,11 @@
                 <%= link_to image_tag(channel.clips.order("view_count DESC").first.stream.user.profile_image_url, class: "avatar-bordered"), channel_path(channel.clips.order("view_count DESC").first.stream.user.id) %>
                 <div class='align-self-center'>
                   <h2><%= channel.clips.order("view_count DESC").first.title %></h2>
-                  <p><%= link_to channel.clips.order("view_count DESC").first.stream.user.display_name, channel_path(channel.clips.order("view_count DESC").first.stream.user.id), class: "text-decoration-none", style: 'color: black'  %></p>
+                  <p><%= link_to channel.clips.order("view_count DESC").first.stream.user.display_name, channel_path(channel.clips.order("view_count DESC").first.stream.user.id), class: "text-decoration-none"%></p>
                 </div>
               </div>
               <div class="text-end me-1">
-                <p><strong><%= link_to channel.clips.order("view_count DESC").first.stream.category.name, category_path(channel.clips.order("view_count DESC").first.stream.category.id), class: "text-decoration-none", style: 'color: black'  %></strong></p>
+                <p><strong><%= link_to channel.clips.order("view_count DESC").first.stream.category.name, category_path(channel.clips.order("view_count DESC").first.stream.category.id), class: "text-decoration-none"%></strong></p>
                 <p>Views: <%= channel.clips.order("view_count DESC").first.view_count %></p>
               </div>
             </div>

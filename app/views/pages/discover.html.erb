@@ -7,7 +7,7 @@
           <img src="<%= user.clips.order("view_count DESC").first.thumbnail_url %>" alt="Thumbnail" class="video-style">
           <div class="d-flex justify-content-start my-2 gap-2">
             <% user.top_categories.each do |category_id| %>
-              <%= link_to Category.find(category_id).name, category_path(category_id), class: "text-decoration-none category-btn" %>
+              <%= link_to Category.find(category_id).name, category_path(category_id), class: "text-decoration-none category-btn d-block" %>
             <% end %>
           </div>
           <div class="card-trip-infos">

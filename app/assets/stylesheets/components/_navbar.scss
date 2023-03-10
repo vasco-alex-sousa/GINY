@@ -23,11 +23,11 @@
     position: relative;
 
     &:hover {
-      color: #fca3e1;
+      color: #9153F4;
     }
 
     &.active {
-      color: #f953c6;
+      color: #9153F4;
     }
 
     i {
@@ -40,7 +40,7 @@
       bottom: -2px;
       width: 100%;
       height: 2px;
-      background-color: #f953c6;
+      background-color: #a251fd;
       transform: scale(0);
       transition: transform 0.3s ease;
     }
