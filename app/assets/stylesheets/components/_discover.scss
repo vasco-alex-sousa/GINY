@@ -50,6 +50,10 @@
   display: flex;
 }
 
+.streamer-ava{
+  color: white;
+}
+
 .streamer-ava > img{
   height: 40px;
   width: 40px;
@@ -68,10 +72,11 @@
   border-bottom-right-radius: 10px;
 }
 .clip-card{
-  background-color: rgb(170, 170, 170);
+  background-color: rgb(255, 255, 255);
   margin: 0 20px 10px 20px;
   border-radius: 10px;
   height: 250px;
+  color:aliceblue;
 }
 
 .clips-container {
