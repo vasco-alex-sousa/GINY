@@ -1,0 +1,149 @@
+// body{
+//  font-family: ;
+//  font-size: ;
+//  background-color: ;
+//  color: ;
+// }
+
+// h1,h2,h3{
+//   color: ;
+//   font-weight:;
+// }
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+.container-show{
+  max-width: 968px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.grid{
+  display:grid;
+  gap:1.5rem;
+}
+
+
+// ===== Profile =====
+
+.profile{
+  position: relative;
+  padding-top: 3.5rem;
+}
+
+.profile__container{
+  row-gap: 2rem;
+}
+
+.profile__data{
+  display: grid;
+  text-align: center;
+}
+
+.profile__perfil{
+  display: flex;
+  // background: ;
+  border-radius: 50%;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.profile__perfil img{
+  width: 85px;
+}
+
+.profile__border{
+  border: 3.5px solid rgb(90, 233, 219);
+  justify-self: center;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-bottom: .75rem;
+}
+
+// .profile__name{
+//   font-size: ;
+// }
+
+// .profile__username{
+//   font-size: ;
+//   font-weight: ;
+//   color: ;
+//   margin-bottom: 1rem;
+// }
+
+.profile__social{
+  display: flex;
+  justify-content: center;
+  column-gap: .75rem
+}
+
+.profile__social-link{
+  font-size: 1.25rem;
+  color: rgb(27, 39, 35);
+  transition: .3s;
+}
+
+.profile__social-link:hover{
+  color: rgb(35, 124, 95);
+}
+
+.profile__info{
+  display: flex;
+  justify-content: center;
+  grid-template-columns: repeat(2);
+}
+
+.profile__info-group{
+  text-align: center;
+}
+
+.profile__info-number{
+  // font-size: ;
+  margin-bottom: .25rem;
+}
+
+.profile__info-description{
+  // font-size: ;
+  font-weight: 500;
+}
+
+.filter__content{
+  margin: 2rem 0 2.5rem;
+  background-color: #9153F4;
+  padding: .375rem;
+  border-radius: .75rem;
+  display: flex;
+  justify-content: space-between;
+  column-gap: .5rem;
+}
+
+.filter__button{
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  color: rgb(235, 230, 230);
+  // font-size: ;
+  // font-family: ;
+  // font-weight: ;
+  border-radius: .75rem;
+  background-color: transparent;
+  transition: .3s;
+}
+
+.filter__button:hover{
+  background-color: aliceblue;
+  color: rgb(12, 14, 14);
+}

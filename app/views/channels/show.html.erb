@@ -1,26 +1,41 @@
-<h1><%= @user.display_name %></h1>
 
-<div class="profile-info">
-  <img class="avatar-large" src="<%= @user.profile_image_url %>" alt="Profile Image">
-  <div class="user-info">
-          <h2><%= @user.display_name %></h2>
-          <% if @user.total_followers >= 1000 && @user.total_followers < 1000000 %>
-            <p><%= (@user.total_followers / 1000.0).round(1) %>k followers</p>
-          <% elsif @user.total_followers >= 1000000 %>
-            <p><%= (@user.total_followers / 1000000.0).round(1) %>M followers</p>
-          <% else %>
-            <p><%= @user.total_followers %> followers</p>
-          <% end %>
-         <div class="follow-button">
-  <a href="https://www.twitch.tv/<%= @user.display_name %>/follow"
-     target="_blank"
-     class="text-decoration-none category-btn"
-  >
-    <i class="fab fa-twitch"></i> Follow <%= @user.display_name %> on Twitch
-  </a>
-</div>
+<header class="profile container-show">
+  <div class="profile__container grid">
+    <div class="profile__data">
+      <div class="profile__border">
+        <div class="profile__perfil">
+          <img class="profile__perfil" src="<%= @user.profile_image_url %>" alt="Profile Image">
+        </div>
+      </div>
 
-          <p><%= @user.description %></p>
+      <h2 class="profile__name"><%= @user.display_name %></h2>
+      <h3 class="profile__username"></h3>
+      <ul class="profile__social">
+        <a href="" target="_blank" class="profile__social-link">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="" target="_blank" class="profile__social-link">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="" target="_blank" class="profile__social-link">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://www.twitch.tv/<%= @user.display_name %>/follow" target="_blank" class="text-decoration-none category-btn">
+          <i class="fab fa-twitch"></i> Follow <%= @user.display_name %> on Twitch
+         </a>
+      </ul>
+    </div>
+    <div class="profile__info grid">
+      <div class="profile__info-group">
+        <% if @user.total_followers >= 1000 && @user.total_followers < 1000000 %>
+          <h3 class="profile__info-number"><%= (@user.total_followers / 1000.0).round(1) %>k followers</h3>
+        <% elsif @user.total_followers >= 1000000 %>
+          <h3 class="profile__info-number"><%= (@user.total_followers / 1000000.0).round(1) %>M followers</h3>
+        <% else %>
+          <h3 class="profile__info-number"><%= @user.total_followers %> followers</h3>
+        <% end %>
+        <p class="profile__infor-description"><%= @user.description %></p>
+
           <% if @user.streams.any? %>
             <% if @top_categories.any? %>
               <ul class="stream-categories">
@@ -31,86 +46,141 @@
               </ul>
             <% end %>
           <% end %>
-        </div>
-</div>
+      </div>
+    </div>
+  </div>
+</header>
 
-<section class="skills section" id="skills">
-  <h2 class="section__title">Stream archive</h2>
+<main class="main">
+  <section class="filters container">
+    <ul class="filter__content">
+      <button class="filter__button" data-target="#clips">
+        Clips
+      </button>
+      <button class="filter__button" data-target="#analytics">
+        Analytics
+      </button>
+    </ul>
+
+  <div class="filters__sections">
+    <div class="clips__content grid" data-content id="clips">
+    <div class="card-container">
+  <div class="cards-container">
+    <% @user_clips.each do |clip| %>
+      <div class="card-trip">
+        <img src="<%= clip.thumbnail_url %>" alt="Clip thumbnail">
+        <div class="card-trip-infos">
+          <h2 ><%= clip.title %></h2>
+          <p> <%= clip.view_count %> <strong>Views</strong></p>
+          <p> <%= clip.clip_date.strftime("%B %d, %Y") %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+    <article class="clips__card">
+      <img src="" alt="">
+      <div class="clips__modal">
+      <div>
+      <span class="clips__subtitle"></span>
+      <h3 class="class__title"></h3>
+      <a href="#" class="clips__button button button__small">
+
+      </a>
+      </div>
+
+      </div>
+    </article>
+
+    </div>
+    <div class="analytics__content grid" data-content id="analytics">
+
+    </div>
+
+
+  </div>
+  <div class="filters__sections"></div>
+  </section>
+</main>
+
+
+<section class="streams section" id="streams">
+  <h2 class="section__title">Analytics</h2>
   <span class="section__subtitle">Stream data</span>
 
-  <div class="skills__container container grid">
+  <div class="streams__container container grid">
       <div>
-          <!--=============== SKILLS 1 ===============-->
-          <div class="skills__content skills__open">
-              <div class="skills__header">
-                  <i class="uil uil-brackets-curly skills__icon"></i>
+          <!--=============== streams 1 ===============-->
+          <div class="streams__content streams__open">
+              <div class="streams__header">
+                  <i class="uil uil-brackets-curly streams__icon"></i>
 
                   <div>
-                      <h1 class="skills__title">Last 5 Streams</h1>
-                      <span class="skills__subtitle">Check out your performance</span>
+                      <h1 class="streams__title">Last 5 Streams</h1>
+                      <span class="streams__subtitle">Check out your performance</span>
                   </div>
 
-                  <i class="uil uil-angle-down skills__arrow"></i>
+                  <i class="uil uil-angle-down streams__arrow"></i>
               </div>
 
-              <div class="skills__list grid">
-                  <div class="skills__data">
-                      <div class="skills__titles">
-                          <h3 class="skills__name">average viewers</h3>
-                          <span class="skills__number"><%= @user.average(5)%></span>
+              <div class="streams__list grid">
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name">average viewers</h3>
+                          <span class="streams__number"><%= @user.average(5)%></span>
                       </div>
-                      <div class="skills__bar">
-                          <span class="skills__percentage skills__html"></span>
-                      </div>
-                  </div>
-
-                  <div class="skills__data">
-                      <div class="skills__titles">
-                          <h3 class="skills__name">peak viewers</h3>
-                          <span class="skills__number"><%= @user.max_peak_viewers(5) %></span>
-                      </div>
-                      <div class="skills__bar">
-                          <span class="skills__percentage skills__css"></span>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__html"></span>
                       </div>
                   </div>
 
-                  <div class="skills__data">
-                      <div class="skills__titles">
-                          <h3 class="skills__name">new followers</h3>
-                          <span class="skills__number"><%= @user.followers(5) %></span>
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name">peak viewers</h3>
+                          <span class="streams__number"><%= @user.max_peak_viewers(5) %></span>
                       </div>
-                      <div class="skills__bar">
-                          <span class="skills__percentage skills__js"></span>
-                      </div>
-                  </div>
-
-                  <div class="skills__data">
-                      <div class="skills__titles">
-                          <h3 class="skills__name">new subscribers</h3>
-                          <span class="skills__number"><%= @user.subscribers(5) %></span>
-                      </div>
-                      <div class="skills__bar">
-                          <span class="skills__percentage skills__react"></span>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__css"></span>
                       </div>
                   </div>
 
-                  <div class="skills__data">
-                    <div class="skills__titles">
-                      <h3 class="skills__name">average chat messages</h3>
-                      <span class="skills__number"><%= @user.num_chat_msg(5) %></span>
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name">new followers</h3>
+                          <span class="streams__number"><%= @user.followers(5) %></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__js"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name">new subscribers</h3>
+                          <span class="streams__number"><%= @user.subscribers(5) %></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__react"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                    <div class="streams__titles">
+                      <h3 class="streams__name">average chat messages</h3>
+                      <span class="streams__number"><%= @user.num_chat_msg(5) %></span>
                     </div>
-                    <div class="skills__bar">
-                      <span class="skills__percentage skills__react"></span>
+                    <div class="streams__bar">
+                      <span class="streams__percentage streams__react"></span>
                     </div>
                   </div>
 
-                    <div class="skills__data">
-                    <div class="skills__titles">
-                      <h3 class="skills__name">average num_chatters</h3>
-                      <span class="skills__number"><%= @user.num_chatters(5) %></span>
+                    <div class="streams__data">
+                    <div class="streams__titles">
+                      <h3 class="streams__name">average num_chatters</h3>
+                      <span class="streams__number"><%= @user.num_chatters(5) %></span>
                     </div>
-                    <div class="skills__bar">
-                      <span class="skills__percentage skills__react"></span>
+                    <div class="streams__bar">
+                      <span class="streams__percentage streams__react"></span>
                     </div>
                   </div>
 
@@ -118,154 +188,154 @@
               </div>
           </div>
 
-          <!--=============== SKILLS 2 ===============-->
-          <div class="skills__content skills__close">
-              <div class="skills__header">
-                  <i class="uil uil-server-network skills__icon"></i>
+          <!--=============== streams 2 ===============-->
+          <div class="streams__content streams__close">
+              <div class="streams__header">
+                  <i class="uil uil-server-network streams__icon"></i>
 
                   <div>
-                      <h1 class="skills__title">Last 10 streams</h1>
-                      <span class="skills__subtitle">Check out your performance</span>
+                      <h1 class="streams__title">Last 10 streams</h1>
+                      <span class="streams__subtitle">Check out your performance</span>
                   </div>
 
-                  <i class="uil uil-angle-down skills__arrow"></i>
+                  <i class="uil uil-angle-down streams__arrow"></i>
               </div>
 
-              <div class="skills__list grid">
-                  <div class="skills__data">
-                      <div class="skills__titles">
-                          <h3 class="skills__name">average viewers</h3>
-                          <span class="skills__number"><%= @user.average(10)%></span>
+              <div class="streams__list grid">
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name">average viewers</h3>
+                          <span class="streams__number"><%= @user.average(10)%></span>
                       </div>
-                      <div class="skills__bar">
-                          <span class="skills__percentage skills__html"></span>
-                      </div>
-                  </div>
-
-                  <div class="skills__data">
-                      <div class="skills__titles">
-                          <h3 class="skills__name">peak viewers</h3>
-                          <span class="skills__number"><%= @user.max_peak_viewers(10) %></span>
-                      </div>
-                      <div class="skills__bar">
-                          <span class="skills__percentage skills__css"></span>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__html"></span>
                       </div>
                   </div>
 
-                  <div class="skills__data">
-                      <div class="skills__titles">
-                          <h3 class="skills__name">new followers</h3>
-                          <span class="skills__number"><%= @user.followers(10) %></span>
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name">peak viewers</h3>
+                          <span class="streams__number"><%= @user.max_peak_viewers(10) %></span>
                       </div>
-                      <div class="skills__bar">
-                          <span class="skills__percentage skills__js"></span>
-                      </div>
-                  </div>
-
-                  <div class="skills__data">
-                      <div class="skills__titles">
-                          <h3 class="skills__name">new subscribers</h3>
-                          <span class="skills__number"><%= @user.subscribers(10) %></span>
-                      </div>
-                      <div class="skills__bar">
-                          <span class="skills__percentage skills__react"></span>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__css"></span>
                       </div>
                   </div>
 
-                  <div class="skills__data">
-                    <div class="skills__titles">
-                      <h3 class="skills__name">average chat messages</h3>
-                      <span class="skills__number"><%= @user.num_chat_msg(10) %></span>
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name">new followers</h3>
+                          <span class="streams__number"><%= @user.followers(10) %></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__js"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name">new subscribers</h3>
+                          <span class="streams__number"><%= @user.subscribers(10) %></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__react"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                    <div class="streams__titles">
+                      <h3 class="streams__name">average chat messages</h3>
+                      <span class="streams__number"><%= @user.num_chat_msg(10) %></span>
                     </div>
-                    <div class="skills__bar">
-                      <span class="skills__percentage skills__react"></span>
+                    <div class="streams__bar">
+                      <span class="streams__percentage streams__react"></span>
                     </div>
                   </div>
 
-                    <div class="skills__data">
-                    <div class="skills__titles">
-                      <h3 class="skills__name">average num_chatters</h3>
-                      <span class="skills__number"><%= @user.num_chatters(10) %></span>
+                    <div class="streams__data">
+                    <div class="streams__titles">
+                      <h3 class="streams__name">average num_chatters</h3>
+                      <span class="streams__number"><%= @user.num_chatters(10) %></span>
                     </div>
-                    <div class="skills__bar">
-                      <span class="skills__percentage skills__react"></span>
+                    <div class="streams__bar">
+                      <span class="streams__percentage streams__react"></span>
                     </div>
                   </div>
              </div>
       </div>
 
       <div>
-          <!--=============== SKILLS 3 ===============-->
-          <div class="skills__content skills__close">
-              <div class="skills__header">
-                  <i class="uil uil-swatchbook skills__icon"></i>
+          <!--=============== streams 3 ===============-->
+          <div class="streams__content streams__close">
+              <div class="streams__header">
+                  <i class="uil uil-swatchbook streams__icon"></i>
 
                   <div>
-                      <h1 class="skills__title">Last 30 streams</h1>
-                      <span class="skills__subtitle">Check out your performance</span>
+                      <h1 class="streams__title">Last 30 streams</h1>
+                      <span class="streams__subtitle">Check out your performance</span>
                   </div>
 
-                  <i class="uil uil-angle-down skills__arrow"></i>
+                  <i class="uil uil-angle-down streams__arrow"></i>
               </div>
 
-             <div class="skills__list grid">
-                  <div class="skills__data">
-                      <div class="skills__titles">
-                          <h3 class="skills__name">average viewers</h3>
-                          <span class="skills__number"><%= @user.average(30)%></span>
+             <div class="streams__list grid">
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name">average viewers</h3>
+                          <span class="streams__number"><%= @user.average(30)%></span>
                       </div>
-                      <div class="skills__bar">
-                          <span class="skills__percentage skills__html"></span>
-                      </div>
-                  </div>
-
-                  <div class="skills__data">
-                      <div class="skills__titles">
-                          <h3 class="skills__name">peak viewers</h3>
-                          <span class="skills__number"><%= @user.max_peak_viewers(30) %></span>
-                      </div>
-                      <div class="skills__bar">
-                          <span class="skills__percentage skills__css"></span>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__html"></span>
                       </div>
                   </div>
 
-                  <div class="skills__data">
-                      <div class="skills__titles">
-                          <h3 class="skills__name">new followers</h3>
-                          <span class="skills__number"><%= @user.followers(30) %></span>
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name">peak viewers</h3>
+                          <span class="streams__number"><%= @user.max_peak_viewers(30) %></span>
                       </div>
-                      <div class="skills__bar">
-                          <span class="skills__percentage skills__js"></span>
-                      </div>
-                  </div>
-
-                  <div class="skills__data">
-                      <div class="skills__titles">
-                          <h3 class="skills__name">new subscribers</h3>
-                          <span class="skills__number"><%= @user.subscribers(30) %></span>
-                      </div>
-                      <div class="skills__bar">
-                          <span class="skills__percentage skills__react"></span>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__css"></span>
                       </div>
                   </div>
 
-                  <div class="skills__data">
-                    <div class="skills__titles">
-                      <h3 class="skills__name">average chat messages</h3>
-                      <span class="skills__number"><%= @user.num_chat_msg(30) %></span>
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name">new followers</h3>
+                          <span class="streams__number"><%= @user.followers(30) %></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__js"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name">new subscribers</h3>
+                          <span class="streams__number"><%= @user.subscribers(30) %></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__react"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                    <div class="streams__titles">
+                      <h3 class="streams__name">average chat messages</h3>
+                      <span class="streams__number"><%= @user.num_chat_msg(30) %></span>
                     </div>
-                    <div class="skills__bar">
-                      <span class="skills__percentage skills__react"></span>
+                    <div class="streams__bar">
+                      <span class="streams__percentage streams__react"></span>
                     </div>
                   </div>
 
-                    <div class="skills__data">
-                    <div class="skills__titles">
-                      <h3 class="skills__name">average num_chatters</h3>
-                      <span class="skills__number"><%= @user.num_chatters(30) %></span>
+                    <div class="streams__data">
+                    <div class="streams__titles">
+                      <h3 class="streams__name">average num_chatters</h3>
+                      <span class="streams__number"><%= @user.num_chatters(30) %></span>
                     </div>
-                    <div class="skills__bar">
-                      <span class="skills__percentage skills__react"></span>
+                    <div class="streams__bar">
+                      <span class="streams__percentage streams__react"></span>
                     </div>
                   </div>
 
@@ -274,9 +344,11 @@
           </div>
       </div>
   </div>
+
+
 </section>
 
-
+<div style="padding-bottom: 105px;"></div>
 
 
 
@@ -318,22 +390,3 @@
     </div>
   </div>
 </div>-->
-
-
-<div class="card-container">
-  <div class="cards-container">
-    <% @user_clips.each do |clip| %>
-      <div class="card-trip">
-        <img src="<%= clip.thumbnail_url %>" alt="Clip thumbnail">
-        <div class="card-trip-infos">
-          <h2 ><%= clip.title %></h2>
-          <p> <%= clip.view_count %> <strong>Views</strong></p>
-          <p> <%= clip.clip_date.strftime("%B %d, %Y") %></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
-</div>
-
-<div style="padding-bottom: 65px;"></div>
