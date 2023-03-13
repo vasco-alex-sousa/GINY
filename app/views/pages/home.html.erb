@@ -1,99 +1,87 @@
-<!-- Displaying User Overview -->
 <div class="profile-info pt-5 pb-3 mb-3">
-  <a href="<%= channel_path(@user.id) %>"><img src="<%= @user.profile_image_url%>"alt="Profile Image", class="avatar-large"></a>
-  <a href="<%= channel_path(@user.id) %>" class="text-decoration-none profile-name"><p><strong><%= @user.display_name %></strong></p></a>
-  <% if @user.total_followers >= 1000 && @user.total_followers < 1000000 %>
-    <p class="profile-header-stats"><%= (@user.total_followers / 1000.0).round(1) %>k followers</p>
-  <% elsif @user.total_followers >= 1000000 %>
-    <p class="profile-header-stats"><%= (@user.total_followers / 1000000.0).round(1) %>M followers</p>
-  <% else %>
-    <p class="profile-header-stats"><%= @user.total_followers %> followers</p>
-  <% end %>
-</div>
-
-
-<div class="d-flex gap-2 justify-content-between mx-3">
-  <div class="stats-info">
-    <div class="week-info">
-      <h5>Last 5 Streams</h5>
-      <p><%= @user.average(5)%> average viewers</p>
-      <p><%= @user.followers(5) %> new followers</p>
-      <p><%= @user.subscribers(5) %> new subscribers</p>
-    </div>
-  </div>
-  <div class="top-categories">
-    <h5>My Top Categories</h5>
-    <% if @user.streams.any? %>
-      <% category_count = @user.streams.where("created_at >= ?", 30.days.ago).group(:category_id).count %>
-      <% top_categories = category_count.sort_by { |_, count| -count }.take(3).map(&:first) %>
-      <% if top_categories.any? %>
-        <div class="stream-categories">
-        <% top_categories.each do |category_id| %>
-          <% category_name = Category.find(category_id).name %>
-          <p><strong><%= link_to category_name, category_path(category_id), class: "text-decoration-none"%></strong></p>
-        <% end %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-
-<% if @user.clips.any? %>
-  <!-- Displaying Clips -->
-  <div class="cards-container">
-    <div class="card-trip">
-      <%= image_tag @user.clips.order("view_count DESC").first.thumbnail_url %>
-      <div class="card-trip-infos">
-        <div class="d-flex gap-3">
-          <%= link_to image_tag(@user.clips.order("view_count DESC").first.stream.user.profile_image_url, class: "avatar-bordered"), channel_path(@user.clips.order("view_count DESC").first.stream.user.id) %>
-          <div class='align-self-center'>
-            <h2><%= @user.clips.order("view_count DESC").first.title %></h2>
-            <p><%= link_to @user.clips.order("view_count DESC").first.stream.user.display_name, channel_path(@user.clips.order("view_count DESC").first.stream.user.id), class: "text-decoration-none"%></p>
+  <header class="profile container-show">
+    <div class="profile__container grid">
+      <div class="profile__data">
+        <div class="profile__border">
+          <div class="profile__perfil">
+            <img class="profile__perfil" src="<%= @user.profile_image_url %>" alt="Profile Image">
           </div>
         </div>
-        <div class="text-end me-1">
-          <p><strong><%= link_to @user.clips.order("view_count DESC").first.stream.category.name, category_path(@user.clips.order("view_count DESC").first.stream.category.id), class: "text-decoration-none"%></strong></p>
-          <p>Views: <%= @user.clips.order("view_count DESC").first.view_count %></p>
+
+        <h2 class="profile__name"><%= @user.display_name %></h2>
+        <% if @user.total_followers >= 1000 && @user.total_followers < 1000000 %>
+            <h5 class="profile__info-number"><%= (@user.total_followers / 1000.0).round(1) %>k followers</h5>
+          <% elsif @user.total_followers >= 1000000 %>
+            <h5 class="profile__info-number"><%= (@user.total_followers / 1000000.0).round(1) %>M followers</h5>
+          <% else %>
+            <h5 class="profile__info-number"><%= @user.total_followers %> followers</h5>
+          <% end %>
+      </div>
+      <h3 class="profile__title">Last 5 streams</h3>
+      <div class="profile__info grid">
+
+        <div class="profile__info-group">
+          <h3 class="profile__info-number"><%= @user.average(5)%></h3>
+          <p class="profile__info-description">average viewers</p>
+        </div>
+        <div class="profile__info-group">
+          <h3 class="profile__info-number">+<%= @user.followers(5) %></h3>
+          <p class="profile__info-description"> new followers</p>
+        </div>
+        <div class="profile__info-group">
+          <h3 class="profile__info-number">+<%= @user.subscribers(5) %></h3>
+          <p class="profile__info-description"> new subscribers</p>
         </div>
       </div>
+      <div class="top-categories">
+  <h3 class="profile__title mb-3">My Top Categories</h3>
+  <% if @user.streams.any? %>
+    <% category_count = @user.streams.where("created_at >= ?", 30.days.ago).group(:category_id).count %>
+    <% top_categories = category_count.sort_by { |_, count| -count }.take(3).map(&:first) %>
+    <% if top_categories.any? %>
+      <div class="stream-categories d-flex justify-content-center flex-wrap gap-2">
+        <% top_categories.each do |category_id| %>
+          <% category_name = Category.find(category_id).name %>
+          <%= link_to category_name, category_path(category_id), class: "text-decoration-none category-btn d-inline" %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+
     </div>
-  </div>
-<% end %>
+    </div>
+  </header>
+</div>
 
 
-<!-- Displaying Categories -->
-<div class="categories">
+<!-- Swiper -->
+
+<div class="container-swiper">
   <h3>Trending Categories:</h3>
-    <% sorted_categories = @categories.sort_by do |category|
-      category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i
-    end.reverse %>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+
+       <% sorted_categories = @all_categories.sort_by do |category| %>
+        <% category.streams.average(:viewer_count).to_i %>
+       <% end %>
 
     <% sorted_categories.each do |category| %>
-      <a href="<%= category_path(category.id) %>"><img src="<%= category.box_art_url %>" alt="Box Art", class="game-small"></a>      <strong><p><%= link_to category.name, category_path(category.id), class: "text-decoration-none"%></p></strong>
-      <p>Average viewers: <%= category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i%></p>
-      <% if category.clips.any? %>
-        <div class="cards-container">
-          <div class="card-trip">
-            <%= image_tag category.clips.order("view_count DESC").first.thumbnail_url %>
-            <div class="card-trip-infos">
-              <div class="d-flex gap-3">
-                <%= link_to image_tag(category.clips.order("view_count DESC").first.stream.user.profile_image_url, class: "avatar-bordered"), channel_path(category.clips.order("view_count DESC").first.stream.user.id) %>
-                <div class='align-self-center'>
-                  <h2><%= category.clips.order("view_count DESC").first.title %></h2>
-                  <p><%= link_to category.clips.order("view_count DESC").first.stream.user.display_name, channel_path(category.clips.order("view_count DESC").first.stream.user.id), class: "text-decoration-none"%></p>
-                </div>
-              </div>
-              <div class="text-end me-1">
-                <p><strong><%= link_to category.clips.order("view_count DESC").first.stream.category.name, category_path(category.clips.order("view_count DESC").first.stream.category.id), class: "text-decoration-none"%></strong></p>
-                <p>Views: <%= category.clips.order("view_count DESC").first.view_count %></p>
-              </div>
-            </div>
-          </div>
+      <%= link_to category_path(category.id) do %>
+        <div class="swiper-slide">
+          <img src="<%= category.box_art_url %>" alt="Box Art", class="game-small"></a>
+          <p><%= category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i%> viewers</p>
         </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
+
+    </div>
+  </div>
 </div>
+
+
+
+
+
 
 
 <!-- Displaying Channels -->
@@ -131,5 +119,8 @@
   </div>
 </div>
 </div>
+
+
+
 
 <div style="padding-bottom: 50px;"></div>

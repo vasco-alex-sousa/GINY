@@ -1,10 +1,19 @@
 // Specific CSS for your home-page
 body{
   font-family: 'Poppins';
-  background-color: #242327;
+  background-color: #242327 !important;
 }
 
  h1,h2,h3,p,a,h5, li,span{
   color: white;
 
  }
+
+
+ .profile__title{
+  text-align: center;
+ }
+
+.container-swiper{
+  overflow: hidden;
+}
