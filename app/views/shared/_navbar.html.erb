@@ -1,17 +1,43 @@
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <div class="navbar-giny">
+  <%= link_to root_path, class: ("active" if current_page?(root_path)) do %>
+    <i class='bx bxs-home-alt-2'></i>
+  <% end %>
 
-  <a href="<%= root_path %>" class="<%= 'active' if current_page?(root_path) %>"><i class='bx bxs-home-alt-2'></i></a>
+<%= link_to search_path, class: ('active' if current_page?(search_path)) do %>
   <i class='bx bxs-search-alt-2' style="font-size: 23px;"></i>
+<% end %>
+
+
 
   <% if current_user %>
-    <a href="<%= channel_path(current_user.id) %>" class="<%= 'active' if current_page?(channel_path(current_user.id)) %>"><i class='bx bxs-user'></i></a>
+
+<%= link_to channel_path(current_user.id), class: ('active' if current_page?(channel_path(current_user.id))) do %>
+  <i class='bx bxs-user'></i>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to clips_path, class: ('active' if current_page?(clips_path)) do %>
+    <i class='bx bxs-planet'></i>
+  <% end %>
+<% end %>
+
+<%= link_to discover_path, class: ('active' if current_page?(discover_path)) do %>
+  <i class='bx bxs-hot'></i>
+<% end %>
+<% end %>
+
+</div>
+
+    <%
+=begin%>
+ <a href="<%= channel_path(current_user.id) %>" class="<%= 'active' if current_page?(channel_path(current_user.id)) %>"><i class='bx bxs-user'></i></a>
   <% else %>
     <a href="<%= new_user_session_path %>" class="<%= 'active' if current_page?(new_user_session_path) %>"><i class='bx bxs-user'></i></a>
   <% end %>
 
   <a href="<%= clips_path %>" class="<%= 'active' if current_page?(clips_path) %>"><i class='bx bxs-planet'></i></a>
   <a href="<%= discover_path %>" class="<%= 'active' if current_page?(discover_path) %>"><i class='bx bxs-hot'></i></a>
-
-</div>
+<%
+=end%>

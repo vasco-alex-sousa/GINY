@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
 
   def search
     @query = params[:query]
-    @categories = Category.where("lower(name) LIKE ?", "%#{@query.downcase if !@query.nil?}%") || []
-    @channels = User.where("lower(display_name) LIKE ?", "%#{@query.downcase if !@query.nil?}%")
+    @categories = @query.presence ? Category.where("lower(name) LIKE ?", "%#{@query.downcase}%") : []
+    @channels = @query.presence ? User.where("lower(display_name) LIKE ?", "%#{@query.downcase}%") : []
   end
 end
