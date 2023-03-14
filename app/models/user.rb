@@ -77,4 +77,15 @@ class User < ApplicationRecord
     category_count = streams.where("created_at >= ?", 30.days.ago).group(:category_id).count
     category_count.sort_by { |_, count| -count }.take(3).map(&:first)
   end
+
+  def performance_score
+    avg_viewer_count = streams.average(:viewer_count).to_f
+    return 0 if avg_viewer_count.zero?
+
+    (viewer_count / avg_viewer_count).round(2)
+  end
+
+  def peak_viewer_count
+    streams.maximum(:viewer_count)
+  end
 end
