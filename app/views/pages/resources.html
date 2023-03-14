@@ -111,3 +111,67 @@
   </ul>
 </div>
 
+
+
+
+
+<!-- channel clips -->
+
+
+<% if channel.clips.any? %>
+<div class="cards-container">
+  <div class="card-trip">
+    <%= image_tag channel.clips.order("view_count DESC").first.thumbnail_url %>
+    <div class="card-trip-infos">
+      <div class="d-flex gap-3">
+        <%= link_to image_tag(channel.clips.order("view_count DESC").first.stream.user.profile_image_url, class: "avatar-bordered"), channel_path(channel.clips.order("view_count DESC").first.stream.user.id) %>
+        <div class='align-self-center'>
+          <h2><%= channel.clips.order("view_count DESC").first.title %></h2>
+          <p><%= link_to channel.clips.order("view_count DESC").first.stream.user.display_name, channel_path(channel.clips.order("view_count DESC").first.stream.user.id), class: "text-decoration-none"%></p>
+        </div>
+      </div>
+      <div class="text-end me-1">
+        <p><strong><%= link_to channel.clips.order("view_count DESC").first.stream.category.name, category_path(channel.clips.order("view_count DESC").first.stream.category.id), class: "text-decoration-none"%></strong></p>
+        <p>Views: <%= channel.clips.order("view_count DESC").first.view_count %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+
+
+<!-- Displaying Channels -->
+<div class="channels">
+  <h3>Trending Channels:</h3>
+  <div class="channels">
+    <% sorted_channels = @channels.sort_by do |channel|
+      channel.streams.where("created_at >= ?", 1.week.ago).average(:viewer_count).to_i
+    end.reverse %>
+    <% sorted_channels.each do |channel| %>
+      <strong><%= link_to channel.display_name, channel_path(channel.id), class: "text-decoration-none"%></strong>
+      <p>Average viewers: <%= channel.streams.where("created_at >= ?", 1.week.ago).average(:viewer_count).to_i %></p>
+      <% if channel.clips.any? %>
+        <div class="cards-container">
+          <div class="card-trip">
+            <%= image_tag channel.clips.order("view_count DESC").first.thumbnail_url %>
+            <div class="card-trip-infos">
+              <div class="d-flex gap-3">
+                <%= link_to image_tag(channel.clips.order("view_count DESC").first.stream.user.profile_image_url, class: "avatar-bordered"), channel_path(channel.clips.order("view_count DESC").first.stream.user.id) %>
+                <div class='align-self-center'>
+                  <h2><%= channel.clips.order("view_count DESC").first.title %></h2>
+                  <p><%= link_to channel.clips.order("view_count DESC").first.stream.user.display_name, channel_path(channel.clips.order("view_count DESC").first.stream.user.id), class: "text-decoration-none"%></p>
+                </div>
+              </div>
+              <div class="text-end me-1">
+                <p><strong><%= link_to channel.clips.order("view_count DESC").first.stream.category.name, category_path(channel.clips.order("view_count DESC").first.stream.category.id), class: "text-decoration-none"%></strong></p>
+                <p>Views: <%= channel.clips.order("view_count DESC").first.view_count %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+</div>

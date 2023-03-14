@@ -10,7 +10,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   </head>
@@ -19,21 +19,22 @@
     <%= render "shared/flashes" %>
     <%= yield %>
     <%= render "shared/navbar" %>
+
     <script>
       const streamsContent = document.getElementsByClassName('streams__content'),
         streamsHeader = document.querySelectorAll('.streams__header')
       function togglestreams(){
-          let itemClass = this.parentNode.className
+        let itemClass = this.parentNode.className
 
           for(i = 0; i < streamsContent.length; i++){
-              streamsContent[i].className = 'streams__content streams__close'
+            streamsContent[i].className = 'streams__content streams__close'
           }
           if(itemClass === 'streams__content streams__close'){
-              this.parentNode.className = 'streams__content streams__open'
+            this.parentNode.className = 'streams__content streams__open'
           }
       }
       streamsHeader.forEach((el) => {
-          el.addEventListener('click', togglestreams)
+        el.addEventListener('click', togglestreams)
       })
 
 

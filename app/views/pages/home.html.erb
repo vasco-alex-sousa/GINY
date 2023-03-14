@@ -1,3 +1,4 @@
+
 <div class="profile-info pt-5 pb-3 mb-3">
   <header class="profile container-show">
     <div class="profile__container grid">
@@ -57,7 +58,9 @@
 <!-- Swiper -->
 
 <div class="container-swiper">
-  <h3>Trending Categories:</h3>
+  <div class="upcoming-title">
+    <h3>Trending channels</h3>
+  </div>
   <div class="swiper-container">
     <div class="swiper-wrapper">
 
@@ -80,47 +83,73 @@
 
 
 
-
-
-
-
-<!-- Displaying Channels -->
-<div class="channels">
-  <h3>Trending Channels:</h3>
-  <div class="channels">
-    <% sorted_channels = @channels.sort_by do |channel|
-      channel.streams.where("created_at >= ?", 1.week.ago).average(:viewer_count).to_i
-    end.reverse %>
-    <% sorted_channels.each do |channel| %>
-      <p><%= link_to image_tag(channel.clips.order("view_count DESC").first.stream.user.profile_image_url, class: "avatar-large"), channel_path(channel.clips.order("view_count DESC").first.stream.user.id) %></p>
-      <strong><%= link_to channel.display_name, channel_path(channel.id), class: "text-decoration-none"%></strong>
-      <p>Average viewers: <%= channel.streams.where("created_at >= ?", 1.week.ago).average(:viewer_count).to_i %></p>
-      <% if channel.clips.any? %>
-        <div class="cards-container">
-          <div class="card-trip">
-            <%= image_tag channel.clips.order("view_count DESC").first.thumbnail_url %>
-            <div class="card-trip-infos">
-              <div class="d-flex gap-3">
-                <%= link_to image_tag(channel.clips.order("view_count DESC").first.stream.user.profile_image_url, class: "avatar-bordered"), channel_path(channel.clips.order("view_count DESC").first.stream.user.id) %>
-                <div class='align-self-center'>
-                  <h2><%= channel.clips.order("view_count DESC").first.title %></h2>
-                  <p><%= link_to channel.clips.order("view_count DESC").first.stream.user.display_name, channel_path(channel.clips.order("view_count DESC").first.stream.user.id), class: "text-decoration-none"%></p>
-                </div>
-              </div>
-              <div class="text-end me-1">
-                <p><strong><%= link_to channel.clips.order("view_count DESC").first.stream.category.name, category_path(channel.clips.order("view_count DESC").first.stream.category.id), class: "text-decoration-none"%></strong></p>
-                <p>Views: <%= channel.clips.order("view_count DESC").first.view_count %></p>
-              </div>
-            </div>
-          </div>
+<div class="top">
+  <div class="upcoming-title">
+    <h3>Live Streams</h3>
+  </div>
+  <div class="top__container">
+    <% @channels.each do |channel| %>
+      <div class="top__card">
+        <div class="card-avatar">
+          <img src="<%= channel.profile_image_url %>" alt="<%= channel.display_name %>" class="top__img">
         </div>
-      <% end %>
+        <div>
+          <h5 class="top__name"><%= link_to channel.display_name, channel_path(channel.id), style: 'color: white;' %></h5>
+        </div>
+        <div>
+           <span class="top__info">
+              <% if channel.viewer_count >= 1000000 %>
+                <%= (channel.viewer_count/1000000.0).round(1) %>m
+              <% elsif channel.viewer_count >= 1000 %>
+                <%= (channel.viewer_count/1000.0).round(1) %>k
+              <% else %>
+                <%= channel.viewer_count %>
+              <% end %>
+              views
+            </span>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+<div class="top">
+  <div class="upcoming-title">
+    <h3>Best Performance</h3>
+  </div>
+  <div class="top__container">
+    <% @channels.sort_by(&:performance_score).reverse.take(10).each do |channel| %>
+      <div class="top__card">
+        <div class="card-avatar">
+          <img src="<%= channel.profile_image_url %>" alt="<%= channel.display_name %>" class="top__img">
+        </div>
+        <div>
+          <h5 class="top__name"><%= link_to channel.display_name, channel_path(channel.id), style: 'color: white;' %></h5>
+        </div>
+        <div>
+          <span class="top__info">
+              <% if channel.viewer_count >= 1000000 %>
+                <%= (channel.viewer_count/1000000.0).round(1) %>m
+              <% elsif channel.viewer_count >= 1000 %>
+                <%= (channel.viewer_count/1000.0).round(1) %>k
+              <% else %>
+                <%= channel.viewer_count %>
+              <% end %>
+              views
+            </span>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-
 
 
 <div style="padding-bottom: 50px;"></div>
