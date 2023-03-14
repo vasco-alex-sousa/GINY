@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
   resources :channels, only: [:show, :index]
   resources :clips, only: [:index]
+  get 'search', to: 'categories#search', as: 'search'
 end
+
