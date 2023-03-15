@@ -6,10 +6,11 @@
   align-items: center;
   position: fixed;
   bottom: 0;
-  width: 100vw;
+  width: 100%;
   padding: 20px;
   font-size: 17px;
   z-index: 10000;
+  text-decoration: none;
 
   a {
     color: aliceblue;

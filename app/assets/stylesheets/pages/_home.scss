@@ -1,7 +1,15 @@
 // Specific CSS for your home-page
+@font-face {
+  font-family: myFirstFont;
+  src: url(/app/assets/fonts/NeueMachina-Ultrabold.otf);
+}
+
+
 body{
 
   background-color: #242327 !important;
+  width: 100vw;
+  height: 100vh;
 }
 
 //  h1,h2,h3,p,a,h5, li,span{
