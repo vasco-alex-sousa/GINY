@@ -1,4 +1,4 @@
-<h1 class="title">Discover</h1>
+<h1>Discover</h1>
 <div class="container">
   <div class="card-container">
     <% @users.each do |user| %>
@@ -11,12 +11,12 @@
             <% end %>
           </div>
           <div class="card-trip-infos">
-            <div class="streamer-ava toptitle">
+            <div class="streamer-ava ">
               <img src="<%= user.profile_image_url %>" alt="Profile Image">
               <%= user.display_name %>
             </div>
 
-            <div class="streamer-followers liltext">
+            <div class="streamer-followers">
               <% if user.total_followers >= 1000 && user.total_followers < 1000000 %>
                 <p><%= (user.total_followers / 1000.0).round(1) %>k followers</p>
               <% elsif user.total_followers >= 1000000 %>
