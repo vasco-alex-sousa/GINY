@@ -8,17 +8,17 @@
         <%= image_tag clip.stream.user.profile_image_url, class: "avatar-bordered" %>
       <% end %>
       <div class='align-self-center'>
-        <h2><%= clip.title %></h2>
+        <h2 class="text"><%= clip.title %></h2>
         <%= link_to channel_path(clip.stream.user), class: "text-decoration-none" do %>
-          <p><%= clip.stream.user.display_name %></p>
+          <p class="toptitle"><%= clip.stream.user.display_name %></p>
         <% end %>
       </div>
     </div>
     <div class="text-end me-1">
       <%= link_to category_path(clip.stream.category), class: "text-decoration-none" do %>
-        <p><strong><%= clip.stream.category.name %></strong></p>
+       <p class="toptitle"><strong><%= clip.stream.category.name %></strong></p>
       <% end %>
-      <p><%= clip.view_count%> viewers</p>
+      <p class="liltext"><%= clip.view_count%> viewers</p>
     </div>
   </div>
 </div>
