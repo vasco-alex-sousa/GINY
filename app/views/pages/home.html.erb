@@ -1,6 +1,20 @@
 
-<div class="profile-info pt-5 pb-3 mb-3">
-  <header class="profile container-show">
+<%# <div class="banner">
+    <div class="banner-content">
+      <h3 class="banner-title">
+        Welcome Pokimane
+      </h3>
+      <h4 class="banner-subtitle">
+        Hello World
+      </h4>
+    </div>
+  </div> %>
+<%# <div class="logo">
+  <img src="/app/assets/images/stream_genius-01.png" alt="">
+</div> %>
+
+<div class="profile-info pb-3 mb-3">
+  <header class="profile container-show pt-0">
     <div class="profile__container grid">
       <div class="profile__data">
         <div class="profile__border">
@@ -9,33 +23,33 @@
           </div>
         </div>
 
-        <h2 class="profile__name"><%= @user.display_name %></h2>
+        <h2 class="title"><%= @user.display_name %></h2>
         <% if @user.total_followers >= 1000 && @user.total_followers < 1000000 %>
-            <h5 class="profile__info-number"><%= (@user.total_followers / 1000.0).round(1) %>k followers</h5>
+            <h5 class="text"><%= (@user.total_followers / 1000.0).round(1) %>k followers</h5>
           <% elsif @user.total_followers >= 1000000 %>
-            <h5 class="profile__info-number"><%= (@user.total_followers / 1000000.0).round(1) %>M followers</h5>
+            <h5 class="text"><%= (@user.total_followers / 1000000.0).round(1) %>M followers</h5>
           <% else %>
-            <h5 class="profile__info-number"><%= @user.total_followers %> followers</h5>
+            <h5 class="text"><%= @user.total_followers %> followers</h5>
           <% end %>
       </div>
-      <h3 class="profile__title">Last 5 streams</h3>
+      <h3 class="subtitle">Last 5 streams</h3>
       <div class="profile__info grid">
 
         <div class="profile__info-group">
-          <h3 class="profile__info-number"><%= @user.average(5)%></h3>
-          <p class="profile__info-description">average viewers</p>
+          <h3 class="profile__info-number subtitle"><%= @user.average(5)%></h3>
+          <p class="profile__info-description liltext">average viewers</p>
         </div>
         <div class="profile__info-group">
-          <h3 class="profile__info-number">+<%= @user.followers(5) %></h3>
-          <p class="profile__info-description"> new followers</p>
+          <h3 class="profile__info-number subtitle">+<%= @user.followers(5) %></h3>
+          <p class="profile__info-description liltext"> new followers</p>
         </div>
         <div class="profile__info-group">
-          <h3 class="profile__info-number">+<%= @user.subscribers(5) %></h3>
-          <p class="profile__info-description"> new subscribers</p>
+          <h3 class="profile__info-number subtitle">+<%= @user.subscribers(5) %></h3>
+          <p class="profile__info-description liltext"> new subscribers</p>
         </div>
       </div>
       <div class="top-categories">
-  <h3 class="profile__title mb-3">My Top Categories</h3>
+  <h3 class="profile__title mb-3 subtitle">My Top Categories</h3>
   <% if @user.streams.any? %>
     <% category_count = @user.streams.where("created_at >= ?", 30.days.ago).group(:category_id).count %>
     <% top_categories = category_count.sort_by { |_, count| -count }.take(3).map(&:first) %>
@@ -59,7 +73,7 @@
 
 <div class="container-swiper">
   <div class="upcoming-title">
-    <h3>Trending channels</h3>
+    <h3 class="subtitle">Trending channels</h3>
   </div>
   <div class="swiper-container">
     <div class="swiper-wrapper">
@@ -72,7 +86,7 @@
       <%= link_to category_path(category.id) do %>
         <div class="swiper-slide">
           <img src="<%= category.box_art_url %>" alt="Box Art", class="game-small"></a>
-          <p><%= category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i%> viewers</p>
+          <p class="liltext"><%= category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i%> viewers</p>
         </div>
         <% end %>
       <% end %>
@@ -85,7 +99,7 @@
 
 <div class="top">
   <div class="upcoming-title">
-    <h3>Live Streams</h3>
+    <h3 class="subtitle">Top Live Streams</h3>
   </div>
   <div class="top__container">
     <% @channels.each do |channel| %>
@@ -94,10 +108,10 @@
           <img src="<%= channel.profile_image_url %>" alt="<%= channel.display_name %>" class="top__img">
         </div>
         <div>
-          <h5 class="top__name"><%= link_to channel.display_name, channel_path(channel.id), style: 'color: white;' %></h5>
+          <h5 class="toptitle"><%= link_to channel.display_name, channel_path(channel.id), style: 'color: white;' %></h5>
         </div>
         <div>
-           <span class="top__info">
+           <span class="subtext">
               <% if channel.viewer_count >= 1000000 %>
                 <%= (channel.viewer_count/1000000.0).round(1) %>m
               <% elsif channel.viewer_count >= 1000 %>
@@ -123,7 +137,7 @@
 
 <div class="top">
   <div class="upcoming-title">
-    <h3>Best Performance</h3>
+    <h3 class="subtitle">Top Best Performance</h3>
   </div>
   <div class="top__container">
     <% @channels.sort_by(&:performance_score).reverse.take(10).each do |channel| %>
@@ -132,10 +146,10 @@
           <img src="<%= channel.profile_image_url %>" alt="<%= channel.display_name %>" class="top__img">
         </div>
         <div>
-          <h5 class="top__name"><%= link_to channel.display_name, channel_path(channel.id), style: 'color: white;' %></h5>
+          <h5 class="toptitle"><%= link_to channel.display_name, channel_path(channel.id), style: 'color: white;' %></h5>
         </div>
         <div>
-          <span class="top__info">
+          <span class="subtext">
               <% if channel.viewer_count >= 1000000 %>
                 <%= (channel.viewer_count/1000000.0).round(1) %>m
               <% elsif channel.viewer_count >= 1000 %>
