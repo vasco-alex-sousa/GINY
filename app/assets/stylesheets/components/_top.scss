@@ -49,7 +49,58 @@
   align-items: center;
   display: flex;
 }
-// .top__info{
-//   // font-size: small;
-//   // color: aqua;
-// }
+
+
+
+
+
+
+//----------------- search page styling ----------------
+
+
+.search-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.search-category {
+  width: 100%;
+}
+
+.search-bar {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.categories-section{
+  width:100%;
+  margin-bottom: 30px;
+}
+
+.channels-section{
+  width:100%;
+  margin-bottom: 86px;
+}
+
+.search-category{
+  display:flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.category-name{
+  margin-left: 10px;
+}
+
+.search-channel{
+  width: 100%;
+  display:flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 15px;
+}
