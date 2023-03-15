@@ -1,13 +1,13 @@
 // Specific CSS for your home-page
 body{
-  font-family: 'Poppins';
+
   background-color: #242327 !important;
 }
 
- h1,h2,h3,p,a,h5, li,span{
-  color: white;
+//  h1,h2,h3,p,a,h5, li,span{
+//   color: white;
 
- }
+//  }
 
 
  .profile__title{
@@ -19,4 +19,15 @@ body{
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 100px; /* set the width of your logo */
+  height: auto; /* set the height to auto to maintain aspect ratio */
 }

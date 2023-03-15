@@ -1,0 +1,83 @@
+:root {
+  --g1: #9146ff; /* Twitch purple */
+  --g2: #ff69b4; /* Pink */
+  --g3: #eeff00; /* Yellow */
+  --border: #47ceff;
+  --background: #000; /* Black */
+}
+
+body{
+  background-color: var(--background);
+}
+
+
+*{
+// margin: 0;
+// padding: 0;
+place-items: center;
+}
+
+.banner{
+ aspect-ratio: 1/1.6;
+ border: 0.5vmin solid var(--border);
+ cursor: pointer;
+ position: relative;
+
+}
+
+.banner::before{
+  background: linear-gradient(
+    130deg,
+    transparent 0% 33%,
+    var(--g1) 66%,
+    var(--g2) 83.5%,
+    var(--g3) 100%
+  );
+  content: "";
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  background-size: 300% 300%;
+  background-position: 0% 0%;
+  transition: background-position 1950ms ease;
+  // z-index: 1;
+}
+
+.banner:hover:before {
+  background-position: 100% 100%;
+  transform: scale(1.08, 1.03);
+}
+
+.banner1-content{
+  background: radial-gradient(rgba(255,255,255, 0.2) 8%,
+  transparent 8%
+  );
+  background-position: 0% 0%;
+  background-size: 5vmin 5vmin;
+
+}
+
+.banner:hover > .banner-content{
+  background-position: -10% 10%;
+}
+
+.banner-title,
+.banner-subtitle{
+ color: white;
+ font-family: Arial, Helvetica, sans-serif;
+ font-weight: 400;
+ margin: 0px;
+ position: relative;
+ z-index: 3;
+}
+
+.banner-title{
+  font-size: 6vmin;
+}
+
+.banner-subtitle{
+  font-size: 3vmin;
+  margin-top: 2vmin;
+}
