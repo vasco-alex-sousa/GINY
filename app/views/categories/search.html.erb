@@ -1,24 +1,51 @@
-<div class='search-bar'>
-  <%= form_tag search_path, method: :get do %>
-    <%= text_field_tag :query, params[:query], style: 'background: none; height: 33px; caret-color: #9154F3; border: none; outline: none; color: white; width: 79%; margin-top: 0;', autocomplete: 'off', placeholder: "search..." %>
-    <%= submit_tag "", style: 'background: none; border: none; color: mediumpurple;'%>
+  <div class= "search-main">
+  <div class='search-bar'>
+    <%= form_tag search_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], style: 'background: none; height: 33px; caret-color: #9154F3; border: none; border-bottom: solid #333138; outline: none; color: white; width: 100%; margin-top: 0;', autocomplete: 'off', placeholder: "search..." %>
+      <%= submit_tag "", style: 'background: none; border: none; color: mediumpurple;'%>
+    <% end %>
+  </div>
+  <% if @query %>
+    <% if !(@categories.empty?) %>
+      <h3>Categories</h3>
+      <p></p>
+      <div class= "categories-section">
+        <% @categories.each do |category| %>
+          <%= link_to category_path(category), class: "text-decoration-none" do %>
+            <div class="search-category ">
+              <div class="card-avatar">
+                  <%= image_tag(category.box_art_url, class: "game-but-smaller", id: "smol-cards") %>
+              </div>
+            <div class="category-name">
+              <p><%= category.name %></p>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% if !(@channels.empty?) %>
+      <h3 style="padding-bottom: 15px;">Channels</h3>
+      <div class= "channels-section">
+        <% @channels.each do |channel| %>
+          <%= link_to channel_path(channel), class: "text-decoration-none" do %>
+            <div class="search-channel">
+                <div class="channel-avatar">
+                  <%= image_tag(channel.profile_image_url, class:"game-but-smaller")%>
+                </div>
+                <div class="category-name">
+                  <p><%= channel.display_name %></p>
+                </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% if @categories.empty? && @channels.empty? && !@query.empty? %>
+      <p>Nothing found</p>
+    <% end %>
   <% end %>
+
 </div>
-<% if @query %>
-  <h2>Search Results for <%= @query %>:</h2>
-  <ul>
-    <% @categories.each do |category| %>
-      <%= link_to category_path(category), class: "text-decoration-none" do %>
-        <p> category:<%= category.name %></p>
-      <% end %>
-    <% end %>
-    <% @channels.each do |channel| %>
-      <%= link_to channel_path(channel), class: "text-decoration-none" do %>
-        <p> <%= image_tag(channel.profile_image_url ) %><%= channel.display_name %></p>
-      <% end %>
-    <% end %>
-  </ul>
-  <% if @categories.empty? && @channels.empty? && @query %>
-    <p>Nothing found</p>
-  <% end %>
-<% end %>
