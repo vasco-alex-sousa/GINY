@@ -79,10 +79,10 @@
     <div class="swiper-wrapper">
 
        <% sorted_categories = @all_categories.sort_by do |category| %>
-        <% category.streams.average(:average_viewers).to_i %>
+        <%   -category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i %>
        <% end %>
 
-    <% sorted_categories.each do |category| %>
+    <% sorted_categories.take(10).each do |category| %>
       <%= link_to category_path(category.id) do %>
         <div class="swiper-slide">
           <img src="<%= category.box_art_url %>" alt="Box Art", class="game-small"></a>

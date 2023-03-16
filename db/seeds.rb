@@ -68,7 +68,7 @@ puts "Created categories successfully"
 puts "Creating some streams"
 category_array = Category.all
 #User 1
-40.times do
+60.times do
   Stream.create!(
     user: user1,
     category: [category7, category9, category11, category12, category14].sample,
@@ -102,7 +102,7 @@ end
   )
 end
 #User 3
-40.times do
+60.times do
   Stream.create!(
     user: user3,
     category: [category3, category8, category10, category18].sample,
@@ -136,7 +136,7 @@ end
   )
 end
 #User 5
-40.times do
+60.times do
   Stream.create!(
     user: user5,
     category: [category3, category4, category8, category10].sample,
@@ -153,7 +153,7 @@ end
   )
 end
 #User 6
-40.times do
+60.times do
   Stream.create!(
     user: user6,
     category: [category3, category8, category10, category18].sample,
@@ -170,7 +170,7 @@ end
   )
 end
 #User 7
-50.times do
+60.times do
   Stream.create!(
     user: user7,
     category: [category2, category3, category9].sample,
@@ -187,7 +187,7 @@ end
   )
 end
 #User 8
-40.times do
+60.times do
   Stream.create!(
     user: user8,
     category: [category3, category4, category6, category15].sample,
@@ -204,7 +204,7 @@ end
   )
 end
 #User 9
-40.times do
+60.times do
   Stream.create!(
     user: user9,
     category: [category3, category16, category17].sample,
@@ -221,7 +221,7 @@ end
   )
 end
 #User 10
-40.times do
+60.times do
   Stream.create!(
     user: user10,
     category: [category3, category5, category6, category10].sample,
@@ -238,7 +238,7 @@ end
   )
 end
 #User 11
-40.times do
+60.times do
   Stream.create!(
     user: user11,
     category: [category2, category3, category9, category17].sample,
@@ -255,7 +255,7 @@ end
   )
 end
 #User 12
-40.times do
+60.times do
   Stream.create!(
     user: user12,
     category: [category4, category8, category10, category18].sample,
@@ -272,7 +272,7 @@ end
   )
 end
 #User 13
-40.times do
+60.times do
   Stream.create!(
     user: user13,
     category: [category2, category7, category13, category14].sample,
@@ -289,7 +289,7 @@ end
   )
 end
 #User 14
-40.times do
+60.times do
   Stream.create!(
     user: user14,
     category: [category2, category3, category9, category17].sample,
@@ -306,7 +306,7 @@ end
   )
 end
 #User 15
-50.times do
+60.times do
   Stream.create!(
     user: user15,
     category: [category2, category3, category9, category16].sample,
@@ -323,7 +323,7 @@ end
   )
 end
 #User 16
-30.times do
+60.times do
   Stream.create!(
     user: user16,
     category: [category3, category9, category17].sample,
@@ -340,7 +340,7 @@ end
   )
 end
 #User 17
-40.times do
+60.times do
   Stream.create!(
     user: user17,
     category: [category4, category8, category10, category15, category18].sample,
@@ -357,7 +357,7 @@ end
   )
 end
 #User 18
-30.times do
+60.times do
   Stream.create!(
     user: user18,
     category: [category2, category12, category13, category14].sample,
@@ -374,7 +374,7 @@ end
   )
 end
 #User 19
-40.times do
+60.times do
   Stream.create!(
     user: user19,
     category: [category2, category12, category13, category14].sample,
@@ -408,7 +408,7 @@ end
 #   )
 # end
 #User 21
-30.times do
+60.times do
   Stream.create!(
     user: user21,
     category: [category7, category11, category12, category14].sample,
@@ -425,7 +425,7 @@ end
   )
 end
 #User 22
-40.times do
+60.times do
   Stream.create!(
     user: user22,
     category: [category4, category8, category10, category18].sample,
@@ -442,7 +442,7 @@ end
   )
 end
 #User 23
-50.times do
+60.times do
   Stream.create!(
     user: user23,
     category: [category4, category8, category10, category16, category18].sample,
@@ -476,7 +476,7 @@ end
 #   )
 # end
 #User 25
-40.times do
+60.times do
   Stream.create!(
     user: user25,
     category: [category2, category6, category7, category9].sample,
@@ -493,7 +493,7 @@ end
   )
 end
 #User 26
-40.times do
+60.times do
   Stream.create!(
     user: user26,
     category: [category1, category5, category6, category15].sample,
@@ -510,7 +510,7 @@ end
   )
 end
 #User 27
-40.times do
+60.times do
   Stream.create!(
     user: user27,
     category: [category1, category5, category6, category10, category15, category17].sample,
@@ -527,7 +527,7 @@ end
   )
 end
 #User 28
-50.times do
+60.times do
   Stream.create!(
     user: user28,
     category: [category1, category4, category8, category10, category16, category17, category18].sample,
@@ -544,7 +544,7 @@ end
   )
 end
 #User 29
-40.times do
+60.times do
   Stream.create!(
     user: user29,
     category: [category1, category4, category5, category6, category10, category15].sample,
@@ -561,7 +561,7 @@ end
   )
 end
 #User 30
-30.times do
+60.times do
   Stream.create!(
     user: user30,
     category: [category2, category9, category12, category13, category14].sample,
