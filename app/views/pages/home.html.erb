@@ -32,24 +32,24 @@
             <h5 class="text"><%= @user.total_followers %> followers</h5>
           <% end %>
       </div>
-      <h3 class="subtitle">Last 5 streams</h3>
+      <h3 class="subtitle title-align">Last 5 streams</h3>
       <div class="profile__info grid">
 
         <div class="profile__info-group">
-          <h3 class="profile__info-number subtitle"><%= @user.average(5)%></h3>
+          <h3 class="profile__info-number toptitle"><%= @user.average(5)%></h3>
           <p class="profile__info-description liltext">average viewers</p>
         </div>
         <div class="profile__info-group">
-          <h3 class="profile__info-number subtitle">+<%= @user.followers(5) %></h3>
+          <h3 class="profile__info-number toptitle">+<%= @user.followers(5) %></h3>
           <p class="profile__info-description liltext"> new followers</p>
         </div>
         <div class="profile__info-group">
-          <h3 class="profile__info-number subtitle">+<%= @user.subscribers(5) %></h3>
+          <h3 class="profile__info-number toptitle">+<%= @user.subscribers(5) %></h3>
           <p class="profile__info-description liltext"> new subscribers</p>
         </div>
       </div>
       <div class="top-categories">
-  <h3 class="profile__title mb-3 subtitle">My Top Categories</h3>
+  <h3 class="profile__title  subtitle" id="deathrow">My Top Categories</h3>
   <% if @user.streams.any? %>
     <% category_count = @user.streams.where("created_at >= ?", 30.days.ago).group(:category_id).count %>
     <% top_categories = category_count.sort_by { |_, count| -count }.take(3).map(&:first) %>
@@ -73,20 +73,20 @@
 
 <div class="container-swiper">
   <div class="upcoming-title">
-    <h3 class="subtitle">Trending channels</h3>
+    <h3 class="subtitle" id="deathrow">Trending channels</h3>
   </div>
   <div class="swiper-container">
     <div class="swiper-wrapper">
 
        <% sorted_categories = @all_categories.sort_by do |category| %>
-        <% category.streams.average(:viewer_count).to_i %>
+        <% category.streams.average(:average_viewers).to_i %>
        <% end %>
 
     <% sorted_categories.each do |category| %>
       <%= link_to category_path(category.id) do %>
         <div class="swiper-slide">
           <img src="<%= category.box_art_url %>" alt="Box Art", class="game-small"></a>
-          <p class="liltext"><%= category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i%> viewers</p>
+          <p class="liltext title-align"><%= category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i%> viewers</p>
         </div>
         <% end %>
       <% end %>
@@ -99,7 +99,7 @@
 
 <div class="top">
   <div class="upcoming-title">
-    <h3 class="subtitle">Top Live Streams</h3>
+    <h3 class="subtitle " id="deathrow">Top Live Streamers</h3>
   </div>
   <div class="top__container">
     <% @channels.each do |channel| %>
@@ -113,13 +113,13 @@
         <div>
            <span class="subtext">
               <% if channel.viewer_count >= 1000000 %>
-                <%= (channel.viewer_count/1000000.0).round(1) %>m
+                <%= (channel.viewer_count/1000000.0).round(1) %>M
               <% elsif channel.viewer_count >= 1000 %>
                 <%= (channel.viewer_count/1000.0).round(1) %>k
               <% else %>
                 <%= channel.viewer_count %>
               <% end %>
-              views
+              viewers
             </span>
         </div>
       </div>
@@ -137,7 +137,7 @@
 
 <div class="top">
   <div class="upcoming-title">
-    <h3 class="subtitle">Top Best Performance</h3>
+    <h3 class="subtitle" id="deathrow">Best Performance</h3>
   </div>
   <div class="top__container">
     <% @channels.sort_by(&:performance_score).reverse.take(10).each do |channel| %>
@@ -151,13 +151,13 @@
         <div>
           <span class="subtext">
               <% if channel.viewer_count >= 1000000 %>
-                <%= (channel.viewer_count/1000000.0).round(1) %>m
+                <%= (channel.viewer_count/1000000.0).round(1) %>M
               <% elsif channel.viewer_count >= 1000 %>
                 <%= (channel.viewer_count/1000.0).round(1) %>k
               <% else %>
                 <%= channel.viewer_count %>
               <% end %>
-              views
+              viewers
             </span>
         </div>
       </div>
