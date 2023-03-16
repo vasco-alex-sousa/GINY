@@ -186,3 +186,79 @@ list of categories
   <li>Last 3 months: <%= @category.streams.where("started_at >= ?", 3.months.ago).average(:average_viewers).to_i %></li>
   <%# <li>All time: <%= @category.streams.where("started_at >= ?", 20.years.ago).average(:average_viewers).to_i %>
 </ul>
+
+
+//chart
+
+var ctx = document.getElementById('my-Chart').getContext('2d');
+  var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+          labels: ['Stream 1', 'Stream 2', 'Stream 3', 'Stream 4', 'Stream 5'],
+          datasets: [
+            {
+              label: 'Average Viewers',
+              data: [<%= @user.average(5) %>],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1
+            },
+            {
+              label: 'Peak Viewers',
+              data: [<%=@user.max_peak_viewers(5) %>],
+              backgroundColor: 'rgba(54, 162, 235, 0.2)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 1
+            },
+            {
+              label: 'New Followers',
+              data: [<%= @user.followers(5) %>],
+              backgroundColor: 'rgba(255, 206, 86, 0.2)',
+              borderColor: 'rgba(255, 206, 86, 1)',
+              borderWidth: 1
+            },
+            {
+              label: 'New Subscribers',
+              data: [<%= @user.subscribers(5) %>],
+              backgroundColor: 'rgba(75, 192, 192, 0.2)',
+              borderColor: 'rgba(75, 192, 192, 1)',
+              borderWidth: 1
+            },
+            {
+              label: 'Average Chat Messages',
+              data: [<%= @user.num_chat_msg(5) %>],
+              backgroundColor: 'rgba(153, 102, 255, 0.2)',
+              borderColor: 'rgba(153, 102, 255, 1)',
+              borderWidth: 1
+            },
+            {
+              label: 'Average Number of Chatters',
+              data: [<%= @user.num_chatters(5) %>],
+              backgroundColor: 'rgba(255, 159, 64, 0.2)',
+              borderColor: 'rgba(255, 159, 64, 1)',
+              borderWidth: 1
+            }
+          ]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          }
+      }
+  });
+      const myChart = new Chart(document.getElementById("my-chart"), {
+      type: "line",
+      data: data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+

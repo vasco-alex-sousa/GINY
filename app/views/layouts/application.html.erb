@@ -16,7 +16,7 @@
       <meta property="og:image" content="<%= meta_image %>">
       <meta property="og:description" content="<%= meta_description %>">
       <meta property="og:site_name" content="<%= meta_title %>">
-
+     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%#= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -56,6 +56,240 @@
           spaceBetween: 10
         });
       });
+
+
+// Chart for Average Viewers
+const averageViewersCtx = document.getElementById('average-viewers-chart').getContext('2d');
+const averageViewersData = {
+    labels: [
+          'Day 1', '', '', '', '', '', '',
+          'Day 8', '', '', '', '', '', '',
+          'Day 15', '', '', '', '', '', '',
+          'Day 22', '', '', '', '', '', '',
+          'Day 29', '', '', '', '', '', ''
+      ],
+  datasets: [{
+    label: 'Average Viewers',
+    data: [
+      <% 30.times do |i| %>
+            <% if @user.present? %>
+              <%= @user.average(i+1) %>,
+            <% end %>
+          <% end %>
+          ],
+    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+    borderColor: 'rgba(255, 99, 132, 1)',
+    borderWidth: 1,
+    lineTension: 0.3
+  }]
+};
+const averageViewersOptions = {
+  scales: {
+    yAxes: [{
+      ticks: {
+        beginAtZero: true
+      }
+    }]
+  }
+};
+const averageViewersChart = new Chart(averageViewersCtx, {
+  type: 'line',
+  data: averageViewersData,
+  options: averageViewersOptions
+});
+
+// Chart for Peak Viewers
+const peakViewersCtx = document.getElementById('peak-viewers-chart').getContext('2d');
+const peakViewersData = {
+   labels: [
+          'Day 1', '', '', '', '', '', '',
+          'Day 8', '', '', '', '', '', '',
+          'Day 15', '', '', '', '', '', '',
+          'Day 22', '', '', '', '', '', '',
+          'Day 29', '', '', '', '', '', ''
+      ],
+  datasets: [{
+    label: 'Peak Viewers',
+    data: [  <% 30.times do |i| %>
+            <% if @user.present? %>
+            <%= @user.max_peak_viewers(i+1)  %>,
+            <% end %>
+            <% end %>],
+    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+    borderColor: 'rgba(54, 162, 235, 1)',
+    borderWidth: 1,
+    lineTension: 0.3
+  }]
+};
+const peakViewersOptions = {
+  scales: {
+    yAxes: [{
+      ticks: {
+        beginAtZero: true
+      }
+    }]
+  }
+};
+const peakViewersChart = new Chart(peakViewersCtx, {
+  type: 'line',
+  data: peakViewersData,
+  options: peakViewersOptions
+});
+
+// Chart for New followers
+const newFollowersCtx = document.getElementById('new-followers-chart').getContext('2d');
+const newFollowersData = {
+   labels: [
+          'Day 1', '', '', '', '', '', '',
+          'Day 8', '', '', '', '', '', '',
+          'Day 15', '', '', '', '', '', '',
+          'Day 22', '', '', '', '', '', '',
+          'Day 29', '', '', '', '', '', ''
+      ],
+  datasets: [{
+    label: 'newFollowers',
+    data: [  <% 30.times do |i| %>
+            <% if @user.present? %>
+            <%= @user.followers(i+1) %>,
+            <% end %>
+            <% end %>],
+    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+    borderColor: 'rgba(54, 162, 235, 1)',
+    borderWidth: 1,
+    lineTension: 0.3
+  }]
+};
+const newFollowersOptions = {
+  scales: {
+    yAxes: [{
+      ticks: {
+        beginAtZero: true
+      }
+    }]
+  }
+};
+const newFollowersChart = new Chart(newFollowersCtx, {
+  type: 'line',
+  data: newFollowersData,
+  options: newFollowersOptions
+});
+
+// Chart for newSubcribers
+const newSubcribersCtx = document.getElementById('new-subs-chart').getContext('2d');
+const newSubcribersData = {
+   labels: [
+          'Day 1', '', '', '', '', '', '',
+          'Day 8', '', '', '', '', '', '',
+          'Day 15', '', '', '', '', '', '',
+          'Day 22', '', '', '', '', '', '',
+          'Day 29', '', '', '', '', '', ''
+      ],
+  datasets: [{
+    label: 'newSubcribers',
+    data: [   <% 30.times do |i| %>
+            <% if @user.present? %>
+            <%= @user.subscribers(i+1) %>,
+            <% end %>
+            <% end %>],
+    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+    borderColor: 'rgba(54, 162, 235, 1)',
+    borderWidth: 1,
+    lineTension: 0.3
+  }]
+};
+const newSubcribersOptions = {
+  scales: {
+    yAxes: [{
+      ticks: {
+        beginAtZero: true
+      }
+    }]
+  }
+};
+const newSubcribersChart = new Chart(newSubcribersCtx, {
+  type: 'line',
+  data: newSubcribersData,
+  options: newSubcribersOptions
+});
+
+
+// Chart for avgChatMessages
+const avgChatMessagesCtx = document.getElementById('avg-chat-chart').getContext('2d');
+const avgChatMessagesData = {
+   labels: [
+          'Day 1', '', '', '', '', '', '',
+          'Day 8', '', '', '', '', '', '',
+          'Day 15', '', '', '', '', '', '',
+          'Day 22', '', '', '', '', '', '',
+          'Day 29', '', '', '', '', '', ''
+      ],
+  datasets: [{
+    label: 'avgChatMessages',
+    data: [   <% 30.times do |i| %>
+            <% if @user.present? %>
+            <%= @user.num_chat_msg(i+1) %>,
+            <% end %>
+            <% end %>],
+    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+    borderColor: 'rgba(54, 162, 235, 1)',
+    borderWidth: 1,
+    lineTension: 0.3
+  }]
+};
+const avgChatMessagesOptions = {
+  scales: {
+    yAxes: [{
+      ticks: {
+        beginAtZero: true
+      }
+    }]
+  }
+};
+const avgChatMessagesChart = new Chart(avgChatMessagesCtx, {
+  type: 'line',
+  data: avgChatMessagesData,
+  options: avgChatMessagesOptions
+});
+
+// Chart for avgNumChat
+const avgNumChatCtx = document.getElementById('avg-num-chat-chart').getContext('2d');
+const avgNumChatData = {
+   labels: [
+          'Day 1', '', '', '', '', '', '',
+          'Day 8', '', '', '', '', '', '',
+          'Day 15', '', '', '', '', '', '',
+          'Day 22', '', '', '', '', '', '',
+          'Day 29', '', '', '', '', '', ''
+      ],
+  datasets: [{
+    label: 'avgNumChat',
+    data: [    <% 30.times do |i| %>
+            <% if @user.present? %>
+            <%= @user.num_chatters(i+1) %>,
+            <% end %>
+            <% end %>],
+    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+    borderColor: 'rgba(54, 162, 235, 1)',
+    borderWidth: 1,
+    lineTension: 0.3
+  }]
+};
+const avgNumChatOptions = {
+  scales: {
+    yAxes: [{
+      ticks: {
+        beginAtZero: true
+      }
+    }]
+  }
+};
+const avgNumChatChart = new Chart(avgNumChatCtx, {
+  type: 'line',
+  data: avgNumChatData,
+  options: avgNumChatOptions
+});
+
+
     </script>
   </body>
 </html>

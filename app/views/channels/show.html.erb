@@ -4,7 +4,7 @@
     <div class="profile__data">
       <div class="profile__border">
         <div class="profile__perfil">
-          <img class="profile__perfil" src="<%= @user.profile_image_url %>" alt="Profile Image">
+          <%= image_tag @user.profile_image_url, class: "profile__perfil", alt: "Profile Image"%>
         </div>
       </div>
 
@@ -69,60 +69,12 @@
   <section class="filters container">
     <ul class="filter__content">
       <button class="filter__button toptitle" data-target="#clips">
-      <strong>  Clips </strong>
+      <strong>  Analytics </strong>
       </button>
       <button class="filter__button toptitle" data-target="#analytics">
-       <strong>  Analytics </strong>
+       <strong>  Clips </strong>
       </button>
     </ul>
-
-      <% if @user.clips.any? %>
-    <h2 class="subtitle title-align">Best Clips</h2>
-
-  <div class="filters__sections">
-    <div class="clips__content grid" data-content id="clips">
-    <div class="card-container">
-  <div class="cards-container">
-    <% @user_clips.each do |clip| %>
-      <div class="card-trip">
-        <img src="<%= clip.thumbnail_url %>" alt="Clip thumbnail">
-        <div class="card-trip-infos">
-          <h2 class="text"><%= clip.title %></h2>
-          <p class="subtext"> <%= clip.view_count %> <strong>Views</strong></p>
-          <%= link_to category_path(clip.stream.category), class: "text-decoration-none" do %>
-          <p class="subtext"><strong><%= clip.stream.category.name %></strong></p>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
-    <article class="clips__card">
-      <img src="" alt="">
-      <div class="clips__modal">
-      <div>
-      <span class="clips__subtitle"></span>
-      <h3 class="class__title"></h3>
-      <a href="#" class="clips__button button button__small">
-
-      </a>
-      </div>
-
-      </div>
-    </article>
-
-    </div>
-    <div class="analytics__content grid" data-content id="analytics">
-
-    </div>
-
-
-  </div>
-  <div class="filters__sections"></div>
-  <% end %>
-  </section>
-</main>
-
 
 <section class="streams section" id="streams">
   <h2 class="subtitle title-align">Analytics</h2>
@@ -368,7 +320,66 @@
 
 </section>
 
-<div style="padding-bottom: 105px;"></div>
+<div>
+ <canvas id="average-viewers-chart"></canvas>
+<canvas id="peak-viewers-chart"></canvas>
+<canvas id="new-followers-chart"></canvas>
+<canvas id="new-subs-chart"></canvas>
+<canvas id="avg-chat-chart"></canvas>
+<canvas id="avg-num-chat-chart"></canvas>
+
+</div>
+
+      <% if @user.clips.any? %>
+    <h2 class="subtitle title-align">Best Clips</h2>
+
+  <div class="filters__sections">
+    <div class="clips__content grid" data-content id="clips">
+    <div class="card-container">
+  <div class="cards-container">
+    <% @user_clips.each do |clip| %>
+      <div class="card-trip">
+        <img src="<%= clip.thumbnail_url %>" alt="Clip thumbnail">
+        <div class="card-trip-infos">
+          <h2 class="text"><%= clip.title %></h2>
+          <p class="subtext"> <%= clip.view_count %> <strong>Views</strong></p>
+          <%= link_to category_path(clip.stream.category), class: "text-decoration-none" do %>
+          <p class="subtext"><strong><%= clip.stream.category.name %></strong></p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+    <article class="clips__card">
+      <img src="" alt="">
+      <div class="clips__modal">
+      <div>
+      <span class="clips__subtitle"></span>
+      <h3 class="class__title"></h3>
+      <a href="#" class="clips__button button button__small">
+
+      </a>
+      </div>
+
+      </div>
+    </article>
+
+    </div>
+    <div class="analytics__content grid" data-content id="analytics">
+
+    </div>
+
+
+  </div>
+  <div class="filters__sections"></div>
+  <% end %>
+  </section>
+</main>
+
+
+
+<div style="padding-bottom: 50px;"></div>
 
 
 
