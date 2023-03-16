@@ -1,22 +1,33 @@
-<h1><%= @category.name %></h1>
+<h1 class="title title-align" id="deathrow" style="margin-top:25px;"><%= @category.name %></h1>
 
 <div class="category-info">
   <img src="<%= @category.box_art_url %>" alt="Box Art", class="game">
-  <p>Average viewers:</p>
-  <ul>
-    <li>Last week: <%= @category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i %></li>
-    <li>Last month: <%= @category.streams.where("started_at >= ?", 1.month.ago).average(:average_viewers).to_i %></li>
-    <li>Last 3 months: <%= @category.streams.where("started_at >= ?", 3.months.ago).average(:average_viewers).to_i %></li>
-    <li>All time: <%= @category.streams.where("started_at >= ?", 20.years.ago).average(:average_viewers).to_i %></li>
-  </ul>
-  <p>Peak viewers: <%= @category.peak_viewers %>
-  <p>Peak viewers date: <%= @category.peak_viewers_date %></p>
+  <p class="toptitle title-align" style="margin-top:25px;"> <strong>Peak viewers:</strong> <br> <%= @category.peak_viewers %>
+  <p class="toptitle title-align"><strong>Peak viewers date:</strong> <br> <%= @category.peak_viewers_date %></p>
+
+<h3 class="subtitle title-align" id="deathrow" style="margin-top:25px;">Average viewers:</h3>
+      <div class="profile__info grid">
+
+        <div class="profile__info-group">
+          <h3 class="profile__info-number toptitle"><%= @category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i %></h3>
+          <p class="profile__info-description liltext">Last week:</p>
+        </div>
+        <div class="profile__info-group">
+          <h3 class="profile__info-number toptitle"><%= @category.streams.where("started_at >= ?", 1.month.ago).average(:average_viewers).to_i %></h3>
+          <p class="profile__info-description liltext"> Last month:</p>
+        </div>
+        <div class="profile__info-group">
+          <h3 class="profile__info-number toptitle">+<%= @category.streams.where("started_at >= ?", 3.months.ago).average(:average_viewers).to_i %></h3>
+          <p class="profile__info-description liltext"> Last 3 months:</p>
+        </div>
+      </div>
+
 </div>
 
 
 
 
-<h3>Popular Clips:</h3>
+<h3 class="subtitle title-align" id="deathrow" style="margin-top:25px;" >Popular Clips:</h3>
 <% if @category.clips.any? %>
   <div class="cards-container">
       <% @category.clips.group_by { |clip| clip.stream.user }.sort_by { |user, clips| clips.sum(&:view_count) }.reverse.first(5).each do |user, clips| %>
@@ -26,11 +37,11 @@
             <div class="d-flex gap-3">
               <%= link_to image_tag(user.profile_image_url, class: "avatar-bordered", alt: "Profile Image"), channel_path(user.id), class: "text-decoration-none" %>
               <div class='align-self-center'>
-                <h2><%= clips.first.title %></h2>
-                <p><%= link_to user.display_name, channel_path(user.id), class: "text-decoration-none"%></p>
+                <h2 class="text"><%= clips.first.title %></h2>
+                <p class="toptitle"><%= link_to user.display_name, channel_path(user.id), class: "text-decoration-none toptitle"%></p>
               </div>
             </div>
-          <p>Views: <%= clips.sum(&:view_count) %></p>
+          <p class="liltext">Views: <%= clips.sum(&:view_count) %></p>
         </div>
       </div>
     <% end %>
@@ -40,9 +51,9 @@
 
 <div class="top">
   <div class="upcoming-title">
-    <h3>Live Streams</h3>
+    <h3 class="subtitle"  id="deathrow">Live Streams</h3>
   </div>
-  <div class="top__container">
+  <div class="top__container" style="background: none;">
     <% @category.streams.group_by(&:user).sort_by { |user, streams| streams.last.average_viewers }.reverse.first(5).each do |user, streams| %>
       <div class="top__card">
         <div class="card-avatar">
@@ -55,11 +66,11 @@
            <span class="top__info">
 
               <% if streams.last.average_viewers >= 1000000 %>
-                <p><%= (streams.last.average_viewers/1000000.0).round(1) %>m viewers</p>
+                <p class="liltext"><%= (streams.last.average_viewers/1000000.0).round(1) %>m viewers</p>
               <% elsif streams.last.average_viewers >= 1000 %>
-                <p><%= (streams.last.average_viewers/1000.0).round(1) %>k viewers</p>
+                <p class="liltext"><%= (streams.last.average_viewers/1000.0).round(1) %>k viewers</p>
               <% else %>
-                <p><%= streams.last.average_viewers %> viewers</p>
+                <p class="liltext"><%= streams.last.average_viewers %> viewers</p>
               <% end %>
             </span>
         </div>

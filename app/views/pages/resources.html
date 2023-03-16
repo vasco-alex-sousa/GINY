@@ -175,3 +175,14 @@
   </div>
 </div>
 </div>
+
+
+list of categories
+
+<p>Average viewers:</p>
+<ul>
+  <li>Last week: <%= @category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i %></li>
+  <li>Last month: <%= @category.streams.where("started_at >= ?", 1.month.ago).average(:average_viewers).to_i %></li>
+  <li>Last 3 months: <%= @category.streams.where("started_at >= ?", 3.months.ago).average(:average_viewers).to_i %></li>
+  <%# <li>All time: <%= @category.streams.where("started_at >= ?", 20.years.ago).average(:average_viewers).to_i %>
+</ul>

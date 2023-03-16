@@ -39,16 +39,17 @@ img{
 
 .profile{
   position: relative;
-  padding-top: 3.5rem;
+  // padding-top: 3.5rem;
 }
 
-.profile__container{
-  row-gap: 2rem;
-}
+// .profile__container{
+//   row-gap: 2rem;
+// }
 
 .profile__data{
   display: grid;
   text-align: center;
+  margin-top: 45px;
 }
 
 .profile__perfil{
@@ -86,7 +87,8 @@ img{
 .profile__social{
   display: flex;
   justify-content: center;
-  column-gap: .75rem
+  column-gap: .75rem;
+  padding: 0;
 }
 
 .profile__social-link{
@@ -114,10 +116,10 @@ img{
   margin-bottom: .25rem;
 }
 
-.profile__info-description{
-  // font-size: ;
-  font-weight: 500;
-}
+// .profile__info-description{
+//   // font-size: ;
+//   // font-weight: 500;
+// }
 
 .filter__content{
   margin: 2rem 0 2.5rem;

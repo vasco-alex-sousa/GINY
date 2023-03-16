@@ -1,3 +1,57 @@
-// Import page-specific CSS files here.
-@import "home";
+// Specific CSS for your home-page
+@font-face {
+  font-family: 'NeueMachina';
+  src: font-url('NeueMachina-Ultrabold.ttf') format('truetype');
+}
 
+@font-face {
+  font-family: 'NeueMachina2';
+  src: font-url('NeueMachina-InktrapRegular.ttf') format('truetype');
+}
+
+
+// To use a font file (.woff) uncomment following lines
+// @font-face {
+//   font-family: "Font Name";
+//   src: font-url('FontFile.eot');
+//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
+//        font-url('FontFile.woff') format('woff'),
+//        font-url('FontFile.ttf') format('truetype')
+// }
+// $my-font: "Font Name";
+
+
+body{
+
+  background-color: #242327 !important;
+  width: 100vw;
+  height: 100vh;
+}
+
+//  h1,h2,h3,p,a,h5, li,span{
+//   color: white;
+
+//  }
+
+
+ .profile__title{
+  text-align: center;
+ }
+
+.container-swiper{
+  overflow: hidden;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 100px; /* set the width of your logo */
+  height: auto; /* set the height to auto to maintain aspect ratio */
+}
