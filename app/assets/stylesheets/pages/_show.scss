@@ -49,7 +49,7 @@ img{
 .profile__data{
   display: grid;
   text-align: center;
-  margin-top: 45px;
+  // margin-top: 45px;
 }
 
 .profile__perfil{
@@ -148,4 +148,18 @@ img{
 .filter__button:hover{
   background-color: aliceblue;
   color: rgb(12, 14, 14);
+}
+
+
+.filters [data-content]{
+  display: none;
+}
+
+.filters__active[data-content]{
+  display: grid;
+}
+
+.filter-tab-active{
+  background-color: white;
+  color: black;
 }

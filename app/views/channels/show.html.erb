@@ -68,78 +68,95 @@
 <main class="main">
   <section class="filters container">
     <ul class="filter__content">
-      <button class="filter__button toptitle" data-target="#clips">
-      <strong>  Analytics </strong>
+      <button class="filter__button toptitle filter-tab-active" data-target="#clips">
+      <strong>  Clips </strong>
       </button>
       <button class="filter__button toptitle" data-target="#analytics">
-       <strong>  Clips </strong>
+       <strong>  Analytics </strong>
       </button>
     </ul>
 
 
 
-<div style="display: flex; flex-wrap: wrap; gap: 20px;">
-  <canvas id="average-viewers-chart"></canvas>
-  <canvas id="peak-viewers-chart"></canvas>
-  <canvas id="new-followers-chart"></canvas>
-  <canvas id="new-subs-chart"></canvas>
-  <canvas id="avg-chat-chart"></canvas>
-  <canvas id="avg-num-chat-chart"></canvas>
-</div>
-
-
+  <div class="filters__sections">
+    <div class="clips__content grid filters__active" data-content id="clips">
       <% if @user.clips.any? %>
     <h2 class="subtitle title-align">Best Clips</h2>
-
-  <div class="filters__sections">
-    <div class="clips__content grid" data-content id="clips">
     <div class="card-container">
-  <div class="cards-container">
-    <% @user_clips.each do |clip| %>
-      <div class="card-trip">
-        <img src="<%= clip.thumbnail_url %>" alt="Clip thumbnail">
-        <div class="card-trip-infos">
-          <h2 class="text"><%= clip.title %></h2>
-          <p class="subtext"> <%= clip.view_count %> <strong>Views</strong></p>
-          <%= link_to category_path(clip.stream.category), class: "text-decoration-none" do %>
-          <p class="subtext"><strong><%= clip.stream.category.name %></strong></p>
-          <% end %>
-        </div>
+      <div class="cards-container">
+        <% @user_clips.each do |clip| %>
+          <div class="card-trip">
+            <img src="<%= clip.thumbnail_url %>" alt="Clip thumbnail">
+            <div class="card-trip-infos">
+              <h2 class="text"><%= clip.title %></h2>
+              <p class="subtext"> <%= clip.view_count %> <strong>Views</strong></p>
+              <%= link_to category_path(clip.stream.category), class: "text-decoration-none" do %>
+              <p class="subtext"><strong><%= clip.stream.category.name %></strong></p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-</div>
-    <article class="clips__card">
-      <img src="" alt="">
-      <div class="clips__modal">
-      <div>
-      <span class="clips__subtitle"></span>
-      <h3 class="class__title"></h3>
-      <a href="#" class="clips__button button button__small">
-
-      </a>
       </div>
-
-      </div>
-    </article>
-
-    </div>
+   </div>
     <div class="analytics__content grid" data-content id="analytics">
-
+    <h2 class="subtitle title-align">Last 30 Streams</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <h2 class="toptitle title-align">Average viewers</h2>
+        <canvas id="average-viewers-chart"></canvas>
+        <h2 class="toptitle title-align">Peak Viewers</h2>
+        <canvas id="peak-viewers-chart"></canvas>
+        <h2 class="toptitle title-align">New Followers</h2>
+        <canvas id="new-followers-chart"></canvas>
+        <h2 class="toptitle title-align">New subscribers</h2>
+        <canvas id="new-subs-chart"></canvas>
+        <h2 class="toptitle title-align">Chat Activity</h2>
+        <canvas id="avg-chat-chart"></canvas>
+        <h2 class="toptitle title-align">Number of chat messages</h2>
+        <canvas id="avg-num-chat-chart"></canvas>
+      </div>
     </div>
 
 
+
   </div>
-  <div class="filters__sections"></div>
+
+
+</div>
+
+
+</div>
+
+
+  </div>
   <% end %>
   </section>
 </main>
 
 
 
-<div style="padding-bottom: 50px;"></div>
+<div style="padding-bottom: 100px;"></div>
 
 <script>
+// buttons_active
+const tabs= document.querySelectorAll('[data-target]'),
+tabContents = document.querySelectorAll('[data-content]')
+
+tabs.forEach (tab => {
+  tab.addEventListener('click', ()=>{
+    const target = document.querySelector(tab.dataset.target)
+
+    tabContents.forEach(tc=>{
+      tc.classList.remove('filters__active')
+    })
+    target.classList.add('filters__active')
+
+    tabs.forEach( t=>{
+      t.classList.remove('filter-tab-active')
+    })
+    tab.classList.add('filter-tab-active')
+  })
+})
 // Chart for Average Viewers
 const averageViewersCtx = document.getElementById('average-viewers-chart').getContext('2d');
 const averageViewersData = {
