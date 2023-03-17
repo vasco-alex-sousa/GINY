@@ -13,7 +13,7 @@
 <div class="profile-info pb-3 mb-3">
   <header class="profile container-show pt-0">
 <div class="logo">
-  <%= image_tag 'stream__-01.png' %> 
+  <%= image_tag 'stream__-01.png' %>
 </div>
     <div class="profile__container grid">
       <div class="profile__data">
@@ -73,7 +73,7 @@
 
 <div class="container-swiper">
   <div class="upcoming-title">
-    <h3 class="subtitle" id="deathrow">Trending channels</h3>
+    <h3 class="subtitle" id="deathrow">Trending Categories</h3>
   </div>
   <div class="swiper-container">
     <div class="swiper-wrapper">
@@ -86,7 +86,14 @@
       <%= link_to category_path(category.id) do %>
         <div class="swiper-slide">
           <img src="<%= category.box_art_url %>" alt="Box Art", class="game-small"></a>
-          <p class="liltext title-align"><%= category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i%> viewers</p>
+            <p class="liltext title-align"><%= if category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i >= 1000000
+                (category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i / 1000000.0).round(1).to_s + "M"
+              elsif category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i >= 1000
+                (category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i / 1000.0).round(1).to_s + "k"
+              else
+                category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i.to_s
+              end %>
+          viewers</p>
         </div>
         <% end %>
       <% end %>
@@ -99,10 +106,10 @@
 
 <div class="top">
   <div class="upcoming-title">
-    <h3 class="subtitle " id="deathrow">Top Live Streamers</h3>
+    <h3 class="subtitle " id="deathrow">Top Streamers</h3>
   </div>
   <div class="top__container">
-    <% @channels.each do |channel| %>
+    <% @channels.first(5).each do |channel| %>
       <div class="top__card">
         <div class="card-avatar">
           <img src="<%= channel.profile_image_url %>" alt="<%= channel.display_name %>" class="top__img">
@@ -140,7 +147,7 @@
     <h3 class="subtitle" id="deathrow">Best Performance</h3>
   </div>
   <div class="top__container">
-    <% @channels.sort_by(&:performance_score).reverse.take(10).each do |channel| %>
+    <% @channels.sort_by(&:performance_score).reverse.take(5).each do |channel| %>
       <div class="top__card">
         <div class="card-avatar">
           <img src="<%= channel.profile_image_url %>" alt="<%= channel.display_name %>" class="top__img">
