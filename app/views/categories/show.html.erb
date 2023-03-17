@@ -2,26 +2,24 @@
 
 <div class="category-info">
   <img src="<%= @category.box_art_url %>" alt="Box Art", class="game">
-  <p class="toptitle title-align" style="margin-top:25px;"> <strong>Peak Viewers</strong> <br> <%= @category.peak_viewers %>
+  <p class="toptitle title-align" style="margin-top:25px;"> <strong>Peak Viewers</strong> <br> <%= number_to_human(@category.peak_viewers, units: {thousand: 'k', million: 'M'}) %></p>
   <p class="toptitle title-align"><strong>Peak Viewers Date</strong> <br> <%= @category.peak_viewers_date %></p>
 
-<h3 class="subtitle title-align" id="deathrow" style="margin-top:25px;">Average Viewers</h3>
+  <h3 class="subtitle title-align" id="deathrow" style="margin-top:25px;">Average Viewers</h3>
       <div class="profile__info grid">
-
         <div class="profile__info-group">
-          <h3 class="profile__info-number toptitle"><%= @category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i %></h3>
+          <h3 class="profile__info-number toptitle"><%= number_to_human(@category.streams.where("started_at >= ?", 1.week.ago).average(:average_viewers).to_i, units: {thousand: 'k', million: 'M'}) %></h3>
           <p class="profile__info-description liltext">Last Week</p>
         </div>
         <div class="profile__info-group">
-          <h3 class="profile__info-number toptitle"><%= @category.streams.where("started_at >= ?", 1.month.ago).average(:average_viewers).to_i %></h3>
-          <p class="profile__info-description liltext"> Last Month</p>
+          <h3 class="profile__info-number toptitle"><%= number_to_human(@category.streams.where("started_at >= ?", 1.month.ago).average(:average_viewers).to_i, units: {thousand: 'k', million: 'M'}) %></h3>
+          <p class="profile__info-description liltext">Last Month</p>
         </div>
         <div class="profile__info-group">
-          <h3 class="profile__info-number toptitle"><%= @category.streams.where("started_at >= ?", 3.months.ago).average(:average_viewers).to_i %></h3>
-          <p class="profile__info-description liltext"> Last 3 Months</p>
+          <h3 class="profile__info-number toptitle"><%= number_to_human(@category.streams.where("started_at >= ?", 3.months.ago).average(:average_viewers).to_i, units: {thousand: 'k', million: 'M'}) %></h3>
+          <p class="profile__info-description liltext">Last 3 Months</p>
         </div>
       </div>
-
 </div>
 
 
