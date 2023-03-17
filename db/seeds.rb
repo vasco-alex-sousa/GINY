@@ -51,18 +51,18 @@ category3 = Category.create(name: 'Just Chatting', box_art_url: 'https://static-
 category4 = Category.create(name: 'Hogwarts Legacy', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/1095275650_IGDB-272x380.jpg', average_viewers: 5874, peak_viewers: 1250000, peak_viewers_date: '07-02-2023')
 category5 = Category.create(name: 'League of Legends', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/21779-285x380.jpg', average_viewers: 164000, peak_viewers: 3100000, peak_viewers_date: '06-11-2022')
 category6 = Category.create(name: 'Valorant', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/516575-285x380.jpg', average_viewers: 122300, peak_viewers: 1700000, peak_viewers_date: '07-04-2020')
-category7 = Category.create(name: 'Football Manager 2023', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/1047410718_IGDB-285x380.jpg', average_viewers: 1700, peak_viewers: 27000, peak_viewers_date: '20-11-2022')
-category8 = Category.create(name: 'God of War Ragnarok', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/102007682_IGDB-272x380.jpg', average_viewers: 400, peak_viewers: 470000, peak_viewers_date: '09-11-2022')
+category7 = Category.create(name: 'FM 2023', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/1047410718_IGDB-285x380.jpg', average_viewers: 1700, peak_viewers: 27000, peak_viewers_date: '20-11-2022')
+category8 = Category.create(name: 'GOW Ragnarok', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/102007682_IGDB-272x380.jpg', average_viewers: 400, peak_viewers: 470000, peak_viewers_date: '09-11-2022')
 category9 = Category.create(name: 'Sports', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/518203-285x380.jpg', average_viewers: 27400, peak_viewers: 1500000, peak_viewers_date: '26-05-2021')
 category10 = Category.create(name: 'Resident Evil 4', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/322503446_IGDB-272x380.jpg', average_viewers: 7300, peak_viewers: 89800, peak_viewers_date: '09-03-2023')
-category11 = Category.create(name: 'Pro Cycling Manager 2022', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/1553050340_IGDB-272x380.jpg', average_viewers: 131, peak_viewers: 1700, peak_viewers_date: '28-06-2022')
+category11 = Category.create(name: 'PCM 2022', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/1553050340_IGDB-272x380.jpg', average_viewers: 131, peak_viewers: 1700, peak_viewers_date: '28-06-2022')
 category12 = Category.create(name: 'NBA 2K23', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/772421245_IGDB-285x380.jpg', average_viewers: 4400, peak_viewers: 351700, peak_viewers_date: '09-09-2022')
 category13 = Category.create(name: 'F1 22', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/1705795372_IGDB-285x380.jpg', average_viewers: 1300, peak_viewers: 112000, peak_viewers_date: '04-11-2022')
 category14 = Category.create(name: 'F1 Manager 2022', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/489490035_IGDB-285x380.jpg', average_viewers: 107, peak_viewers: 63400, peak_viewers_date: '25-08-2022')
 category15 = Category.create(name: 'Pokemon Unite', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/518379_IGDB-272x380.jpg', average_viewers: 1290, peak_viewers: 225400, peak_viewers_date: '21-07-2021')
 category16 = Category.create(name: 'Chess', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/743-285x380.jpg', average_viewers: 9800, peak_viewers: 370100, peak_viewers_date: '15-02-2021')
-category17 = Category.create(name: 'Talk Shows & Podcasts', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/417752-285x380.jpg', average_viewers: 6000, peak_viewers: 413700, peak_viewers_date: '30-05-2020')
-category18 = Category.create(name: 'Final Fantasy VII Remake', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/490359_IGDB-272x380.jpg', average_viewers: 109, peak_viewers: 227800, peak_viewers_date: '10-04-2020')
+category17 = Category.create(name: 'Talk Shows Podcasts', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/417752-285x380.jpg', average_viewers: 6000, peak_viewers: 413700, peak_viewers_date: '30-05-2020')
+category18 = Category.create(name: 'FF VII Remake', box_art_url: 'https://static-cdn.jtvnw.net/ttv-boxart/490359_IGDB-272x380.jpg', average_viewers: 109, peak_viewers: 227800, peak_viewers_date: '10-04-2020')
 puts "Created categories successfully"
 
 puts "Creating some streams"
