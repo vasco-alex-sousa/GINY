@@ -1,7 +1,7 @@
 <h1 class="title title-align" id="deathrow-clips" style="margin-top:25px;">Trending Clips</h1>
 
 <div class="cards-container">
-  <% @clips.each do |clip| %>
+  <% @clips.first(20).each do |clip| %>
     <%= render "shared/clip_card", clip: clip %>
     <p></p>
   <% end %>
