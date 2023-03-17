@@ -31,11 +31,11 @@ user16 = User.create(email: 'ricardinho10futsal@twitch.tv', password: 'ricardinh
 user17 = User.create(email: 'xanajogatudo@twitch.tv', password: 'xanajogatudo', display_name: 'XanaJogaTudoo', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/cc1c854e-0296-4cfc-81c7-50ec956a15e3-profile_image-300x300.jpeg', created_at: '31-03-2021', description: 'Os jogos variam a boa disposição é que não.', total_followers: 2000)
 user18 = User.create(email: 'jarnoopmeer@twitch.tv', password: 'jarnoopmeer', display_name: 'jarnoopmeer', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/add0353a-e399-4412-b76c-c2dd88dc267f-profile_image-300x300.png', created_at: '17-11-2016', description: '2020 & 2021 F1 Esports Champion driving for Mercedes AMG PETRONAS', total_followers: 246400)
 user19 = User.create(email: 'radweasel@twitch.tv', password: 'radweasel', display_name: 'RadWeasel', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/82ee791d-7556-4257-b5ee-f5683510006f-profile_image-300x300.png', created_at: '17-11-2016', description: 'Embaixador NEXT LEVEL RACING - Junta-te ao Boogity Club 🏁Lets Go Racing 🚥Business contact - theradweasel@gmail.com', total_followers: 39400)
-user20 = User.create(email: 'nasa@twitch.tv', password: 'nasa', display_name: 'Nasa', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/nasa-profile_image-739106d9e1948b76-300x300.png', created_at: '30-03-2017', description: 'Explore the universe and discover our home planet with the official NASA channel on Twitch.', total_followers: 1200000)
+user20 = User.create(email: 'nasa@twitch.tv', password: 'nasaspace', display_name: 'Nasa', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/nasa-profile_image-739106d9e1948b76-300x300.png', created_at: '30-03-2017', description: 'Explore the universe and discover our home planet with the official NASA channel on Twitch.', total_followers: 1200000)
 user21 = User.create(email: 'macedotv@twitch.tv', password: 'macedotv', display_name: 'Macedo_TV', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/8492a3c0-2c4d-480d-af0d-fbdff45d4d3c-profile_image-300x300.png', created_at: '24-01-2019', description: 'Email Profissional : macedo_tv_contaprofissional@hotmail.com', total_followers: 1800)
 user22 = User.create(email: 'theportuguesenerdydad@twitch.tv', password: 'nerdydad', display_name: 'ThePortugueseNerdyDad', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/18475e70-594f-4cad-afe5-71c79e3d92a0-profile_image-300x300.png', created_at: '17-11-2016', description: 'Gostas de jogos indie? Roguelike? Metroidvania? Good vibes? Estás no sítio certo...', total_followers: 2000)
 user23 = User.create(email: 'impakt@twitch.tv', password: 'impakt', display_name: 'impakt', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/10c11ec1-7fc4-410d-b149-cb206dbaa06d-profile_image-300x300.png', created_at: '17-11-2016', description: '1º Parceiro da Twitch em 🇵🇹 , Gamer, Streamer, Entertainer / IMPAKTTV.PT', total_followers: 149800)
-user24 = User.create(email: 'sor13@twitch.tv', password: 'sor13', display_name: 'Sor13', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/bf4a86ab-f5fc-42a3-a5e4-c527752eadcc-profile_image-300x300.jpg', created_at: '17-11-2016', description: 'Bem-vindo eu sou o Sorte. Stream focada em jogos de Sobrevivência e Pro Cycling Manager.', total_followers: 534)
+user24 = User.create(email: 'sor13@twitch.tv', password: 'sorte13', display_name: 'Sor13', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/bf4a86ab-f5fc-42a3-a5e4-c527752eadcc-profile_image-300x300.jpg', created_at: '17-11-2016', description: 'Bem-vindo eu sou o Sorte. Stream focada em jogos de Sobrevivência e Pro Cycling Manager.', total_followers: 534)
 user25 = User.create(email: 'nelsonds16@twitch.tv', password: 'nelsonds16', display_name: 'NelsonDS16', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/ab9055c9-5a6f-4b2e-a850-13e256ee6227-profile_image-300x300.png', created_at: '19-11-2018', description: 'Boas pessoal o meu nome é Nelson tenho 27 anos, sou licenciado em Treino Desportivo e adoro jogar. Aqui jogamos essencialmente Football Manager mas também podemos estar noutro tipo de jogos, conversamos sobre vários temas mas em especial sobre Desporto. Email de Contacto: ds16nelson@gmail.com', total_followers: 3800)
 user26 = User.create(email: 'mafskiwi@twitch.tv', password: 'mafskiwi', display_name: 'MafsKiwi', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/64925138-97bd-448c-b076-e3f795ebfc2f-profile_image-300x300.png', created_at: '01-10-2021', description: 'Hii guys! My name is Mafalda, Im from Portugal and I enjoy streaming. My channel focuses on gaming, I mainly play valorant but i like trying new games! Hope you enjoy and have fun with me 🥰', total_followers: 2300)
 user27 = User.create(email: 'ptanimestreams@twitch.tv', password: 'ptanime', display_name: 'ptAnimeStreams', profile_image_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/03f70562-7555-433a-9369-00027988cc1d-profile_image-300x300.png', created_at: '03-11-2020', description: 'Bem vindos ao canal da Twitch do ptAnime! Aqui iremos trazer conteúdo relacionado com cultura asiática e quem sabe mais! Não se esqueçam de nos acompanhar no nosso site, onde vos trazemos análises, entrevistas e as novidades mais recentes do mundo anime, manga, videojogos, k-pop, e mais.', total_followers: 468)
@@ -73,7 +73,7 @@ category_array = Category.all
     user: user1,
     category: [category7, category9, category11, category12, category14].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(1000..2000),
     average_viewers: rand(100..200),
@@ -90,7 +90,7 @@ end
     user: user2,
     category: [category1, category3, category5, category6].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "English",
     viewer_count: rand(100000..200000),
     average_viewers: rand(10000..15000),
@@ -107,7 +107,7 @@ end
     user: user3,
     category: [category3, category8, category10, category18].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(100..200),
     average_viewers: rand(15..25),
@@ -124,7 +124,7 @@ end
     user: user4,
     category: [category3, category4, category5, category6].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "English",
     viewer_count: rand(100000..200000),
     average_viewers: rand(50000..80000),
@@ -139,9 +139,9 @@ end
 60.times do
   Stream.create!(
     user: user5,
-    category: [category3, category4, category8, category10].sample,
+    category: [category1, category3, category4, category8, category10].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(2000..3000),
     average_viewers: rand(150..250),
@@ -158,7 +158,7 @@ end
     user: user6,
     category: [category3, category8, category10, category18].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(100..200),
     average_viewers: rand(17..30),
@@ -175,7 +175,7 @@ end
     user: user7,
     category: [category2, category3, category9].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(3000..6000),
     average_viewers: rand(150..400),
@@ -192,7 +192,7 @@ end
     user: user8,
     category: [category3, category4, category6, category15].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(100..200),
     average_viewers: rand(15..20),
@@ -209,7 +209,7 @@ end
     user: user9,
     category: [category3, category16, category17].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "English",
     viewer_count: rand(100000..200000),
     average_viewers: rand(13000..20000),
@@ -226,7 +226,7 @@ end
     user: user10,
     category: [category3, category5, category6, category10].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(1000..2000),
     average_viewers: rand(100..200),
@@ -243,7 +243,7 @@ end
     user: user11,
     category: [category2, category3, category9, category17].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Spanish",
     viewer_count: rand(1000000..2000000),
     average_viewers: rand(150000..180000),
@@ -260,7 +260,7 @@ end
     user: user12,
     category: [category4, category8, category10, category18].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(100..200),
     average_viewers: rand(10..15),
@@ -277,7 +277,7 @@ end
     user: user13,
     category: [category2, category7, category13, category14].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(250..400),
     average_viewers: rand(17..25),
@@ -294,7 +294,7 @@ end
     user: user14,
     category: [category2, category3, category9, category17].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(4000..6000),
     average_viewers: rand(400..600),
@@ -311,7 +311,7 @@ end
     user: user15,
     category: [category2, category3, category9, category16].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(100000..300000),
     average_viewers: rand(15000..25000),
@@ -328,7 +328,7 @@ end
     user: user16,
     category: [category3, category9, category17].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(1000..2000),
     average_viewers: rand(150..250),
@@ -345,7 +345,7 @@ end
     user: user17,
     category: [category4, category8, category10, category15, category18].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(300..600),
     average_viewers: rand(20..30),
@@ -362,7 +362,7 @@ end
     user: user18,
     category: [category2, category12, category13, category14].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "English",
     viewer_count: rand(20000..30000),
     average_viewers: rand(1000..1500),
@@ -379,7 +379,7 @@ end
     user: user19,
     category: [category2, category12, category13, category14].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(20000..30000),
     average_viewers: rand(170..230),
@@ -390,30 +390,30 @@ end
     new_subscriptions: rand(3..6)
   )
 end
-# #User 20
-# 30.times do
-#   Stream.create!(
-#     user: user20,
-#     category: [category3, category17].sample,
-#     status: "live",
-#     started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
-#     language: "English",
-#     viewer_count: rand(60000..90000),
-#     average_viewers: rand(4000..5000),
-#     peak_viewers: rand(6000..8000),
-#     number_of_chat_messages: rand(15000..20000),
-#     unique_chatters: rand(1500..2000),
-#     new_followers: rand(150..300),
-#     new_subscriptions: rand(10..20)
-#   )
-# end
+#User 20
+30.times do
+  Stream.create!(
+    user: user20,
+    category: [category3, category17].sample,
+    status: "live",
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
+    language: "English",
+    viewer_count: rand(60000..90000),
+    average_viewers: rand(4000..5000),
+    peak_viewers: rand(6000..8000),
+    number_of_chat_messages: rand(15000..20000),
+    unique_chatters: rand(1500..2000),
+    new_followers: rand(150..300),
+    new_subscriptions: rand(10..20)
+  )
+end
 #User 21
 60.times do
   Stream.create!(
     user: user21,
     category: [category7, category11, category12, category14].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(500..700),
     average_viewers: rand(30..40),
@@ -430,7 +430,7 @@ end
     user: user22,
     category: [category4, category8, category10, category18].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(250..500),
     average_viewers: rand(13..20),
@@ -447,7 +447,7 @@ end
     user: user23,
     category: [category4, category8, category10, category16, category18].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(25000..50000),
     average_viewers: rand(700..800),
@@ -458,30 +458,30 @@ end
     new_subscriptions: rand(10..20)
   )
 end
-# #User 24
-# 30.times do
-#   Stream.create!(
-#     user: user24,
-#     category: [category7, category11, category12, category14].sample,
-#     status: "live",
-#     started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
-#     language: "Portuguese",
-#     viewer_count: rand(100..200),
-#     average_viewers: rand(8..10),
-#     peak_viewers: rand(12..16),
-#     number_of_chat_messages: rand(20..40),
-#     unique_chatters: rand(5..10),
-#     new_followers: rand(1..3),
-#     new_subscriptions: rand(0..1)
-#   )
-# end
+#User 24
+30.times do
+  Stream.create!(
+    user: user24,
+    category: [category7, category11, category12, category14].sample,
+    status: "live",
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
+    language: "Portuguese",
+    viewer_count: rand(100..200),
+    average_viewers: rand(8..10),
+    peak_viewers: rand(12..16),
+    number_of_chat_messages: rand(20..40),
+    unique_chatters: rand(5..10),
+    new_followers: rand(1..3),
+    new_subscriptions: rand(0..1)
+  )
+end
 #User 25
 60.times do
   Stream.create!(
     user: user25,
     category: [category2, category6, category7, category9].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(600..900),
     average_viewers: rand(30..40),
@@ -498,7 +498,7 @@ end
     user: user26,
     category: [category1, category5, category6, category15].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(600..900),
     average_viewers: rand(30..35),
@@ -515,7 +515,7 @@ end
     user: user27,
     category: [category1, category5, category6, category10, category15, category17].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(100..200),
     average_viewers: rand(7..10),
@@ -532,7 +532,7 @@ end
     user: user28,
     category: [category1, category4, category8, category10, category16, category17, category18].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "English",
     viewer_count: rand(2500..5000),
     average_viewers: rand(500..700),
@@ -549,7 +549,7 @@ end
     user: user29,
     category: [category1, category4, category5, category6, category10, category15].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(300..600),
     average_viewers: rand(20..25),
@@ -566,7 +566,7 @@ end
     user: user30,
     category: [category2, category9, category12, category13, category14].sample,
     status: "live",
-    started_at: DateTime.new(2023, rand(1..3), rand(1..10), rand(10..16), 30, 00),
+    started_at: DateTime.new(2023, rand(1..3), rand(1..16), rand(10..22), 30, 00),
     language: "Portuguese",
     viewer_count: rand(4000..8000),
     average_viewers: rand(650..750),
@@ -582,55 +582,123 @@ puts "Created streams successfully"
 streams_array = Stream.all
 puts "Creating some clips"
 #User 1
-clip1 = Clip.create!(stream: user1.streams.sample, title: "GG", view_count: 100, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/BrYQ6Y.gif')
-clip2 = Clip.create!(stream: user2.streams.sample, title: "F in the chat", view_count: 1000, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/nR98zW.gif')
-clip3 = Clip.create!(stream: user3.streams.sample, title: "Poggers", view_count: 10, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/mq9GE9.gif')
-clip4 = Clip.create!(stream: user4.streams.sample, title: "Take that L", view_count: 10000, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/pZj7zp.gif')
-clip5 = Clip.create!(stream: user5.streams.sample, title: "Huge W", view_count: 200, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/BrYQnk.gif')
-clip6 = Clip.create!(stream: user6.streams.sample, title: "Noob Moment", view_count: 20, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/r2lXY4.gif')
-clip7 = Clip.create!(stream: user7.streams.sample, title: "WTF", view_count: 200, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/x6r9l3.gif')
-clip8 = Clip.create!(stream: user8.streams.sample, title: "Get Good", view_count: 20, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/z6w9nZ.gif')
-clip9 = Clip.create!(stream: user9.streams.sample, title: "KEKW", view_count: 20000, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/EqVGPY.gif')
-clip10 = Clip.create!(stream: user10.streams.sample, title: "LUL", view_count: 150, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/J89lPJ.gif')
-clip11 = Clip.create!(stream: user1.streams.sample, title: "OMG!", view_count: 200, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/Og0qEY.gif')
-clip12 = Clip.create!(stream: user2.streams.sample, title: "Simp Alert", view_count: 2000, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/Qk8vN0.gif')
-clip13 = Clip.create!(stream: user3.streams.sample, title: "Need Help", view_count: 20, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/RlVwMO.gif')
-clip14 = Clip.create!(stream: user4.streams.sample, title: "Pro Player", view_count: 20000, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/VvVl5v.gif')
-clip15 = Clip.create!(stream: user5.streams.sample, title: "Rare W", view_count: 400, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/WP9mwQ.gif')
-clip16 = Clip.create!(stream: user6.streams.sample, title: "Another L", view_count: 40, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/XQ9n75.gif')
-clip17 = Clip.create!(stream: user7.streams.sample, title: "Rage Moment", view_count: 400, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/x6r9l3.gif')
-clip18 = Clip.create!(stream: user8.streams.sample, title: "Ok Boomer", view_count: 40, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/Y790QM.gif')
-clip19 = Clip.create!(stream: user9.streams.sample, title: "Best Streamer", view_count: 40000, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/Z89pww.gif')
-clip20 = Clip.create!(stream: user10.streams.sample, title: "Nice", view_count: 250, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/16vQYV.gif')
-# clip21 = Clip.create!(stream: streams_array.sample, title: "Clip 21", view_count: 150, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/BrYQ6Y.gif')
-# clip22 = Clip.create!(stream: streams_array.sample, title: "Clip 22", view_count: 1500, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/nR98zW.gif')
-# clip23 = Clip.create!(stream: streams_array.sample, title: "Clip 23", view_count: 15, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/mq9GE9.gif')
-# clip24 = Clip.create!(stream: streams_array.sample, title: "Clip 24", view_count: 15000, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/pZj7zp.gif')
-# clip25 = Clip.create!(stream: streams_array.sample, title: "Clip 25", view_count: 250, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/BrYQnk.gif')
-# clip26 = Clip.create!(stream: streams_array.sample, title: "Clip 26", view_count: 25, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/r2lXY4.gif')
-# clip27 = Clip.create!(stream: streams_array.sample, title: "Clip 27", view_count: 250, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/x6r9l3.gif')
-# clip28 = Clip.create!(stream: streams_array.sample, title: "Clip 28", view_count: 25, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/z6w9nZ.gif')
-# clip29 = Clip.create!(stream: streams_array.sample, title: "Clip 29", view_count: 25000, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/EqVGPY.gif')
-# clip30 = Clip.create!(stream: streams_array.sample, title: "Clip 30", view_count: 200, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/J89lPJ.gif')
-# clip31 = Clip.create!(stream: streams_array.sample, title: "Clip 31", view_count: 250, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/Og0qEY.gif')
-# clip32 = Clip.create!(stream: streams_array.sample, title: "Clip 32", view_count: 2500, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/Qk8vN0.gif')
-# clip33 = Clip.create!(stream: streams_array.sample, title: "Clip 33", view_count: 25, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/RlVwMO.gif')
-# clip34 = Clip.create!(stream: streams_array.sample, title: "Clip 34", view_count: 25000, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/VvVl5v.gif')
-# clip35 = Clip.create!(stream: streams_array.sample, title: "Clip 35", view_count: 450, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/WP9mwQ.gif')
-# clip36 = Clip.create!(stream: streams_array.sample, title: "Clip 36", view_count: 45, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/XQ9n75.gif')
-# clip37 = Clip.create!(stream: streams_array.sample, title: "Clip 37", view_count: 450, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/x6r9l3.gif')
-# clip38 = Clip.create!(stream: streams_array.sample, title: "Clip 38", view_count: 45, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/Y790QM.gif')
-# clip39 = Clip.create!(stream: streams_array.sample, title: "Clip 39", view_count: 45000, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/Z89pww.gif')
-# clip40 = Clip.create!(stream: streams_array.sample, title: "Clip 40", view_count: 255, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/16vQYV.gif')
-# clip41 = Clip.create!(stream: streams_array.sample, title: "Clip 41", view_count: 10, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/BrYQ6Y.gif')
-# clip42 = Clip.create!(stream: streams_array.sample, title: "Clip 42", view_count: 100, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/nR98zW.gif')
-# clip43 = Clip.create!(stream: streams_array.sample, title: "Clip 43", view_count: 1, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/mq9GE9.gif')
-# clip44 = Clip.create!(stream: streams_array.sample, title: "Clip 44", view_count: 1000, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/pZj7zp.gif')
-# clip45 = Clip.create!(stream: streams_array.sample, title: "Clip 45", view_count: 20, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/BrYQnk.gif')
-# clip46 = Clip.create!(stream: streams_array.sample, title: "Clip 46", view_count: 2, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/r2lXY4.gif')
-# clip47 = Clip.create!(stream: streams_array.sample, title: "Clip 47", view_count: 3, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/x6r9l3.gif')
-# clip48 = Clip.create!(stream: streams_array.sample, title: "Clip 48", view_count: 20, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/z6w9nZ.gif')
-# clip49 = Clip.create!(stream: streams_array.sample, title: "Clip 49", view_count: 2000, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/EqVGPY.gif')
-# clip50 = Clip.create!(stream: streams_array.sample, title: "Clip 50", view_count: 15, clip_date: DateTime.new(2023,03,05, 12,00, 00), thumbnail_url: 'https://j.gifs.com/J89lPJ.gif')
-
+clip1 = Clip.create!(stream: user1.streams.sample, title: "CAMPEÕES 🏆", view_count: 339, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/w0q2Lz.gif')
+clip2 = Clip.create!(stream: user1.streams.sample, title: "FOD*-SE!", view_count: 154, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/qQk6Bk.gif')
+clip3 = Clip.create!(stream: user1.streams.sample, title: "Penalty", view_count: 79, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/ywv7Ng.gif')
+#User 2
+clip4 = Clip.create!(stream: user2.streams.sample, title: "amazing day 🥰", view_count: 618000, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/qQk61k.gif')
+clip5 = Clip.create!(stream: user2.streams.sample, title: "Nymn Corn", view_count: 375000, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/w0q21z.gif')
+clip6 = Clip.create!(stream: user2.streams.sample, title: "Permabans Moe", view_count: 252000, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/x6r8gE.gif')
+#User 3
+clip7 = Clip.create!(stream: user3.streams.sample, title: "Mushu!", view_count: 31, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/BrYOqW.gif')
+clip8 = Clip.create!(stream: user3.streams.sample, title: "POWERWASH", view_count: 17, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/DqV6v5.gif')
+clip9 = Clip.create!(stream: user3.streams.sample, title: "a rapper", view_count: 13, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/EqV1w4.gif')
+#User 4
+clip10 = Clip.create!(stream: user4.streams.sample, title: "wrong choice", view_count: 700000, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/qQk63y.gif')
+clip11 = Clip.create!(stream: user4.streams.sample, title: "APPLE??", view_count: 631000, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/vQpR3n.gif')
+clip12 = Clip.create!(stream: user4.streams.sample, title: "DRAMA", view_count: 540000, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/w0q23X.gif')
+#User 5
+clip13 = Clip.create!(stream: user5.streams.sample, title: "Mitra", view_count: 24, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/x6r83P.gif')
+clip14 = Clip.create!(stream: user5.streams.sample, title: "Lindo", view_count: 307, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/ywv73R.gif')
+clip15 = Clip.create!(stream: user5.streams.sample, title: "de VOLTA", view_count: 469, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/z6wQ32.gif')
+#User 6
+clip16 = Clip.create!(stream: user6.streams.sample, title: "rip consola", view_count: 149, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/A6YWVj.gif')
+clip17 = Clip.create!(stream: user6.streams.sample, title: "f****sse", view_count: 79, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/DqV65k.gif')
+clip18 = Clip.create!(stream: user6.streams.sample, title: "ad do Youtube", view_count: 49, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/K8Vzn8.gif')
+#User 7
+clip19 = Clip.create!(stream: user7.streams.sample, title: "manda toty", view_count: 7101, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/NO6Xq8.gif')
+clip20 = Clip.create!(stream: user7.streams.sample, title: "Sporting", view_count: 790, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/Og0LrE.gif')
+clip21 = Clip.create!(stream: user7.streams.sample, title: "conde marques", view_count: 67, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/PjVgv6.gif')
+#User 8
+clip22 = Clip.create!(stream: user8.streams.sample, title: "gg squad", view_count: 30, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/WP9pDo.gif')
+clip23 = Clip.create!(stream: user8.streams.sample, title: "khaheri adora", view_count: 31, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/XQ9qEV.gif')
+clip24 = Clip.create!(stream: user8.streams.sample, title: "smurf", view_count: 34, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/Y79rGY.gif')
+#User 9
+clip25 = Clip.create!(stream: user9.streams.sample, title: "OMEGALUL", view_count: 102000, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/k20Bmv.gif')
+clip26 = Clip.create!(stream: user9.streams.sample, title: "chesscom", view_count: 200000, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/lR9Xn1.gif')
+clip27 = Clip.create!(stream: user9.streams.sample, title: "vs eric!", view_count: 49000, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/mq98o3.gif')
+#User 10
+clip28 = Clip.create!(stream: user10.streams.sample, title: "Chinese Year", view_count: 69, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/nR97pp.gif')
+clip29 = Clip.create!(stream: user10.streams.sample, title: "choreography", view_count: 33, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/vQpRAn.gif')
+clip30 = Clip.create!(stream: user10.streams.sample, title: "Toma foguetinhos", view_count: 15, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/w0q2BX.gif')
+#User 11
+clip31 = Clip.create!(stream: user11.streams.sample, title: "Ronaldinho", view_count: 62800, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/Z89vA5.gif')
+clip32 = Clip.create!(stream: user11.streams.sample, title: "Gol Kun", view_count: 60900, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/16vE0m.gif')
+clip33 = Clip.create!(stream: user11.streams.sample, title: "Penalti", view_count: 34400, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/36xEkR.gif')
+#User 12
+clip34 = Clip.create!(stream: user12.streams.sample, title: "Magia 🪄", view_count: 41, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/83DWp3.gif')
+clip35 = Clip.create!(stream: user12.streams.sample, title: "Sad badger", view_count: 33, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/99EGqD.gif')
+clip36 = Clip.create!(stream: user12.streams.sample, title: "OLHA AI", view_count: 29, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/08rE5L.gif')
+#User 13
+clip37 = Clip.create!(stream: user13.streams.sample, title: "fredinhooo", view_count: 57, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/k20BG6.gif')
+clip38 = Clip.create!(stream: user13.streams.sample, title: "Ganda Follow", view_count: 17, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/lR9XJM.gif')
+clip39 = Clip.create!(stream: user13.streams.sample, title: "Noup", view_count: 15, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/mq98KG.gif')
+#User 14
+clip40 = Clip.create!(stream: user14.streams.sample, title: "VIDA DE JOGA", view_count: 627, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/oZg8MX.gif')
+clip41 = Clip.create!(stream: user14.streams.sample, title: "UF UF UF", view_count: 501, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/pZjBNV.gif')
+clip42 = Clip.create!(stream: user14.streams.sample, title: "contrario", view_count: 315, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/r2lBPp.gif')
+#User 15
+clip43 = Clip.create!(stream: user15.streams.sample, title: "KKK", view_count: 16500, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/w0q2X8.gif')
+clip44 = Clip.create!(stream: user15.streams.sample, title: "olha ai", view_count: 15500, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/gp98AG.gif')
+clip45 = Clip.create!(stream: user15.streams.sample, title: "MEU VICE", view_count: 6155, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/jY95EP.gif')
+#User 16
+clip46 = Clip.create!(stream: user16.streams.sample, title: "Kingsleague", view_count: 1050, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/oZg8MB.gif')
+clip47 = Clip.create!(stream: user16.streams.sample, title: "o chinês", view_count: 181, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/mq98K9.gif')
+clip48 = Clip.create!(stream: user16.streams.sample, title: "maquina", view_count: 170, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/nR97LW.gif')
+#User 17
+clip49 = Clip.create!(stream: user17.streams.sample, title: "a cirurgia", view_count: 51, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/pZjBNp.gif')
+clip50 = Clip.create!(stream: user17.streams.sample, title: "vs Kirby", view_count: 47, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/qQk6O0.gif')
+clip51 = Clip.create!(stream: user17.streams.sample, title: "oh king", view_count: 19, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/r2lBP4.gif')
+#User 18
+clip52 = Clip.create!(stream: user18.streams.sample, title: "????", view_count: 4250, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/vQpRW0.gif')
+clip53 = Clip.create!(stream: user18.streams.sample, title: "juj", view_count: 2874, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/w0q2X1.gif')
+clip54 = Clip.create!(stream: user18.streams.sample, title: "WTF", view_count: 911, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/x6r8Y3.gif')
+#User 19
+clip55 = Clip.create!(stream: user19.streams.sample, title: "20h depois", view_count: 1151, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/DqV6Gy.gif')
+clip56 = Clip.create!(stream: user19.streams.sample, title: "Finish?", view_count: 726, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/EqV1JY.gif')
+clip57 = Clip.create!(stream: user19.streams.sample, title: "Larga-me", view_count: 511, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/J89zOJ.gif')
+#User 20
+clip58 = Clip.create!(stream: user20.streams.sample, title: "SD card", view_count: 333000, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/K8VzPM.gif')
+clip59 = Clip.create!(stream: user20.streams.sample, title: "OMEGALUL", view_count: 86100, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/LZV0QX.gif')
+clip60 = Clip.create!(stream: user20.streams.sample, title: "Solar Eclipse", view_count: 61000, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/MZVNRO.gif')
+#User 21
+clip61 = Clip.create!(stream: user21.streams.sample, title: "olhó galo", view_count: 105, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/NO6XND.gif')
+clip62 = Clip.create!(stream: user21.streams.sample, title: "King Macedo", view_count: 61, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/Og0LOY.gif')
+clip63 = Clip.create!(stream: user21.streams.sample, title: "um tolinho", view_count: 37, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/PjVgP1.gif')
+#User 22
+clip64 = Clip.create!(stream: user22.streams.sample, title: "SPARTAAAAA", view_count: 17, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/RlVkRO.gif')
+clip65 = Clip.create!(stream: user22.streams.sample, title: "Vale socos?", view_count: 15, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/VvVoYv.gif')
+clip66 = Clip.create!(stream: user22.streams.sample, title: "tanta luz", view_count: 11, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/WP9pZQ.gif')
+#User 23
+clip67 = Clip.create!(stream: user23.streams.sample, title: "TIKTOK", view_count: 59, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/XQ9q15.gif')
+clip68 = Clip.create!(stream: user23.streams.sample, title: "rage", view_count: 1401, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/Y79r2M.gif')
+clip69 = Clip.create!(stream: user23.streams.sample, title: "OH BINO", view_count: 883, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/Z89v3w.gif')
+#User 24
+clip70 = Clip.create!(stream: user24.streams.sample, title: "Laranjada", view_count: 37, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/16vE2V.gif')
+clip71 = Clip.create!(stream: user24.streams.sample, title: "Domina", view_count: 21, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/28w231.gif')
+clip72 = Clip.create!(stream: user24.streams.sample, title: "Caruso Mota", view_count: 12, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/36xE4O.gif')
+#User 25
+clip73 = Clip.create!(stream: user25.streams.sample, title: "Mesa rija", view_count: 124, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/x6r8P3.gif')
+clip74 = Clip.create!(stream: user25.streams.sample, title: "NAO JOGAS +", view_count: 30, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/z6wQRZ.gif')
+clip75 = Clip.create!(stream: user25.streams.sample, title: "Full Disney", view_count: 39, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/A6YWw3.gif')
+#User 26
+clip76 = Clip.create!(stream: user26.streams.sample, title: "TÁ PRO", view_count: 138, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/DqV6zy.gif')
+clip77 = Clip.create!(stream: user26.streams.sample, title: "get fuuuhhh", view_count: 72, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/K8Vz0M.gif')
+clip78 = Clip.create!(stream: user26.streams.sample, title: "MASTERCHEF", view_count: 109, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/MZVNMO.gif')
+#User 27
+clip79 = Clip.create!(stream: user27.streams.sample, title: "AI JOCA", view_count: 75, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/NO6XPD.gif')
+clip80 = Clip.create!(stream: user27.streams.sample, title: "MHA", view_count: 31, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/Og0LQY.gif')
+clip81 = Clip.create!(stream: user27.streams.sample, title: "Parabéns", view_count: 24, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/PjVgR1.gif')
+#User 28
+clip82 = Clip.create!(stream: user28.streams.sample, title: "U said it", view_count: 8725, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/RlVkWO.gif')
+clip83 = Clip.create!(stream: user28.streams.sample, title: "Uff ok", view_count: 3555, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/XQ9q35.gif')
+clip84 = Clip.create!(stream: user28.streams.sample, title: "Best Outro", view_count: 1171, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/Z89v5w.gif')
+#User 29
+clip85 = Clip.create!(stream: user29.streams.sample, title: "em ação xD", view_count: 39, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/28w261.gif')
+clip86 = Clip.create!(stream: user29.streams.sample, title: "Pum!", view_count: 17, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/46yVgV.gif')
+clip87 = Clip.create!(stream: user29.streams.sample, title: "INCRIBEL", view_count: 15, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/6WAGkV.gif')
+#User 30
+clip88 = Clip.create!(stream: user30.streams.sample, title: "dale", view_count: 1092, clip_date: DateTime.new(2023,03,14, 12,00, 00), thumbnail_url: 'https://j.gifs.com/83DWmg.gif')
+clip89 = Clip.create!(stream: user30.streams.sample, title: "brabo!", view_count: 568, clip_date: DateTime.new(2023,03,15, 12,00, 00), thumbnail_url: 'https://j.gifs.com/08rE4y.gif')
+clip90 = Clip.create!(stream: user30.streams.sample, title: "valeu", view_count: 99, clip_date: DateTime.new(2023,03,16, 12,00, 00), thumbnail_url: 'https://j.gifs.com/gp98vG.gif')
 puts "Created clips successfully"
