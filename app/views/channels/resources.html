@@ -296,3 +296,251 @@
   </div>
 </div>
 </div>
+
+
+
+
+
+<section class="streams section" id="streams">
+  <h2 class="subtitle title-align">Analytics</h2>
+  <span class="subtext title-align">Check out your performance</span>
+
+  <div class="streams__container container grid">
+      <div>
+          <!--=============== streams 1 ===============-->
+          <div class="streams__content streams__close" id="deathrow">
+              <div class="streams__header">
+                  <i class="uil uil-brackets-curly streams__icon"></i>
+
+                  <div>
+                      <h1 class="toptitle title-align">Last 5 Streams</h1>
+                      <span class="streams__subtitle"></span>
+                  </div>
+
+                  <i class="uil uil-angle-down streams__arrow"></i>
+              </div>
+
+              <div class="streams__list grid">
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name liltext">average viewers</h3>
+                          <span class="streams__number liltext"><%= @user.average(5)%></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__html"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name liltext">peak viewers</h3>
+                          <span class="streams__number liltext"><%= @user.max_peak_viewers(5) %></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__css"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name liltext">new followers</h3>
+                          <span class="streams__number liltext"><%= @user.followers(5) %></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__js"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                      <div class="streams__titles ">
+                          <h3 class="streams__name liltext">new subscribers</h3>
+                          <span class="streams__number liltext"><%= @user.subscribers(5) %></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__react"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                    <div class="streams__titles">
+                      <h3 class="streams__name liltext">average chat messages</h3>
+                      <span class="streams__number liltext"><%= @user.num_chat_msg(5) %></span>
+                    </div>
+                    <div class="streams__bar">
+                      <span class="streams__percentage streams__react"></span>
+                    </div>
+                  </div>
+
+                    <div class="streams__data">
+                    <div class="streams__titles">
+                      <h3 class="streams__name liltext">average num_chatters</h3>
+                      <span class="streams__number liltext"><%= @user.num_chatters(5) %></span>
+                    </div>
+                    <div class="streams__bar">
+                      <span class="streams__percentage streams__react"></span>
+                    </div>
+                  </div>
+
+
+              </div>
+          </div>
+
+          <!--=============== streams 2 ===============-->
+          <div class="streams__content streams__close" id="deathrow">
+              <div class="streams__header">
+                  <i class="uil uil-server-network streams__icon"></i>
+
+                  <div>
+                      <h1 class="toptitle title-align">Last 10 streams</h1>
+                      <span class="streams__subtitle"></span>
+                  </div>
+
+                  <i class="uil uil-angle-down streams__arrow"></i>
+              </div>
+
+              <div class="streams__list grid">
+                  <div class="streams__data">
+                      <div class="streams__titles t">
+                          <h3 class="streams__name liltext">average viewers</h3>
+                          <span class="streams__number liltext"><%= @user.average(10)%></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__html"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                      <div class="streams__titles ">
+                          <h3 class="streams__name liltext">peak viewers</h3>
+                          <span class="streams__number liltext"><%= @user.max_peak_viewers(10) %></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__css"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                      <div class="streams__titles ">
+                          <h3 class="streams__name liltext">new followers</h3>
+                          <span class="streams__number liltext"><%= @user.followers(10) %></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__js"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name liltext">new subscribers</h3>
+                          <span class="streams__number liltext"><%= @user.subscribers(10) %></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__react"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                    <div class="streams__titles ">
+                      <h3 class="streams__name liltext">average chat messages</h3>
+                      <span class="streams__number liltext"><%= @user.num_chat_msg(10) %></span>
+                    </div>
+                    <div class="streams__bar">
+                      <span class="streams__percentage streams__react"></span>
+                    </div>
+                  </div>
+
+                    <div class="streams__data">
+                    <div class="streams__titles">
+                      <h3 class="streams__name liltext">average num_chatters</h3>
+                      <span class="streams__number liltext"><%= @user.num_chatters(10) %></span>
+                    </div>
+                    <div class="streams__bar">
+                      <span class="streams__percentage streams__react"></span>
+                    </div>
+                  </div>
+             </div>
+      </div>
+
+      <div>
+          <!--=============== streams 3 ===============-->
+          <div class="streams__content streams__close" id="deathrow">
+              <div class="streams__header">
+                  <i class="uil uil-swatchbook streams__icon"></i>
+
+                  <div>
+                      <h1 class="toptitle title-align">Last 30 streams</h1>
+                      <span class="streams__subtitle"></span>
+                  </div>
+
+                  <i class="uil uil-angle-down streams__arrow"></i>
+              </div>
+
+             <div class="streams__list grid">
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name liltext">average viewers</h3>
+                          <span class="streams__number liltext"><%= @user.average(30)%></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__html"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name liltext">peak viewers</h3>
+                          <span class="streams__number liltext"><%= @user.max_peak_viewers(30) %></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__css"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name liltext">new followers</h3>
+                          <span class="streams__number liltext"><%= @user.followers(30) %></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__js"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                      <div class="streams__titles">
+                          <h3 class="streams__name liltext">new subscribers</h3>
+                          <span class="streams__number liltext"><%= @user.subscribers(30) %></span>
+                      </div>
+                      <div class="streams__bar">
+                          <span class="streams__percentage streams__react"></span>
+                      </div>
+                  </div>
+
+                  <div class="streams__data">
+                    <div class="streams__titles">
+                      <h3 class="streams__name liltext">average chat messages</h3>
+                      <span class="streams__number liltext"><%= @user.num_chat_msg(30) %></span>
+                    </div>
+                    <div class="streams__bar">
+                      <span class="streams__percentage streams__react"></span>
+                    </div>
+                  </div>
+
+                    <div class="streams__data">
+                    <div class="streams__titles">
+                      <h3 class="streams__name liltext">average num_chatters</h3>
+                      <span class="streams__number liltext"><%= @user.num_chatters(30) %></span>
+                    </div>
+                    <div class="streams__bar">
+                      <span class="streams__percentage streams__react"></span>
+                    </div>
+                  </div>
+
+
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+</section>

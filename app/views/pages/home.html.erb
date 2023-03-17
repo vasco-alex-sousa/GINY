@@ -9,12 +9,12 @@
       </h4>
     </div>
   </div> %>
-<div class="logo">
-  <%= image_tag 'stream_genius-01.png' %>
-</div>
 
 <div class="profile-info pb-3 mb-3">
   <header class="profile container-show pt-0">
+<div class="logo">
+  <%= image_tag 'stream__-01.png' %> 
+</div>
     <div class="profile__container grid">
       <div class="profile__data">
         <div class="profile__border">
@@ -167,3 +167,13 @@
 
 
 <div style="padding-bottom: 50px;"></div>
+
+<script>
+      // swiper js
+      $(document).ready(function() {
+        const swiper = new Swiper('.swiper-container', {
+          slidesPerView: 3,
+          spaceBetween: 10
+        });
+      });
+</script>

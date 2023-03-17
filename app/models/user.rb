@@ -21,7 +21,7 @@ class User < ApplicationRecord
       i += 1
       counter += stream.average_viewers
     end
-    (counter.to_f / i).round
+    (counter.to_f / i).round rescue 0
   end
 
   def followers(num_of_streams)
@@ -51,7 +51,7 @@ class User < ApplicationRecord
       i += 1
       counter += stream.number_of_chat_messages
     end
-    (counter.to_f / i).round
+    (counter.to_f / i).round rescue 0
   end
 
   def num_chatters(num_of_streams)
@@ -61,7 +61,7 @@ class User < ApplicationRecord
       i += 1
       counter += stream.unique_chatters
     end
-    (counter.to_f / i).round
+    (counter.to_f / i).round rescue 0
   end
 
   def max_peak_viewers(num_of_streams)
