@@ -16,7 +16,7 @@
       <meta property="og:image" content="<%= meta_image %>">
       <meta property="og:description" content="<%= meta_description %>">
       <meta property="og:site_name" content="<%= meta_title %>">
-
+     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%#= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -31,31 +31,6 @@
     <%= yield %>
     <%= render "shared/navbar" %>
 
-    <script>
-      const streamsContent = document.getElementsByClassName('streams__content'),
-        streamsHeader = document.querySelectorAll('.streams__header')
-      function togglestreams(){
-        let itemClass = this.parentNode.className
 
-          for(i = 0; i < streamsContent.length; i++){
-            streamsContent[i].className = 'streams__content streams__close'
-          }
-          if(itemClass === 'streams__content streams__close'){
-            this.parentNode.className = 'streams__content streams__open'
-          }
-      }
-      streamsHeader.forEach((el) => {
-        el.addEventListener('click', togglestreams)
-      })
-
-
-      // swiper js
-      $(document).ready(function() {
-        const swiper = new Swiper('.swiper-container', {
-          slidesPerView: 3,
-          spaceBetween: 10
-        });
-      });
-    </script>
   </body>
 </html>
