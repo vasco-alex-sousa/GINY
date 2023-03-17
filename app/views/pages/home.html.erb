@@ -36,15 +36,15 @@
       <div class="profile__info grid">
 
         <div class="profile__info-group">
-          <h3 class="profile__info-number toptitle"><%= @user.average(5)%></h3>
+          <h3 class="profile__info-number toptitle"> <strong> <%= @user.average(5)%> </strong></h3>
           <p class="profile__info-description liltext">average viewers</p>
         </div>
         <div class="profile__info-group">
-          <h3 class="profile__info-number toptitle">+<%= @user.followers(5) %></h3>
+          <h3 class="profile__info-number toptitle"> <strong>+<%= @user.followers(5) %></strong></h3>
           <p class="profile__info-description liltext"> new followers</p>
         </div>
         <div class="profile__info-group">
-          <h3 class="profile__info-number toptitle">+<%= @user.subscribers(5) %></h3>
+          <h3 class="profile__info-number toptitle"> <strong>+<%= @user.subscribers(5) %></strong></h3>
           <p class="profile__info-description liltext"> new subscribers</p>
         </div>
       </div>
@@ -112,7 +112,9 @@
     <% @channels.first(5).each do |channel| %>
       <div class="top__card">
         <div class="card-avatar">
-          <img src="<%= channel.profile_image_url %>" alt="<%= channel.display_name %>" class="top__img">
+          <%= link_to channel_path(channel) do %>
+            <%= image_tag channel.profile_image_url, alt: channel.display_name, class: "top__img" %>
+          <% end %>
         </div>
         <div>
           <h5 class="toptitle" style="margin: 0;"><%= link_to channel.display_name, channel_path(channel.id), style: 'color: white;' %></h5>
@@ -150,9 +152,11 @@
     <% @channels.sort_by(&:performance_score).reverse.take(5).each do |channel| %>
       <div class="top__card">
         <div class="card-avatar">
-          <img src="<%= channel.profile_image_url %>" alt="<%= channel.display_name %>" class="top__img">
+          <%= link_to channel_path(channel) do %>
+            <%= image_tag channel.profile_image_url, alt: channel.display_name, class: "top__img" %>
+          <% end %>
         </div>
-        <div>
+      <div>
           <h5 class="toptitle" style="margin: 0;"><%= link_to channel.display_name, channel_path(channel.id), style: 'color: white;' %></h5>
         </div>
         <div>

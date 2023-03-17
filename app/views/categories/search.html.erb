@@ -27,6 +27,7 @@
 
     <% if !(@channels.empty?) %>
       <h3 class="subtitle style="padding-bottom: 15px;">Channels</h3>
+      <p> </p>
       <div class= "channels-section">
         <% @channels.each do |channel| %>
           <%= link_to channel_path(channel), class: "toptitle text-decoration-none", style: "color: aliceblue;" do %>

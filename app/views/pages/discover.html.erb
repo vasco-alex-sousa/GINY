@@ -12,7 +12,9 @@
           </div>
           <div class="card-trip-infos">
             <div class="streamer-ava toptitle">
-              <img src="<%= user.profile_image_url %>" alt="Profile Image">
+                <%= link_to channel_path(user) do %>
+                  <%= image_tag user.profile_image_url, alt: "Profile Image", class: "avatar-bordered" %>
+                <% end %>
               <%= user.display_name %>
             </div>
 
