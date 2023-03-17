@@ -102,17 +102,17 @@
     <div class="analytics__content grid" data-content id="analytics">
     <h2 class="subtitle title-align">Last 30 Streams</h2>
       <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-        <h2 class="toptitle title-align">Average viewers</h2>
+        <h2 class="toptitle title-align">Average Viewers</h2>
         <canvas id="average-viewers-chart"></canvas>
         <h2 class="toptitle title-align">Peak Viewers</h2>
         <canvas id="peak-viewers-chart"></canvas>
         <h2 class="toptitle title-align">New Followers</h2>
         <canvas id="new-followers-chart"></canvas>
-        <h2 class="toptitle title-align">New subscribers</h2>
+        <h2 class="toptitle title-align">New Subscribers</h2>
         <canvas id="new-subs-chart"></canvas>
-        <h2 class="toptitle title-align">Chat Activity</h2>
+        <h2 class="toptitle title-align">Number of Chat Messages</h2>
         <canvas id="avg-chat-chart"></canvas>
-        <h2 class="toptitle title-align">Number of chat messages</h2>
+        <h2 class="toptitle title-align">Unique Chatters</h2>
         <canvas id="avg-num-chat-chart"></canvas>
       </div>
     </div>
@@ -247,7 +247,7 @@ const newFollowersData = {
           'Day 29', '', '', '', '', '', ''
       ],
   datasets: [{
-    label: 'newFollowers',
+    label: 'New Followers',
     data: [  <% 30.times do |i| %>
             <% if @user.present? %>
             <%= @user.followers(i+1) %>,
@@ -285,7 +285,7 @@ const newSubcribersData = {
           'Day 29', '', '', '', '', '', ''
       ],
   datasets: [{
-    label: 'newSubcribers',
+    label: 'New Subcribers',
     data: [   <% 30.times do |i| %>
             <% if @user.present? %>
             <%= @user.subscribers(i+1) %>,
@@ -324,7 +324,7 @@ const avgChatMessagesData = {
           'Day 29', '', '', '', '', '', ''
       ],
   datasets: [{
-    label: 'avgChatMessages',
+    label: 'Chat Messages',
     data: [   <% 30.times do |i| %>
             <% if @user.present? %>
             <%= @user.num_chat_msg(i+1) %>,
@@ -362,7 +362,7 @@ const avgNumChatData = {
           'Day 29', '', '', '', '', '', ''
       ],
   datasets: [{
-    label: 'avgNumChat',
+    label: 'Unique Chatters',
     data: [    <% 30.times do |i| %>
             <% if @user.present? %>
             <%= @user.num_chatters(i+1) %>,
